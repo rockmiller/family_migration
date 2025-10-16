@@ -1,0 +1,23 @@
+# Normalize line endings across platforms
+* text=auto
+
+# Force CRLF line endings on Windows
+*.py text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Shell scripts (if any): use LF
+*.sh text eol=lf
+
+# Jupyter notebooks: treat as binary to avoid messy diffs
+*.ipynb binary
+
+# CSV and TSV files: treat as text
+*.csv text
+*.tsv text
+
+# VSCode settings: treat as text
+.vscode/* text
+
+# Python files: mark language for GitHub linguist
+*.py linguist-language=Python

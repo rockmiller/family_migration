@@ -1,0 +1,38 @@
+zone,type,origin,region,axis,region
+AM,L,KB,CO,SW,Cotton Country
+AV,L,KB,SF,SW,Southern Frontier
+AW,L,KB,SF,SW,Southern Frontier
+AZ,L,KB,SF,SW,Southern Frontier
+IC,L,KB,NO,NW,North Industrial
+IN,L,KB,NO,NW,North Industrial
+IS,L,KB,KD,NW,Kentucky Diaspora
+KB,I,KB,KY,KB,Kentucky Regional
+KC,R,KB,KY,KW,Kentucky Regional
+KE,R,KB,KY,KE,Kentucky Regional
+KL,R,KB,KY,NW,Kentucky Regional
+KN,R,KB,KY,NW,Kentucky Regional
+KW,L,KB,KD,WE,Kentucky Diaspora
+MD,L,KB,KD,WE,Kentucky Diaspora
+ME,L,KB,CO,WE,Cotton Country
+ML,L,KB,CO,WE,Cotton Country
+MM,L,KB,SF,WE,Southern Frontier
+MN,L,KB,WF,NW,Western Frontier
+MW,L,KB,WF,WE,Southern Frontier
+MZ,L,KB,SF,SW,Southern Frontier
+NC,L,KB,NO,NW,North Industrial
+NN,L,KB,NO,NW,North Industrial
+NS,L,KB,KD,NW,Kentucky Diaspora
+OC,L,KB,NO,NW,North Industrial
+OE,L,KB,KD,NW,Kentucky Diaspora
+OH,R,KB,KD,NW,Kentucky Diaspora
+ON,L,KB,NO,NW,North Industrial
+OW,L,KB,NO,NW,North Industrial
+SE,L,KB,WF,WE,West
+TE,L,KB,SO,SO,Southwards
+TH,L,KB,SO,SO,Southwards
+TM,L,KB,SO,SO,Southwards
+TW,L,KB,CO,SO,Cotton Country
+XE,L,KB,SF,SW,Southern Frontier
+XN,L,KB,SF,SW,Southern Frontier
+XS,L,KB,SF,SW,Southern Frontier
+XT,L,KB,SF,SW,Southern Frontier

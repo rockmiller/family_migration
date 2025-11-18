@@ -1,0 +1,12 @@
+Naming Convention
+
+Search Censuses
+cs00 - full search census
+cs01 - interim (partial) censuses (during construction)
+cs## - additional
+
+Study Population Censuses
+cp00 - selected population census
+cp01 - interim or alternate selection
+cs## - additional
+

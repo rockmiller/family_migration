@@ -1,0 +1,3 @@
+batch,desc,path,cbkfilename,cbkname,datafile,cendata,cbkcol,pattern
+13,indiana-illinois,D:\Documents\datafiles\batch13 - ind-ill,usa_00024.cbk,cbk13,usa_00024.dat,cen13,"variable,basis,range,length","\s{2}(\w+)\s+([HP])\s+([0-9,-]+)\s+(\d+)"
+14,ohio,D:\Documents\datafiles\batch14 - oh,usa_00025.cbk,cbk14,usa_00025.dat,cen14,"variable,basis,range,length","\s{2}(\w+)\s+([HP])\s+([0-9,-]+)\s+(\d+)"

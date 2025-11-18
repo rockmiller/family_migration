@@ -1,0 +1,51 @@
+import duckdb
+from typing import List, Optional
+
+def make_conn(db_path: Optional[str] = None,
+              threads: int = 7,
+              memory_limit: Optional[str] = None,
+              temp_directory: Optional[str] = None) -> duckdb.DuckDBPyConnection:
+    """
+    Open a DuckDB connection and apply PRAGMAs for that connection.
+    - db_path: path to DuckDB file or None for in-memory.
+    - threads: PRAGMA threads value (set to number of physical cores or desired level).
+    - memory_limit: e.g. '8GB' to limit memory for this connection (optional).
+    - temp_directory: path for temporary spill files (optional).
+    Returns the configured connection; caller should reuse it for queries.
+    """
+    con = duckdb.connect(database=db_path or ':memory:')
+    con.execute(f"PRAGMA threads={threads};")
+    if memory_limit:
+        con.execute(f"PRAGMA memory_limit='{memory_limit}';")
+    if temp_directory:
+        con.execute(f"PRAGMA temp_directory='{temp_directory}';")
+    return con
+
+def make_conn_pool(db_path: Optional[str] = None,
+                   n: int = 4,
+                   threads_per_conn: int = 2,
+                   memory_limit_per_conn: Optional[str] = None,
+                   temp_directory: Optional[str] = None) -> List[duckdb.DuckDBPyConnection]:
+    """
+    Create a small pool (list) of DuckDB connections configured for parallel queries.
+    - n: number of connections in the pool (e.g., number of worker threads/processes).
+    - threads_per_conn: PRAGMA threads on each connection (tune according to cores and concurrency).
+    Returns a list of configured DuckDB connections.
+    Note: If you use multiple processes, create connections in each process rather than share these objects.
+    """
+    pool = []
+    for _ in range(n):
+        c = make_conn(db_path=db_path,
+                      threads=threads_per_conn,
+                      memory_limit=memory_limit_per_conn,
+                      temp_directory=temp_directory)
+        pool.append(c)
+    return pool
+	
+	
+#
+#Practical tuning notes
+#- PRAGMA threads is connection-scoped; choose threads_per_conn so sum(threads_per_conn across active connections) ≤ physical cores (leave room for OS I/O).
+#- For multi-process server workers, create connections inside each process and set PRAGMA there. Do not share DuckDB connection objects across processes.
+#- Set PRAGMA temp_directory to a fast local disk (NVMe) if you expect large temporary spills.
+#- If the initialization script will both build indexes and then retain connections for query serving, you can set a higher threads value while building, then set a lower threads value on the long‑lived connections if desired (close and reopen or execute a new PRAGMA on the connection to change it).

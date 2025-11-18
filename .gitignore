@@ -1,19 +1,30 @@
-# Python
+# --- Core ignores ---
+.vscode/
+.git/
+activate
+
+# --- Python standard ignores ---
 __pycache__/
 *.py[cod]
-*.egg
 *.egg-info/
-dist/
-build/
+*.egg
 *.log
+*.sqlite3
+*.db
 
-# Jupyter
-.ipynb_checkpoints/
-*.ipynb
-
-# VSCode
-.vscode/
-
-# Virtual Envs
+# --- Virtual environments ---
 venv/
-venv_fm/
+env/
+.venv/
+ENV/
+
+# --- Local paths (Windows style) ---
+# Ignore everything under C:\Users\rockm\local
+/local/
+# Specifically ignore your venv_fm
+/local/venv_fm/
+
+# --- Keep project directories ---
+!family_migration/src/
+!family_migration/dev/
+!family_migration/test/

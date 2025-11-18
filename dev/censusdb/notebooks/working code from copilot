@@ -1,0 +1,640 @@
+# duckdb_year_ingest.py
+# Requires: duckdb Python package
+# All functions use DuckDB only. No polars. Designed for notebook testing.
+
+#-- Items in main_ingestion script
+#BASE_PATH and SOURCE_PATH
+#CENSUS_PATH and MANIFEST_PATH and SEARCH_INDEX_PATH
+#bucket dictionary (loaded from CSV in MANIFEST_PATH)
+#year mapping
+
+import duckdb
+from pathlib import Path
+import os
+import sys
+from typing import Optional, List
+from datetime import datetime, timezone
+import date
+import time
+from tabulate import tabulate
+
+#7 cores, reserve one
+DEFAULT_THREADS = 6
+PARQUET_COMPRESSION = 'zstd'
+DEFAULT_ROW_GROUP = 131072
+
+# ----------------- Core helpers -----------------
+
+def duckdb_connect(path: Optional[str] = None, threads: int = DEFAULT_THREADS):
+    """
+    Return a duckdb connection. If path is None returns an in-memory DB.
+    """
+    con = duckdb.connect(database=path or ':memory:')
+    con.execute(f"PRAGMA threads={threads};")
+    return con
+
+def safe_replace(src: str, dst: str):
+    os.replace(src, dst)
+
+# ----------------- Ingest step functions (per year) -----------------
+
+# duckdb_key_helpers.py
+import duckdb
+
+def _zero_pad_sql(col: str, width: int) -> str:
+    """
+    SQL expression to zero-pad a numeric or text column to fixed width.
+    Uses LPAD(CAST(col AS VARCHAR), width, '0').
+    """
+    return f"lpad(CAST({col} AS VARCHAR), {width}, '0')"
+
+def add_or_compute_census_keys(con: duckdb.DuckDBPyConnection,
+                               tmp_table: str,
+                               serial_col: str = 'serial',
+                               state_col: str = 'stateicp',
+                               county_col: str = 'countyicp',
+                               histid_col: str = 'histid',
+                               hik_col: str = 'hik'):
+    """
+    Ensure and compute canonical key columns in-place in tmp_table:
+      - cenyear is expected to exist already as integer.
+      - hhid  = cenyear(4) || serial(8 zero-padded)
+      - cloc  = stateicp(2 zero-padded) || countyicp(4 zero-padded)
+      - cpid  = hhid || histid (histid assumed present)
+      - hik   kept as-is (nulls preserved)
+    This function will create columns if absent and populate them where NULL.
+    It will NOT overwrite existing non-NULL values.
+    """
+    # Ensure cenyear exists (we expect it present; if not, this leaves it alone)
+    cols = [r[1] for r in con.execute(f"PRAGMA table_info('{tmp_table}');").fetchall()]
+
+    if 'cenyear' not in cols:
+        raise RuntimeError("Expected 'cenyear' column to exist in the CSV table")
+
+    # Ensure serial/state/county/histid cols exist
+    for required in (serial_col, state_col, county_col, histid_col):
+        if required not in cols:
+            raise RuntimeError(f"Expected column '{required}' to exist in the CSV table")
+
+    # hhid: create if absent, else update only NULLs
+    if 'hhid' not in cols:
+        con.execute(f"ALTER TABLE {tmp_table} ADD COLUMN hhid TEXT;")
+    # Expression: cenyear (4 digits) + serial (8 digits zero-padded)
+    hhid_expr = f"CAST(cenyear AS VARCHAR) || {_zero_pad_sql(serial_col, 8)}"
+    con.execute(f"UPDATE {tmp_table} SET hhid = {hhid_expr} WHERE hhid IS NULL;")
+
+    # cloc: create if absent, else update only NULLs
+    if 'cloc' not in cols:
+        con.execute(f"ALTER TABLE {tmp_table} ADD COLUMN cloc TEXT;")
+    cloc_expr = f"{_zero_pad_sql(state_col,2)} || {_zero_pad_sql(county_col,4)}"
+    con.execute(f"UPDATE {tmp_table} SET cloc = {cloc_expr} WHERE cloc IS NULL;")
+
+    # cpid: create if absent, else update only NULLs
+    if 'cpid' not in cols:
+        con.execute(f"ALTER TABLE {tmp_table} ADD COLUMN cpid TEXT;")
+    # histid may already be text; concatenate hhid + histid (36)
+    con.execute(f"UPDATE {tmp_table} SET cpid = hhid || CAST({histid_col} AS VARCHAR) WHERE cpid IS NULL;")
+
+    # Ensure hik exists as column; do not touch its values (keep nulls)
+    if hik_col not in cols:
+        con.execute(f"ALTER TABLE {tmp_table} ADD COLUMN {hik_col} TEXT;")
+
+    return tmp_table
+	
+#Usage example
+#from duckdb_key_helpers import add_or_compute_census_keys
+#con = duckdb.connect(':memory:')
+#con.execute("PRAGMA threads=6;")
+# assume you already ran: CREATE TABLE census_tmp AS SELECT * FROM read_csv_auto('...csv')
+#add_or_compute_census_keys(con, 'census_tmp',
+#                           serial_col='serial',
+#                           state_col='stateicp',
+#                           county_col='countyicp',
+#                           histid_col='histid',
+#                           hik_col='hik')
+# now census_tmp.hhid, census_tmp.cloc, census_tmp.cpid are populated; hik preserved (nulls intact)
+
+def build_persistent_hhid_dict(con: duckdb.DuckDBPyConnection, tmp_table: str,
+                               persistent_db_path: Optional[str],
+                               hhid_dict_table: str = 'hhid_dict'):
+    """
+    Build/replace a persistent hhid_dict table in the DuckDB file (persistent_db_path).
+    If con is connected to a different DB, this will create/replace table in current connection.
+    Returns table name.
+    """
+    con.execute(f"CREATE OR REPLACE TABLE {hhid_dict_table} AS\n"
+                f"SELECT hhid, CAST(ROW_NUMBER() OVER (ORDER BY hhid) AS INTEGER) AS hhid_id\n"
+                f"FROM (SELECT DISTINCT hhid FROM {tmp_table});")
+    con.execute(f"CREATE INDEX IF NOT EXISTS idx_{hhid_dict_table}_hhid ON {hhid_dict_table}(hhid);")
+    return hhid_dict_table
+
+def create_and_persist_search_index(con: duckdb.DuckDBPyConnection, tmp_table: str, year: int,
+                                    hhid_dict_table: str,
+                                    persistent_search_index_table: Optional[str] = None):
+    """
+    Create a persistent per-year search_index_{year} table in the connected DB and index it.
+    This table is kept in DuckDB and not exported to parquet (per current request).
+    """
+    tbl = persistent_search_index_table or f"search_index_{year}"
+    con.execute(f"CREATE OR REPLACE TABLE {tbl} AS\n"
+                f"SELECT DISTINCT t.hik, t.hhid, t.cloc, d.hhid_id, t.cenyear\n"
+                f"FROM {tmp_table} t\n"
+                f"LEFT JOIN {hhid_dict_table} d USING (hhid);")
+    # create indexes once
+    con.execute(f"CREATE INDEX IF NOT EXISTS idx_{tbl}_hhid_id ON {tbl}(hhid_id);")
+    con.execute(f"CREATE INDEX IF NOT EXISTS idx_{tbl}_cloc ON {tbl}(cloc);")
+    con.execute(f"CREATE INDEX IF NOT EXISTS idx_{tbl}_hik ON {tbl}(hik);")
+    return tbl
+
+def create_bucketed_temp_table(con: duckdb.DuckDBPyConnection, search_index_table: str,
+                               n_buckets: int = 100, bucket_col: str = 'bucket'):
+    """
+    Create a non-persistent (in-DB) bucketed table that includes a bucket number.
+    Uses simple hash bucketing: bucket = hhid_id % n_buckets.
+    Returns name of temp bucket table.
+    """
+    tmp_bkt = f"{search_index_table}_bkt"
+    con.execute(f"DROP TABLE IF EXISTS {tmp_bkt};")
+    con.execute(f"""
+        CREATE TABLE {tmp_bkt} AS
+        SELECT *, (hhid_id % {n_buckets})::INTEGER AS {bucket_col}
+        FROM {search_index_table}
+        ORDER BY hhid_id;
+    """)
+    con.execute(f"CREATE INDEX IF NOT EXISTS idx_{tmp_bkt}_bucket ON {tmp_bkt}({bucket_col});")
+    return tmp_bkt
+
+def build_and_persist_manifest(con: duckdb.DuckDBPyConnection, tmp_bkt_table: str, year: int,
+                               manifest_table: Optional[str] = None, file_template: Optional[str] = None):
+    """
+    Build per-year manifest_{year} table persisted in the current DB.
+    If file_template provided, populate file_path column using the template: file_template.format(year=year, bucket=b)
+    """
+    manifest_tbl = manifest_table or f"manifest_{year}"
+    con.execute(f"CREATE OR REPLACE TABLE {manifest_tbl} AS\n"
+                f"SELECT {year} AS cenyear, bucket, MIN(hhid) AS min_hhid, MAX(hhid) AS max_hhid, COUNT(*) AS record_count\n"
+                f"FROM {tmp_bkt_table}\n"
+                f"GROUP BY bucket\n"
+                f"ORDER BY bucket;")
+    con.execute(f"CREATE INDEX IF NOT EXISTS idx_{manifest_tbl}_bucket ON {manifest_tbl}(bucket);")
+
+    if file_template:
+        # add file_path column and populate
+        con.execute(f"ALTER TABLE {manifest_tbl} ADD COLUMN IF NOT EXISTS file_path TEXT;")
+        rows = con.execute(f"SELECT bucket FROM {manifest_tbl} ORDER BY bucket;").fetchall()
+        for (b,) in rows:
+            path = file_template.format(year=year, bucket=b)
+            con.execute(f"UPDATE {manifest_tbl} SET file_path = '{path}' WHERE bucket = {b};")
+    return manifest_tbl
+
+def write_bucket_parquets(con: duckdb.DuckDBPyConnection, tmp_bkt_table: str, out_dir: str, year: int,
+                          n_buckets: int = 100, row_group_size: int = DEFAULT_ROW_GROUP,
+                          compression: str = PARQUET_COMPRESSION):
+    """
+    Write bucket files to out_dir/{year}/bucket_{bucket:03}.parquet using tmp bucket table as source.
+    """
+    out_base = Path(out_dir) / str(year)
+    out_base.mkdir(parents=True, exist_ok=True)
+    for b in range(n_buckets):
+        tmp_file = out_base / f".bucket_{b:03}.parquet.tmp"
+        final_file = out_base / f"bucket_{b:03}.parquet"
+        sql = (f"COPY (SELECT * FROM {tmp_bkt_table} WHERE bucket = {b} ORDER BY hhid_id) "
+               f"TO '{tmp_file}' (FORMAT PARQUET, COMPRESSION '{compression}', ROW_GROUP_SIZE {row_group_size});")
+        con.execute(sql)
+        safe_replace(str(tmp_file), str(final_file))
+    return str(out_base)
+
+def export_manifest_parquet(con: duckdb.DuckDBPyConnection, manifest_table: str, out_path: str, compression: str = PARQUET_COMPRESSION):
+    tmp_path = str(Path(out_path).with_suffix('.parquet.tmp'))
+    con.execute(f"COPY (SELECT * FROM {manifest_table} ORDER BY bucket) TO '{tmp_path}' (FORMAT PARQUET, COMPRESSION '{compression}');")
+    safe_replace(tmp_path, out_path)
+    return out_path
+
+def drop_temp_table(con: duckdb.DuckDBPyConnection, table_name: str):
+    con.execute(f"DROP TABLE IF EXISTS {table_name};")
+    return True
+
+# ----------------- High-level per-year orchestration -----------------
+
+def ingest_year_persist_indexes(csv_path: str, year: int, db_path: str, out_dir: str,
+                                n_buckets: int = 100,
+                                hhid_expr: Optional[str] = None,
+                                cloc_expr: Optional[str] = None,
+                                hik_col: str = 'hik',
+                                threads: int = DEFAULT_THREADS):
+    """
+    High-level per-year ingestion that:
+      - loads CSV into an in-memory temporary DB session
+      - computes hhid and cloc
+      - builds and persists hhid_dict (in DB at db_path)
+      - creates and persists search_index_{year} table with indexes
+      - creates temporary bucket table, builds and persists manifest_{year} table
+      - writes bucket parquet files to out_dir/{year}/
+      - does NOT write out a parquet copy of the search-index (per request)
+    Returns dict with produced artifact paths and table names.
+    """
+    # Connect to persistent DB where search_index_{year}, hhid_dict and manifest_{year} will live
+    con = duckdb_connect(db_path, threads=threads)
+
+    # Step 1: load CSV into temp table in the same connection so tables persist in same DB file
+    tmp_table = load_csv_into_temp(con, csv_path, tmp_table='census_tmp')
+    ensure_cenyear_column(con, tmp_table, year)
+    add_or_compute_keys(con, tmp_table, hhid_expr=hhid_expr, cloc_expr=cloc_expr, hik_col=hik_col)
+
+    # Step 2: build persistent hhid_dict (replaces existing if present)
+    hhid_dict_tbl = build_persistent_hhid_dict(con, tmp_table, db_path, hhid_dict_table=f"hhid_dict_{year}")
+
+    # Step 3: create and persist per-year search_index_{year} and build indexes once
+    search_index_tbl = create_and_persist_search_index(con, tmp_table, year, hhid_dict_tbl)
+
+    # Step 4: build bucketed temp table (non-persistent bucket table)
+    tmp_bkt = create_bucketed_temp_table(con, search_index_tbl, n_buckets=n_buckets)
+
+    # Step 5: build and persist manifest_{year}
+    file_template = str(Path(out_dir) / "{year}" / "bucket_{bucket:03}.parquet")
+    manifest_tbl = build_and_persist_manifest(con, tmp_bkt, year, manifest_table=f"manifest_{year}", file_template=file_template)
+
+    # Step 6: write bucket parquets to disk
+    buckets_dir = write_bucket_parquets(con, tmp_bkt, out_dir, year, n_buckets=n_buckets)
+
+    # Step 7: export manifest parquet for this year (keeps manifest as parquet artifact)
+    manifest_parquet = str(Path(out_dir) / f"manifest_{year}.parquet")
+    export_manifest_parquet(con, manifest_tbl, manifest_parquet)
+
+    # Step 8: cleanup the temporary census table and tmp bucket table
+    drop_temp_table(con, 'census_tmp')
+    drop_temp_table(con, tmp_bkt)
+
+    con.close()
+    return {
+        'db_path': db_path,
+        'search_index_table': search_index_tbl,
+        'hhid_dict_table': hhid_dict_tbl,
+        'manifest_table': manifest_tbl,
+        'buckets_dir': buckets_dir,
+        'manifest_parquet': manifest_parquet
+    }
+
+# ----------------- Initialization (after all years persisted) --------------
+
+def initialize_views_for_years(db_path: str, years: List[int]):
+    """
+    After ingesting years with persistency, open DB and create UNION ALL views:
+      - search_index_all  (UNION ALL of search_index_{y})
+      - manifest_all      (UNION ALL of manifest_{y})
+    This assumes per-year tables already exist in the DB.
+    """
+    con = duckdb_connect(db_path)
+    # Build search_index_all view from available per-year tables (only include existing tables)
+    existing_search_tables = []
+    for y in years:
+        tbl = f"search_index_{y}"
+        try:
+            # quick pragma check for existence
+            cols = con.execute(f"PRAGMA table_info('{tbl}');").fetchall()
+            if cols:
+                existing_search_tables.append(tbl)
+        except Exception:
+            pass
+
+    if existing_search_tables:
+        union_sql = "CREATE OR REPLACE VIEW search_index_all AS\n" + "\nUNION ALL\n".join([f"SELECT * FROM {t}" for t in existing_search_tables])
+        con.execute(union_sql)
+
+    # Build manifest_all
+    existing_manifest_tables = []
+    for y in years:
+        mt = f"manifest_{y}"
+        try:
+            cols = con.execute(f"PRAGMA table_info('{mt}');").fetchall()
+            if cols:
+                existing_manifest_tables.append(mt)
+        except Exception:
+            pass
+
+    if existing_manifest_tables:
+        manifest_union = "CREATE OR REPLACE VIEW manifest_all AS\n" + "\nUNION ALL\n".join([f"SELECT * FROM {m}" for m in existing_manifest_tables])
+        con.execute(manifest_union)
+
+    con.close()
+    return True
+
+# parallel_ingest.py
+from multiprocessing import Pool
+from typing import List, Dict, Any, Tuple
+import traceback
+import os
+
+# Import your per-year ingest function here.
+# Adjust the import path to match where you placed ingest_year_persist_indexes.
+from duckdb_year_ingest import ingest_year_persist_indexes
+
+def _worker_ingest(args: Tuple) -> Tuple[int, Any]:
+    """
+    Worker wrapper called inside each process.
+    args = (csv_path, year, db_path, out_dir, n_buckets, hhid_expr, cloc_expr, hik_col, threads_for_worker)
+    Returns (year, result_dict) or (year, exception_str).
+    """
+    try:
+        (csv_path, year, db_path, out_dir, n_buckets, hhid_expr, cloc_expr, hik_col, threads_for_worker) = args
+        # Call per-year ingest with threads tuned for this worker
+        result = ingest_year_persist_indexes(
+            csv_path=csv_path,
+            year=year,
+            db_path=db_path,
+            out_dir=out_dir,
+            n_buckets=n_buckets,
+            hhid_expr=hhid_expr,
+            cloc_expr=cloc_expr,
+            hik_col=hik_col,
+            threads=threads_for_worker
+        )
+        return (year, result)
+    except Exception as e:
+        tb = traceback.format_exc()
+        return (year, {"error": str(e), "traceback": tb})
+
+def run_parallel_year_ingests(jobs: List[Dict[str, Any]],
+                              db_path: str,
+                              out_dir: str,
+                              n_buckets: int = 100,
+                              processes: int = 6,
+                              threads_per_worker: int = 1) -> Dict[int, Any]:
+    """
+    Run multiple per-year ingestion jobs in parallel.
+    - jobs: list of dicts with keys: csv_path (str), year (int), optional hhid_expr, cloc_expr, hik_col
+      Example job: {"csv_path": "data/raw/1880.csv", "year": 1880, "hhid_expr": "...", "cloc_expr": "..."}
+    - db_path: path to the persistent DuckDB metadata DB used by workers
+    - out_dir: base output directory for bucket files and manifests
+    - n_buckets: buckets per year
+    - processes: number of parallel worker processes (default 6)
+    - threads_per_worker: PRAGMA threads value each worker will pass to ingest (default 1 to avoid oversubscribe)
+    Returns: dict mapping year -> result (ingest return dict or error dict)
+    """
+    # Build worker arg tuples
+    worker_args = []
+    for job in jobs:
+        csv_path = job['csv_path']
+        year = int(job['year'])
+        hhid_expr = job.get('hhid_expr')
+        cloc_expr = job.get('cloc_expr')
+        hik_col = job.get('hik_col', 'hik')
+        worker_args.append((csv_path, year, db_path, out_dir, n_buckets, hhid_expr, cloc_expr, hik_col, threads_per_worker))
+
+    results: Dict[int, Any] = {}
+    # Create Pool and map
+    with Pool(processes=processes) as pool:
+        for year, res in pool.imap_unordered(_worker_ingest, worker_args):
+            results[year] = res
+            if isinstance(res, dict) and 'error' in res:
+                # simple logging; adapt to your logging framework
+                print(f"[ERROR] year={year} failed: {res['error']}")
+            else:
+                print(f"[OK] year={year} completed: produced {res.get('buckets_dir', 'no-dir')}")
+
+    return results
+	
+# ingest_summary.py
+import os
+import csv
+from pathlib import Path
+from datetime import datetime
+from typing import Optional, Dict, Any
+import duckdb
+from tabulate import tabulate
+
+SUMMARY_HEADER = [
+    "year",
+    "source_count",
+    "temp_table_count",
+    "bucket_records",
+    "manifest_records",
+    "manifest_min_hhid",
+    "manifest_max_hhid",
+    "num_buckets_in_manifest",
+    "search_index_records",
+    "hhid_id_records",
+    "timestamp"
+]
+
+def _connect(db_path: Optional[str]):
+    """
+    Return a DuckDB connection. If db_path is None, returns an in-memory connection.
+    """
+    con = duckdb.connect(database=db_path or ':memory:')
+    return con
+
+def _count_csv_rows_via_duckdb(csv_path: str, con: Optional[duckdb.DuckDBPyConnection] = None) -> int:
+    """
+    Fast line/row count for CSV via DuckDB's read_csv_auto (works with header rows).
+    """
+    own = False
+    if con is None:
+        con = _connect(None)
+        own = True
+    # Use COUNT(*) from read_csv_auto to avoid loading full table into Python
+    q = f"SELECT COUNT(*) FROM read_csv_auto('{csv_path}')"
+    n = con.execute(q).fetchone()[0]
+    if own:
+        con.close()
+    return int(n)
+
+def summarize_year_post_ingest(
+    csv_path: str,
+    db_path: Optional[str],
+    year: int,
+    summary_csv_path: str,
+    tmp_table: Optional[str] = None,
+    con: Optional[duckdb.DuckDBPyConnection] = None
+) -> Dict[str, Any]:
+    """
+    Compute and return a dict of summary measures for a single year.
+    Also prints a one-row tabulated summary and appends/merges into summary_csv_path.
+
+    Parameters
+    - csv_path: path to the source CSV for this year (used for source_count).
+    - db_path: path to the persistent DuckDB metadata DB (or None to use provided con).
+    - year: census year integer (used to find tables search_index_{year}, manifest_{year}, hhid_dict_{year}).
+    - summary_csv_path: path to all-year summary CSV to append/update.
+    - tmp_table: optional name of temporary census table (if still present in connection). If provided and exists, its row count is included.
+    - con: optional DuckDB connection to reuse; if omitted, a new connection to db_path is opened.
+
+    Returns a dict with the measures.
+    """
+    close_conn = False
+    if con is None:
+        con = _connect(db_path)
+        close_conn = True
+
+    # 1) source_count
+    source_count = _count_csv_rows_via_duckdb(csv_path, con)
+
+    # 2) temp_table_count (if tmp_table provided and exists)
+    temp_table_count = None
+    if tmp_table:
+        try:
+            # quick existence check using pragma
+            cols = con.execute(f"PRAGMA table_info('{tmp_table}');").fetchall()
+            if cols:
+                temp_table_count = int(con.execute(f"SELECT COUNT(*) FROM {tmp_table};").fetchone()[0])
+        except Exception:
+            temp_table_count = None
+
+    # 3) manifest info and bucket records
+    manifest_tbl = f"manifest_{year}"
+    manifest_exists = False
+    try:
+        cols = con.execute(f"PRAGMA table_info('{manifest_tbl}');").fetchall()
+        manifest_exists = len(cols) > 0
+    except Exception:
+        manifest_exists = False
+
+    bucket_records = 0
+    manifest_records = 0
+    manifest_min_hhid = None
+    manifest_max_hhid = None
+    num_buckets_in_manifest = 0
+
+    if manifest_exists:
+        # total records (sum of record_count)
+        manifest_records = int(con.execute(f"SELECT COUNT(*) FROM {manifest_tbl};").fetchone()[0])
+        # sum of record_count column (census records in buckets)
+        try:
+            bucket_records = int(con.execute(f"SELECT SUM(record_count) FROM {manifest_tbl};").fetchone()[0] or 0)
+        except Exception:
+            bucket_records = 0
+        # min/max hhid across manifest (range)
+        try:
+            manifest_min_hhid = con.execute(f"SELECT MIN(min_hhid) FROM {manifest_tbl};").fetchone()[0]
+            manifest_max_hhid = con.execute(f"SELECT MAX(max_hhid) FROM {manifest_tbl};").fetchone()[0]
+        except Exception:
+            manifest_min_hhid = None
+            manifest_max_hhid = None
+        # number of distinct buckets
+        try:
+            num_buckets_in_manifest = int(con.execute(f"SELECT COUNT(DISTINCT bucket) FROM {manifest_tbl};").fetchone()[0] or 0)
+        except Exception:
+            num_buckets_in_manifest = 0
+
+    # 4) search-index records and hhid_id records
+    search_idx_tbl = f"search_index_{year}"
+    search_index_records = 0
+    hhid_id_records = 0
+    try:
+        cols = con.execute(f"PRAGMA table_info('{search_idx_tbl}');").fetchall()
+        if cols:
+            search_index_records = int(con.execute(f"SELECT COUNT(*) FROM {search_idx_tbl};").fetchone()[0])
+            # distinct hhid_id
+            try:
+                hhid_id_records = int(con.execute(f"SELECT COUNT(DISTINCT hhid_id) FROM {search_idx_tbl};").fetchone()[0] or 0)
+            except Exception:
+                hhid_id_records = 0
+    except Exception:
+        search_index_records = 0
+        hhid_id_records = 0
+
+    timestamp = datetime.utcnow().isoformat() + "Z"
+
+    measures = {
+        "year": int(year),
+        "source_count": int(source_count),
+        "temp_table_count": temp_table_count if temp_table_count is not None else "",
+        "bucket_records": int(bucket_records),
+        "manifest_records": int(manifest_records),
+        "manifest_min_hhid": manifest_min_hhid or "",
+        "manifest_max_hhid": manifest_max_hhid or "",
+        "num_buckets_in_manifest": int(num_buckets_in_manifest),
+        "search_index_records": int(search_index_records),
+        "hhid_id_records": int(hhid_id_records),
+        "timestamp": timestamp
+    }
+
+    # Print a one-row tabulate table (human friendly)
+    headers = ["measure", "value"]
+    rows = [(k, measures[k]) for k in [
+        "year", "source_count", "temp_table_count", "bucket_records",
+        "manifest_records", "manifest_min_hhid", "manifest_max_hhid",
+        "num_buckets_in_manifest", "search_index_records", "hhid_id_records", "timestamp"
+    ]]
+    print(tabulate(rows, headers=headers, tablefmt="github"))
+
+    # Append/merge into SUMMARY CSV
+    summary_path = Path(summary_csv_path)
+    # Ensure parent dir exists
+    summary_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # If file doesn't exist, write header then row
+    write_header = not summary_path.exists()
+    # Load existing rows into memory keyed by year to allow merging (small file)
+    existing = {}
+    if summary_path.exists():
+        with open(summary_path, "r", newline="") as f:
+            reader = csv.DictReader(f)
+            for r in reader:
+                try:
+                    existing_year = int(r.get("year"))
+                except Exception:
+                    continue
+                existing[existing_year] = r
+
+    # Prepare row as strings (consistent columns)
+    out_row = {k: measures[k] for k in SUMMARY_HEADER}
+    # If an existing row for year exists, replace/merge it
+    existing[int(year)] = {k: out_row[k] for k in SUMMARY_HEADER}
+
+    # Write back entire CSV (overwrite) so merging is simple and atomic from the caller POV
+    tmp_path = str(summary_path.with_suffix(".tmp"))
+    with open(tmp_path, "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=SUMMARY_HEADER)
+        writer.writeheader()
+        for y in sorted(existing.keys()):
+            writer.writerow(existing[y])
+    os.replace(tmp_path, str(summary_path))
+
+    if close_conn:
+        con.close()
+
+    return measures
+
+Summary functions for year and total databases
+
+def report_all_years_summary(summary_csv_path: str) -> None:
+    """
+    Read the all-year SUMMARY CSV and print a transposed tabulate table:
+    - Rows: measures (source_count, bucket_records, etc.)
+    - Columns: years (sorted)
+    """
+    summary_path = Path(summary_csv_path)
+    if not summary_path.exists():
+        print(f"No summary CSV found at {summary_csv_path}")
+        return
+
+    # Read CSV into in-memory dict: year -> row
+    rows_by_year = {}
+    with open(summary_csv_path, "r", newline="") as f:
+        reader = csv.DictReader(f)
+        for r in reader:
+            try:
+                y = int(r.get("year"))
+            except Exception:
+                continue
+            rows_by_year[y] = r
+
+    if not rows_by_year:
+        print("SUMMARY CSV is empty")
+        return
+
+    years = sorted(rows_by_year.keys())
+    # Build list of measures (excluding year and timestamp)
+    measures = [h for h in SUMMARY_HEADER if h not in ("year",)]
+    # Prepare table: first column measure, then one column per year
+    table = []
+    for m in measures:
+        row = [m]
+        for y in years:
+            v = rows_by_year[y].get(m, "")
+            row.append(v)
+        table.append(row)
+
+    headers = ["measure"] + [str(y) for y in years]
+    print(tabulate(table, headers=headers, tablefmt="github"))

@@ -1,0 +1,255 @@
+#!/usr/bin/env python3
+"""
+duckdb_sequential_export_gz.py
+
+Single-process exporter for gzip-compressed per-year CSVs (pre-sorted by household key).
+Writes per-bucket Parquet files, verifies an adjustable sample, and appends manifest rows.
+
+Run: python duckdb_sequential_export_gz.py
+"""
+
+import csv
+import hashlib
+import time
+import uuid
+from pathlib import Path
+from typing import Dict, Any, List
+
+import duckdb
+
+# -----------------------
+# CONFIGURATION
+# -----------------------
+CSV_GZ_DIR = Path("D:/census_csv_gz")    # contains e.g. 1850.csv.gz, 1860.csv.gz, ...
+DATA_ROOT = Path("D:/census_dataset")
+MANIFEST_PATH = DATA_ROOT / "manifest.csv"
+
+# Per-year fixed bucket counts
+YEAR_BUCKETS: Dict[int, int] = {
+    1850: 4,
+    1860: 4,
+    1870: 8,
+    1880: 8,
+    1900: 16,
+    1910: 16,
+    1920: 16,
+}
+
+# DuckDB / Parquet options
+DUCKDB_DB = ":memory:"
+DUCKDB_TEMP_DIR = Path("D:/duckdb_tmp")
+PARQUET_COMPRESSION = "zstd"
+TMP_SUFFIX = ".tmp"
+
+# Household ordering key (used for verification and ordered re-write fallback)
+HOUSEHOLD_ORDER = "stateicp, countyicp, serial, relate, birthyr"
+
+# Manifest fields (includes first/last household key columns)
+MANIFEST_FIELDS = [
+    "year", "bucket", "file_path", "rows", "bytes", "sha256", "created_at",
+    "first_stateicp", "first_countyicp", "first_serial", "first_relate", "first_birthyr",
+    "last_stateicp", "last_countyicp", "last_serial", "last_relate", "last_birthyr",
+]
+
+# Verification sampling: fraction of non-empty buckets per year to verify (0-1)
+VERIFY_BUCKET_SAMPLE_FRACTION = 0.25
+
+# DuckDB threads for single-process mode
+DUCKDB_THREADS = 1
+
+# -----------------------
+# HELPERS
+# -----------------------
+def ensure_dir(p: Path):
+    p.mkdir(parents=True, exist_ok=True)
+
+def append_manifest_row(manifest_path: Path, row: Dict[str, Any]):
+    first = not manifest_path.exists()
+    ensure_dir(manifest_path.parent)
+    with manifest_path.open("a", newline="") as mf:
+        writer = csv.DictWriter(mf, fieldnames=MANIFEST_FIELDS)
+        if first:
+            writer.writeheader()
+        writer.writerow(row)
+
+def sha256_file(path: Path, chunk_size: int = 1 << 20) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(chunk_size), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+# -----------------------
+# PER-YEAR PROCESS (single-process)
+# -----------------------
+def process_year_gz_sequential(year: int, con: duckdb.DuckDBPyConnection):
+    gz_path = CSV_GZ_DIR / f"{year}.csv.gz"
+    if not gz_path.exists():
+        raise FileNotFoundError(f"Missing gzip for year {year}: {gz_path}")
+
+    n_buckets = YEAR_BUCKETS.get(year, 8)
+    print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Starting year {year} (buckets={n_buckets})")
+
+    view_name = f"year_{year}_view"
+    csv_uri = str(gz_path)
+
+    # Create a view that reads the gzipped CSV and computes the bucket
+    con.execute(f"DROP VIEW IF EXISTS {view_name}")
+    create_sql = f"""
+    CREATE VIEW {view_name} AS
+    SELECT *, (abs(hash(cenyear || '|' || serial || '|' || coalesce(histid, ''))) % {n_buckets}) AS bucket
+    FROM read_csv_auto('{csv_uri}')
+    """
+    con.execute(create_sql)
+
+    # Get bucket counts
+    bucket_counts = con.execute(f"SELECT bucket, count(*) AS rows FROM {view_name} GROUP BY bucket ORDER BY bucket").fetchall()
+    counts_map = {int(r[0]): int(r[1]) for r in bucket_counts}
+    non_empty_buckets = [b for b, cnt in counts_map.items() if cnt > 0]
+    print(f"  bucket counts: {counts_map}")
+
+    # Sample some buckets to verify whether writing without ORDER BY preserves CSV order
+    import math, random
+    sample_size = max(1, int(math.ceil(len(non_empty_buckets) * VERIFY_BUCKET_SAMPLE_FRACTION))) if non_empty_buckets else 0
+    sample_buckets = random.sample(non_empty_buckets, sample_size) if sample_size > 0 else []
+
+    buckets_requiring_order = set()
+    for b in sample_buckets:
+        out_dir = DATA_ROOT / f"year={year}" / f"bucket={b}"
+        ensure_dir(out_dir)
+        tmp_name = f"year={year}-bucket={b}-{uuid.uuid4().hex}.parquet{TMP_SUFFIX}"
+        tmp_path = out_dir / tmp_name
+
+        # Write a temp parquet for the sample bucket without ORDER BY
+        select_sql = f"SELECT * FROM {view_name} WHERE bucket = {b}"
+        copy_sql = f"COPY ({select_sql}) TO '{str(tmp_path)}' (FORMAT PARQUET, COMPRESSION '{PARQUET_COMPRESSION}')"
+        con.execute(copy_sql)
+
+        # Read first/last from parquet and from CSV view and compare
+        try:
+            pq_first = con.execute(f"SELECT {HOUSEHOLD_ORDER} FROM read_parquet('{str(tmp_path)}') LIMIT 1").fetchone()
+        except Exception:
+            pq_first = None
+        try:
+            pq_last = con.execute(f"SELECT {HOUSEHOLD_ORDER} FROM read_parquet('{str(tmp_path)}') ORDER BY {', '.join([c.strip() + ' DESC' for c in HOUSEHOLD_ORDER.split(',')])} LIMIT 1").fetchone()
+        except Exception:
+            pq_last = None
+        try:
+            csv_first = con.execute(f"SELECT {HOUSEHOLD_ORDER} FROM {view_name} WHERE bucket = {b} LIMIT 1").fetchone()
+        except Exception:
+            csv_first = None
+        try:
+            csv_last = con.execute(f"SELECT {HOUSEHOLD_ORDER} FROM {view_name} WHERE bucket = {b} ORDER BY {', '.join([c.strip() + ' DESC' for c in HOUSEHOLD_ORDER.split(',')])} LIMIT 1").fetchone()
+        except Exception:
+            csv_last = None
+
+        # remove sample tmp file
+        try:
+            tmp_path.unlink(missing_ok=True)
+        except Exception:
+            pass
+
+        if (csv_first is not None and pq_first is not None and tuple(csv_first) != tuple(pq_first)) or \
+           (csv_last is not None and pq_last is not None and tuple(csv_last) != tuple(pq_last)):
+            buckets_requiring_order.add(b)
+
+    if buckets_requiring_order:
+        print(f"  buckets that require ORDER BY fallback based on sample: {sorted(buckets_requiring_order)}")
+    else:
+        print("  sampled buckets verified: parquet preserves CSV order for samples")
+
+    # Sequentially write each non-empty bucket
+    for b in sorted(non_empty_buckets):
+        bucket_rows = counts_map.get(b, 0)
+        out_dir = DATA_ROOT / f"year={year}" / f"bucket={b}"
+        ensure_dir(out_dir)
+        filename = f"year={year}-bucket={b}-{uuid.uuid4().hex}.parquet"
+        tmp_path = out_dir / (filename + TMP_SUFFIX)
+        final_path = out_dir / filename
+
+        # Decide whether to write unordered (fast) or ordered (fallback)
+        if b in buckets_requiring_order:
+            print(f"  bucket {b}: writing ORDER BY (fallback) rows={bucket_rows}")
+            select_sql = f"SELECT * FROM {view_name} WHERE bucket = {b} ORDER BY {HOUSEHOLD_ORDER}"
+        else:
+            print(f"  bucket {b}: writing without ORDER BY rows={bucket_rows}")
+            select_sql = f"SELECT * FROM {view_name} WHERE bucket = {b}"
+
+        copy_sql = f"COPY ({select_sql}) TO '{str(tmp_path)}' (FORMAT PARQUET, COMPRESSION '{PARQUET_COMPRESSION}')"
+
+        # Execute write
+        con.execute(copy_sql)
+
+        # Compute first/last keys from the just-written parquet
+        try:
+            first_row = con.execute(f"SELECT {HOUSEHOLD_ORDER} FROM read_parquet('{str(tmp_path)}') LIMIT 1").fetchone()
+        except Exception:
+            first_row = None
+        try:
+            rev_order = ", ".join([f"{c.strip()} DESC" for c in HOUSEHOLD_ORDER.split(",")])
+            last_row = con.execute(f"SELECT {HOUSEHOLD_ORDER} FROM read_parquet('{str(tmp_path)}') ORDER BY {rev_order} LIMIT 1").fetchone()
+        except Exception:
+            last_row = None
+
+        # finalize: compute size, sha256, and rename tmp -> final
+        size_bytes = tmp_path.stat().st_size
+        sha = sha256_file(tmp_path)
+        tmp_path.replace(final_path)
+
+        manifest_row: Dict[str, Any] = {
+            "year": year,
+            "bucket": b,
+            "file_path": str(final_path),
+            "rows": bucket_rows,
+            "bytes": size_bytes,
+            "sha256": sha,
+            "created_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            "first_stateicp": first_row[0] if first_row is not None else None,
+            "first_countyicp": first_row[1] if first_row is not None else None,
+            "first_serial": first_row[2] if first_row is not None else None,
+            "first_relate": first_row[3] if first_row is not None else None,
+            "first_birthyr": first_row[4] if first_row is not None else None,
+            "last_stateicp": last_row[0] if last_row is not None else None,
+            "last_countyicp": last_row[1] if last_row is not None else None,
+            "last_serial": last_row[2] if last_row is not None else None,
+            "last_relate": last_row[3] if last_row is not None else None,
+            "last_birthyr": last_row[4] if last_row is not None else None,
+        }
+        append_manifest_row(MANIFEST_PATH, manifest_row)
+        print(f"   wrote {final_path.name}: {size_bytes/1024/1024:.1f} MB, rows={bucket_rows}, sha={sha[:8]}...")
+
+    # cleanup view
+    con.execute(f"DROP VIEW IF EXISTS {view_name}")
+    print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Finished year {year}")
+
+# -----------------------
+# MAIN DRIVER
+# -----------------------
+def main():
+    ensure_dir(DATA_ROOT)
+    ensure_dir(DUCKDB_TEMP_DIR)
+    # ensure manifest header
+    if not MANIFEST_PATH.exists():
+        append_manifest_row(MANIFEST_PATH, {f: "" for f in MANIFEST_FIELDS})
+        with MANIFEST_PATH.open("r") as f:
+            lines = f.readlines()
+        with MANIFEST_PATH.open("w") as f:
+            if lines:
+                f.write(lines[0])
+
+    con = duckdb.connect(database=DUCKDB_DB, read_only=False)
+    try:
+        con.execute(f"PRAGMA temp_directory='{str(DUCKDB_TEMP_DIR)}';")
+        con.execute("PRAGMA enable_progress_bar=false;")
+        con.execute(f"PRAGMA threads={DUCKDB_THREADS};")
+
+        for year in sorted(YEAR_BUCKETS.keys()):
+            process_year_gz_sequential(year, con)
+
+    finally:
+        con.close()
+
+    print("All years processed")
+
+if __name__ == "__main__":
+    main()

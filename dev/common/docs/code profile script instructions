@@ -1,0 +1,5 @@
+Method 2: Use a VS Code profile script 
+The PowerShell extension for VS Code runs an integrated console and can be configured to use a workspace-specific profile script.
+This script runs every time a new PowerShell session is started in VS Code, which is different from when a workspace is simply opened.
+To find the correct profile script for your VS Code session, open a PowerShell terminal and run $PROFILE. The output will show you the full path to the file that VS Code uses.
+You can edit this file to run code every time a new PowerShell session begins in VS Code. 

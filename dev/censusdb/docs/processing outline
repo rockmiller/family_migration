@@ -1,0 +1,32 @@
+Family Migration
+search links (csearch) (census year)
+hik, year, serial, loc
+
+Places
+location, stateicp, region, zone
+
+Household (census year)
+year, serial, loc, farm, urban, sizepl, hhtype, gq, gqtype, gqtyped
+
+Family (census year)
+year, serial, loc, histid, birthyr, sex, histid_hh, pernum, relate, related, histid_sp, histid_pop, histid_mom,
+	steppop, stepmom, age, hik, race, bpl, bpld, sursim, slvhcat
+	
+Work Status
+year, serial, loc, histid, school, labforce, occ1950
+
+Slaveholder (processed from individual slv fields - adult or child in slaveholding household 1850/1860)
+year, serial, histid, slvhcat
+
+1. create loc codes (coalesce, stateicp, countyicp, region)
+2. create search links union of hik, year, serial, loc from cr(yyyy)
+3. create basehiks (year, loc, category)
+4. search csearch (all) for instances of basehiks in census households (append new hiks) recursive (up/down/up/down)
+5. create studylinks (hik-year-serial-loc) for all recursed hiks
+
+6. extract family census records from cr(yyyy) via studylinks (linked and unlinked per year/serial)
+7. extract household census records from cr(yyyy) via studylinks
+
+
+
+

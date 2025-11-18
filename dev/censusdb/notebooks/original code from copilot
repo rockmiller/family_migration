@@ -1,0 +1,281 @@
+# duckdb_year_ingest.py
+# Requires: duckdb Python package
+# All functions use DuckDB only. No polars. Designed for notebook testing.
+
+import duckdb
+from pathlib import Path
+import os
+import sys
+from typing import Optional, List
+from datetime import datetime, timezone
+import date
+import time
+from tabulate import tabulate
+
+DEFAULT_THREADS = 7
+PARQUET_COMPRESSION = 'zstd'
+DEFAULT_ROW_GROUP = 131072
+
+# ----------------- Core helpers -----------------
+
+def duckdb_connect(path: Optional[str] = None, threads: int = DEFAULT_THREADS):
+    """
+    Return a duckdb connection. If path is None returns an in-memory DB.
+    """
+    con = duckdb.connect(database=path or ':memory:')
+    con.execute(f"PRAGMA threads={threads};")
+    return con
+
+def safe_replace(src: str, dst: str):
+    os.replace(src, dst)
+
+# ----------------- Ingest step functions (per year) -----------------
+
+def load_csv_into_temp(con: duckdb.DuckDBPyConnection, csv_path: str, tmp_table: str = 'census_tmp', csv_options: Optional[str] = None):
+    """
+    Load CSV into a temporary DuckDB table (creates or replaces tmp_table).
+    csv_options is raw SQL options to pass to read_csv_auto if needed.
+    """
+    con.execute(f"DROP TABLE IF EXISTS {tmp_table};")
+    opts = csv_options or ''
+    con.execute(f"CREATE TABLE {tmp_table} AS SELECT * FROM read_csv_auto('{csv_path}'{opts});")
+    return tmp_table
+
+def ensure_cenyear_column(con: duckdb.DuckDBPyConnection, tmp_table: str, year: int):
+    con.execute(f"ALTER TABLE {tmp_table} ADD COLUMN IF NOT EXISTS cenyear INTEGER DEFAULT {year};")
+    return tmp_table
+
+def add_or_compute_keys(con: duckdb.DuckDBPyConnection, tmp_table: str,
+                        hhid_expr: Optional[str] = None,
+                        cloc_expr: Optional[str] = None,
+                        hik_col: str = 'hik'):
+    """
+    Ensure columns: hhid (TEXT), cloc (TEXT optional), hik (TEXT).
+    If hhid_expr provided, compute hhid where null.
+    """
+    # ensure hhid exists or compute
+    if hhid_expr:
+        con.execute(f"ALTER TABLE {tmp_table} ADD COLUMN IF NOT EXISTS hhid TEXT;")
+        con.execute(f"UPDATE {tmp_table} SET hhid = {hhid_expr} WHERE hhid IS NULL;")
+    else:
+        # ensure column exists
+        cols = [r[1] for r in con.execute(f"PRAGMA table_info('{tmp_table}');").fetchall()]
+        if 'hhid' not in cols:
+            raise RuntimeError("No hhid column and no hhid_expr provided")
+
+    # ensure hik exists
+    cols = [r[1] for r in con.execute(f"PRAGMA table_info('{tmp_table}');").fetchall()]
+    if hik_col not in cols:
+        con.execute(f"ALTER TABLE {tmp_table} ADD COLUMN {hik_col} TEXT;")
+
+    # compute cloc if expression given
+    if cloc_expr:
+        con.execute(f"ALTER TABLE {tmp_table} ADD COLUMN IF NOT EXISTS cloc TEXT;")
+        con.execute(f"UPDATE {tmp_table} SET cloc = {cloc_expr} WHERE cloc IS NULL;")
+
+    return tmp_table
+
+def build_persistent_hhid_dict(con: duckdb.DuckDBPyConnection, tmp_table: str,
+                               persistent_db_path: Optional[str],
+                               hhid_dict_table: str = 'hhid_dict'):
+    """
+    Build/replace a persistent hhid_dict table in the DuckDB file (persistent_db_path).
+    If con is connected to a different DB, this will create/replace table in current connection.
+    Returns table name.
+    """
+    con.execute(f"CREATE OR REPLACE TABLE {hhid_dict_table} AS\n"
+                f"SELECT hhid, CAST(ROW_NUMBER() OVER (ORDER BY hhid) AS INTEGER) AS hhid_id\n"
+                f"FROM (SELECT DISTINCT hhid FROM {tmp_table});")
+    con.execute(f"CREATE INDEX IF NOT EXISTS idx_{hhid_dict_table}_hhid ON {hhid_dict_table}(hhid);")
+    return hhid_dict_table
+
+def create_and_persist_search_index(con: duckdb.DuckDBPyConnection, tmp_table: str, year: int,
+                                    hhid_dict_table: str,
+                                    persistent_search_index_table: Optional[str] = None):
+    """
+    Create a persistent per-year search_index_{year} table in the connected DB and index it.
+    This table is kept in DuckDB and not exported to parquet (per current request).
+    """
+    tbl = persistent_search_index_table or f"search_index_{year}"
+    con.execute(f"CREATE OR REPLACE TABLE {tbl} AS\n"
+                f"SELECT DISTINCT t.hik, t.hhid, d.hhid_id, t.cloc, t.cenyear\n"
+                f"FROM {tmp_table} t\n"
+                f"LEFT JOIN {hhid_dict_table} d USING (hhid);")
+    # create indexes once
+    con.execute(f"CREATE INDEX IF NOT EXISTS idx_{tbl}_hhid_id ON {tbl}(hhid_id);")
+    con.execute(f"CREATE INDEX IF NOT EXISTS idx_{tbl}_cloc ON {tbl}(cloc);")
+    con.execute(f"CREATE INDEX IF NOT EXISTS idx_{tbl}_hik ON {tbl}(hik);")
+    return tbl
+
+def create_bucketed_temp_table(con: duckdb.DuckDBPyConnection, search_index_table: str,
+                               n_buckets: int = 100, bucket_col: str = 'bucket'):
+    """
+    Create a non-persistent (in-DB) bucketed table that includes a bucket number.
+    Uses simple hash bucketing: bucket = hhid_id % n_buckets.
+    Returns name of temp bucket table.
+    """
+    tmp_bkt = f"{search_index_table}_bkt"
+    con.execute(f"DROP TABLE IF EXISTS {tmp_bkt};")
+    con.execute(f"""
+        CREATE TABLE {tmp_bkt} AS
+        SELECT *, (hhid_id % {n_buckets})::INTEGER AS {bucket_col}
+        FROM {search_index_table}
+        ORDER BY hhid_id;
+    """)
+    con.execute(f"CREATE INDEX IF NOT EXISTS idx_{tmp_bkt}_bucket ON {tmp_bkt}({bucket_col});")
+    return tmp_bkt
+
+def build_and_persist_manifest(con: duckdb.DuckDBPyConnection, tmp_bkt_table: str, year: int,
+                               manifest_table: Optional[str] = None, file_template: Optional[str] = None):
+    """
+    Build per-year manifest_{year} table persisted in the current DB.
+    If file_template provided, populate file_path column using the template: file_template.format(year=year, bucket=b)
+    """
+    manifest_tbl = manifest_table or f"manifest_{year}"
+    con.execute(f"CREATE OR REPLACE TABLE {manifest_tbl} AS\n"
+                f"SELECT {year} AS cenyear, bucket, MIN(hhid) AS min_hhid, MAX(hhid) AS max_hhid, COUNT(*) AS record_count\n"
+                f"FROM {tmp_bkt_table}\n"
+                f"GROUP BY bucket\n"
+                f"ORDER BY bucket;")
+    con.execute(f"CREATE INDEX IF NOT EXISTS idx_{manifest_tbl}_bucket ON {manifest_tbl}(bucket);")
+
+    if file_template:
+        # add file_path column and populate
+        con.execute(f"ALTER TABLE {manifest_tbl} ADD COLUMN IF NOT EXISTS file_path TEXT;")
+        rows = con.execute(f"SELECT bucket FROM {manifest_tbl} ORDER BY bucket;").fetchall()
+        for (b,) in rows:
+            path = file_template.format(year=year, bucket=b)
+            con.execute(f"UPDATE {manifest_tbl} SET file_path = '{path}' WHERE bucket = {b};")
+    return manifest_tbl
+
+def write_bucket_parquets(con: duckdb.DuckDBPyConnection, tmp_bkt_table: str, out_dir: str, year: int,
+                          n_buckets: int = 100, row_group_size: int = DEFAULT_ROW_GROUP,
+                          compression: str = PARQUET_COMPRESSION):
+    """
+    Write bucket files to out_dir/{year}/bucket_{bucket:03}.parquet using tmp bucket table as source.
+    """
+    out_base = Path(out_dir) / str(year)
+    out_base.mkdir(parents=True, exist_ok=True)
+    for b in range(n_buckets):
+        tmp_file = out_base / f".bucket_{b:03}.parquet.tmp"
+        final_file = out_base / f"bucket_{b:03}.parquet"
+        sql = (f"COPY (SELECT * FROM {tmp_bkt_table} WHERE bucket = {b} ORDER BY hhid_id) "
+               f"TO '{tmp_file}' (FORMAT PARQUET, COMPRESSION '{compression}', ROW_GROUP_SIZE {row_group_size});")
+        con.execute(sql)
+        safe_replace(str(tmp_file), str(final_file))
+    return str(out_base)
+
+def export_manifest_parquet(con: duckdb.DuckDBPyConnection, manifest_table: str, out_path: str, compression: str = PARQUET_COMPRESSION):
+    tmp_path = str(Path(out_path).with_suffix('.parquet.tmp'))
+    con.execute(f"COPY (SELECT * FROM {manifest_table} ORDER BY bucket) TO '{tmp_path}' (FORMAT PARQUET, COMPRESSION '{compression}');")
+    safe_replace(tmp_path, out_path)
+    return out_path
+
+def drop_temp_table(con: duckdb.DuckDBPyConnection, table_name: str):
+    con.execute(f"DROP TABLE IF EXISTS {table_name};")
+    return True
+
+# ----------------- High-level per-year orchestration -----------------
+
+def ingest_year_persist_indexes(csv_path: str, year: int, db_path: str, out_dir: str,
+                                n_buckets: int = 100,
+                                hhid_expr: Optional[str] = None,
+                                cloc_expr: Optional[str] = None,
+                                hik_col: str = 'hik',
+                                threads: int = DEFAULT_THREADS):
+    """
+    High-level per-year ingestion that:
+      - loads CSV into an in-memory temporary DB session
+      - computes hhid and cloc
+      - builds and persists hhid_dict (in DB at db_path)
+      - creates and persists search_index_{year} table with indexes
+      - creates temporary bucket table, builds and persists manifest_{year} table
+      - writes bucket parquet files to out_dir/{year}/
+      - does NOT write out a parquet copy of the search-index (per request)
+    Returns dict with produced artifact paths and table names.
+    """
+    # Connect to persistent DB where search_index_{year}, hhid_dict and manifest_{year} will live
+    con = duckdb_connect(db_path, threads=threads)
+
+    # Step 1: load CSV into temp table in the same connection so tables persist in same DB file
+    tmp_table = load_csv_into_temp(con, csv_path, tmp_table='census_tmp')
+    ensure_cenyear_column(con, tmp_table, year)
+    add_or_compute_keys(con, tmp_table, hhid_expr=hhid_expr, cloc_expr=cloc_expr, hik_col=hik_col)
+
+    # Step 2: build persistent hhid_dict (replaces existing if present)
+    hhid_dict_tbl = build_persistent_hhid_dict(con, tmp_table, db_path, hhid_dict_table=f"hhid_dict_{year}")
+
+    # Step 3: create and persist per-year search_index_{year} and build indexes once
+    search_index_tbl = create_and_persist_search_index(con, tmp_table, year, hhid_dict_tbl)
+
+    # Step 4: build bucketed temp table (non-persistent bucket table)
+    tmp_bkt = create_bucketed_temp_table(con, search_index_tbl, n_buckets=n_buckets)
+
+    # Step 5: build and persist manifest_{year}
+    file_template = str(Path(out_dir) / "{year}" / "bucket_{bucket:03}.parquet")
+    manifest_tbl = build_and_persist_manifest(con, tmp_bkt, year, manifest_table=f"manifest_{year}", file_template=file_template)
+
+    # Step 6: write bucket parquets to disk
+    buckets_dir = write_bucket_parquets(con, tmp_bkt, out_dir, year, n_buckets=n_buckets)
+
+    # Step 7: export manifest parquet for this year (keeps manifest as parquet artifact)
+    manifest_parquet = str(Path(out_dir) / f"manifest_{year}.parquet")
+    export_manifest_parquet(con, manifest_tbl, manifest_parquet)
+
+    # Step 8: cleanup the temporary census table and tmp bucket table
+    drop_temp_table(con, 'census_tmp')
+    drop_temp_table(con, tmp_bkt)
+
+    con.close()
+    return {
+        'db_path': db_path,
+        'search_index_table': search_index_tbl,
+        'hhid_dict_table': hhid_dict_tbl,
+        'manifest_table': manifest_tbl,
+        'buckets_dir': buckets_dir,
+        'manifest_parquet': manifest_parquet
+    }
+
+# ----------------- Initialization (after all years persisted) --------------
+
+def initialize_views_for_years(db_path: str, years: List[int]):
+    """
+    After ingesting years with persistency, open DB and create UNION ALL views:
+      - search_index_all  (UNION ALL of search_index_{y})
+      - manifest_all      (UNION ALL of manifest_{y})
+    This assumes per-year tables already exist in the DB.
+    """
+    con = duckdb_connect(db_path)
+    # Build search_index_all view from available per-year tables (only include existing tables)
+    existing_search_tables = []
+    for y in years:
+        tbl = f"search_index_{y}"
+        try:
+            # quick pragma check for existence
+            cols = con.execute(f"PRAGMA table_info('{tbl}');").fetchall()
+            if cols:
+                existing_search_tables.append(tbl)
+        except Exception:
+            pass
+
+    if existing_search_tables:
+        union_sql = "CREATE OR REPLACE VIEW search_index_all AS\n" + "\nUNION ALL\n".join([f"SELECT * FROM {t}" for t in existing_search_tables])
+        con.execute(union_sql)
+
+    # Build manifest_all
+    existing_manifest_tables = []
+    for y in years:
+        mt = f"manifest_{y}"
+        try:
+            cols = con.execute(f"PRAGMA table_info('{mt}');").fetchall()
+            if cols:
+                existing_manifest_tables.append(mt)
+        except Exception:
+            pass
+
+    if existing_manifest_tables:
+        manifest_union = "CREATE OR REPLACE VIEW manifest_all AS\n" + "\nUNION ALL\n".join([f"SELECT * FROM {m}" for m in existing_manifest_tables])
+        con.execute(manifest_union)
+
+    con.close()
+    return True

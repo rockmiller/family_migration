@@ -1,0 +1,27 @@
+﻿zonid,zon_name,zon_type,note
+1,New England,us_region,"me,nh,vt,ma,ct,ri"
+2,Mid-Atlantic,us_region,"ny,nj,pa"
+3,Upper South,us_region,"md, dc, va,nc,ky,tn,wv"
+4,Lower South,us_region,"sc,ga,fl,al,ms"
+5,Trans-Mississippi South,us_region,"la,tx,ar,ok"
+6,Lower Midwest,us_region,"oh,mi,in,il"
+7,Upper Midwest,us_region,"wi,mn,ia"
+8,Central Midwest,us_region,"mo,ks"
+9,Northern Plains,us_region,"nb,sd,nd"
+10,Northern Rockies,us_region,"mt,id"
+11,Central Rockies,us_region,"co,wy,ut,nv"
+12,Southwest Rockies,us_region,"az,nm"
+13,California,us_region,ca
+14,Pacific Northwest,us_region,"wa,or"
+15,Alaska,us_region,ak
+16,Hawaii,us_region,hi
+17,Eastern Seabord,us_georegion,"me,nh,vt,ma,ct,ri,ny,nj,pa, md, va, nc, sc, ga, fl, dc,wv"
+18,Mississippi Valley,us_georegion,"oh,mi,in,ky,mo, ia, tn, al, ms, la,tx"
+19,Plains,us_georegion,"ok,ks,ne,sd,nd"
+20,Rocky Mountains,us_georegion,"nm,co,wy,mt,id,ut,nv,az"
+21,Pacific,us_georegion,"ca,or,wa"
+22,Alaska,us_georegion,ak
+23,Hawaii,us_georegion,hi
+24,Slave States,us_slv,"md, dc, va,nc,ky,tn,sc,ga,fl,al,ms,la,tx,ar,ok,mo,wv"
+25,Free States,us_slv,"me,nh,vt,ma,ct,ri,ny,nj,pa,oh,mi,in,il,ia,wi,mn,ca, or"
+26,Territories,us_slv,"ks,nb,sd,nd,mt,id,co,wy,ut,nv,az,nm,wa"

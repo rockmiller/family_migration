@@ -1,0 +1,18 @@
+The following codes are included in STEPPOP:
+0 = Biological father or no father of this person present in household.
+1 = Age difference between father and child was less than 14 years.
+2 = Link was established only because the father was married to the mother (according to SPLOC). The listed order of family members on the form was non-standard.
+3 = Form explicitly identified as stepfather - information not available for 1960, 1970, 1980, and the ACS.
+5 = Form explicitly identified as adopted - information available only for the 1880, 1900, 1910 (U.S. and Puerto Rican), 1920 (U.S. and Puerto Rican), and 2000 (U.S. and Puerto Rican) censuses.
+6 = Child was older than the father's marriage (current marriage for 1900 and 1910, first marriage for 1960 and 1970), and the father's response in BPL did not match the child's response in FBPL.
+7 = Surname differed, and child was a male, a never-married female (1880), or a female under age 15 (1850-1870).
+
+The following codes are included in STEPMOM:
+0 = Biological mother or no mother of this person present in household.
+1 = Age difference between mother and child was less than 12 or greater than 54 years.
+2 = Link was established only because the mother was married to the father (according to SPLOC). The listed order of family members on the form was non-standard.
+3 = Form explicitly identified as stepmother
+4 = Mother had 0 children surviving.
+5 = Form explicitly identified as adopted - information available only for the 1880, 1900, 1910 (U.S. and Puerto Rican), 1920 (U.S. and Puerto Rican), and 2000 (U.S. and Puerto Rican) censuses.
+6 = Child was older than the mother's marriage (current marriage for 1900 and 1910, first marriage for 1960 and 1970), and the mother's response in BPL did not match the child's response in MBPL.
+7 = If the number of children linked to each mother exceeded the number of children born or the number of children surviving (whichever is valid), the IPUMS unlinked the eldest child(ren) with the same surname, unless the mother was listed as wife and the child was listed as a stepchild of the head.

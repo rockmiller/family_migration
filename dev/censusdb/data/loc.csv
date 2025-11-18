@@ -1,0 +1,3260 @@
+﻿locid,loc_name,loc_type
+1,"Fairfield County, Connecticut",us_county
+2,"Hartford County, Connecticut",us_county
+3,"Litchfield County, Connecticut",us_county
+4,"Middlesex County, Connecticut",us_county
+5,"New Haven County, Connecticut",us_county
+6,"New London County, Connecticut",us_county
+7,"Tolland County, Connecticut",us_county
+8,"Windham County, Connecticut",us_county
+9,"Androscoggin County, Maine",us_county
+10,"Aroostook County, Maine",us_county
+11,"Cumberland County, Maine",us_county
+12,"Franklin County, Maine",us_county
+13,"Hancock County, Maine",us_county
+14,"Kennebec County, Maine",us_county
+15,"Knox County, Maine",us_county
+16,"Lincoln County, Maine",us_county
+17,"Oxford County, Maine",us_county
+18,"Penobscot County, Maine",us_county
+19,"Piscataquis County, Maine",us_county
+20,"Sagadahoc County, Maine",us_county
+21,"Somerset County, Maine",us_county
+22,"Waldo County, Maine",us_county
+23,"Washington County, Maine",us_county
+24,"York County, Maine",us_county
+25,"Barnstable County, Massachusetts",us_county
+26,"Berkshire County, Massachusetts",us_county
+27,"Bristol County, Massachusetts",us_county
+28,"Dukes County, Massachusetts",us_county
+29,"Essex County, Massachusetts",us_county
+30,"Franklin County, Massachusetts",us_county
+31,"Hampden County, Massachusetts",us_county
+32,"Hampshire County, Massachusetts",us_county
+33,"Middlesex County, Massachusetts",us_county
+34,"Nantucket County, Massachusetts",us_county
+35,"Norfolk County, Massachusetts",us_county
+36,"Plymouth County, Massachusetts",us_county
+37,"Suffolk County, Massachusetts",us_county
+38,"Worcester County, Massachusetts",us_county
+39,"Belknap County, New Hampshire",us_county
+40,"Carroll County, New Hampshire",us_county
+41,"Cheshire County, New Hampshire",us_county
+42,"Coos County, New Hampshire",us_county
+43,"Grafton County, New Hampshire",us_county
+44,"Hillsborough County, New Hampshire",us_county
+45,"Merrimack County, New Hampshire",us_county
+46,"Rockingham County, New Hampshire",us_county
+47,"Strafford County, New Hampshire",us_county
+48,"Sullivan County, New Hampshire",us_county
+49,"Bristol County, Rhode Island",us_county
+50,"Kent County, Rhode Island",us_county
+51,"Newport County, Rhode Island",us_county
+52,"Providence County, Rhode Island",us_county
+53,"Washington County, Rhode Island",us_county
+54,"Addison County, Vermont",us_county
+55,"Bennington County, Vermont",us_county
+56,"Caledonia County, Vermont",us_county
+57,"Chittenden County, Vermont",us_county
+58,"Essex County, Vermont",us_county
+59,"Franklin County, Vermont",us_county
+60,"Grand Isle County, Vermont",us_county
+61,"Lamoille County, Vermont",us_county
+62,"Orange County, Vermont",us_county
+63,"Orleans County, Vermont",us_county
+64,"Rutland County, Vermont",us_county
+65,"Washington County, Vermont",us_county
+66,"Windham County, Vermont",us_county
+67,"Windsor County, Vermont",us_county
+68,"Kent County, Delaware",us_county
+69,"New Castle County, Delaware",us_county
+70,"Sussex County, Delaware",us_county
+71,"Atlantic County, New Jersey",us_county
+72,"Bergen County, New Jersey",us_county
+73,"Burlington County, New Jersey",us_county
+74,"Camden County, New Jersey",us_county
+75,"Cape May County, New Jersey",us_county
+76,"Cumberland County, New Jersey",us_county
+77,"Essex County, New Jersey",us_county
+78,"Gloucester County, New Jersey",us_county
+79,"Hudson County, New Jersey",us_county
+80,"Hunterdon County, New Jersey",us_county
+81,"Mercer County, New Jersey",us_county
+82,"Middlesex County, New Jersey",us_county
+83,"Monmouth County, New Jersey",us_county
+84,"Morris County, New Jersey",us_county
+85,"Ocean County, New Jersey",us_county
+86,"Passaic County, New Jersey",us_county
+87,"Salem County, New Jersey",us_county
+88,"Somerset County, New Jersey",us_county
+89,"Sussex County, New Jersey",us_county
+90,"Union County, New Jersey",us_county
+91,"Warren County, New Jersey",us_county
+92,"Albany County, New York",us_county
+93,"Allegany County, New York",us_county
+94,"Bronx County, New York",us_county
+95,"Broome County, New York",us_county
+96,"Cattaraugus County, New York",us_county
+97,"Cayuga County, New York",us_county
+98,"Chautauqua County, New York",us_county
+99,"Chemung County, New York",us_county
+100,"Chenango County, New York",us_county
+101,"Clinton County, New York",us_county
+102,"Columbia County, New York",us_county
+103,"Cortland County, New York",us_county
+104,"Delaware County, New York",us_county
+105,"Dutchess County, New York",us_county
+106,"Erie County, New York",us_county
+107,"Essex County, New York",us_county
+108,"Franklin County, New York",us_county
+109,"Fulton County, New York",us_county
+110,"Genesee County, New York",us_county
+111,"Greene County, New York",us_county
+112,"Hamilton County, New York",us_county
+113,"Herkimer County, New York",us_county
+114,"Jefferson County, New York",us_county
+115,"Kings County, New York",us_county
+116,"Lewis County, New York",us_county
+117,"Livingston County, New York",us_county
+118,"Madison County, New York",us_county
+119,"Monroe County, New York",us_county
+120,"Montgomery County, New York",us_county
+121,"Nassau County, New York",us_county
+122,"New York County, New York",us_county
+123,"Niagara County, New York",us_county
+124,"Oneida County, New York",us_county
+125,"Onondaga County, New York",us_county
+126,"Ontario County, New York",us_county
+127,"Orange County, New York",us_county
+128,"Orleans County, New York",us_county
+129,"Oswego County, New York",us_county
+130,"Otsego County, New York",us_county
+131,"Putnam County, New York",us_county
+132,"Queens County, New York",us_county
+133,"Rensselaer County, New York",us_county
+134,"Richmond County, New York",us_county
+135,"Rockland County, New York",us_county
+136,"St Lawrence County, New York",us_county
+137,"Saratoga County, New York",us_county
+138,"Schenectady County, New York",us_county
+139,"Schoharie County, New York",us_county
+140,"Schuyler County, New York",us_county
+141,"Seneca County, New York",us_county
+142,"Steuben County, New York",us_county
+143,"Suffolk County, New York",us_county
+144,"Sullivan County, New York",us_county
+145,"Tioga County, New York",us_county
+146,"Tompkins County, New York",us_county
+147,"Ulster County, New York",us_county
+148,"Warren County, New York",us_county
+149,"Washington County, New York",us_county
+150,"Wayne County, New York",us_county
+151,"Westchester County, New York",us_county
+152,"Wyoming County, New York",us_county
+153,"Yates County, New York",us_county
+154,"Adams County, Pennsylvania",us_county
+155,"Allegheny County, Pennsylvania",us_county
+156,"Armstrong County, Pennsylvania",us_county
+157,"Beaver County, Pennsylvania",us_county
+158,"Bedford County, Pennsylvania",us_county
+159,"Berks County, Pennsylvania",us_county
+160,"Blair County, Pennsylvania",us_county
+161,"Bradford County, Pennsylvania",us_county
+162,"Bucks County, Pennsylvania",us_county
+163,"Butler County, Pennsylvania",us_county
+164,"Cambria County, Pennsylvania",us_county
+165,"Cameron County, Pennsylvania",us_county
+166,"Carbon County, Pennsylvania",us_county
+167,"Centre County, Pennsylvania",us_county
+168,"Chester County, Pennsylvania",us_county
+169,"Clarion County, Pennsylvania",us_county
+170,"Clearfield County, Pennsylvania",us_county
+171,"Clinton County, Pennsylvania",us_county
+172,"Columbia County, Pennsylvania",us_county
+173,"Crawford County, Pennsylvania",us_county
+174,"Cumberland County, Pennsylvania",us_county
+175,"Dauphin County, Pennsylvania",us_county
+176,"Delaware County, Pennsylvania",us_county
+177,"Elk County, Pennsylvania",us_county
+178,"Erie County, Pennsylvania",us_county
+179,"Fayette County, Pennsylvania",us_county
+180,"Forest County, Pennsylvania",us_county
+181,"Franklin County, Pennsylvania",us_county
+182,"Fulton County, Pennsylvania",us_county
+183,"Greene County, Pennsylvania",us_county
+184,"Huntingdon County, Pennsylvania",us_county
+185,"Indiana County, Pennsylvania",us_county
+186,"Jefferson County, Pennsylvania",us_county
+187,"Juniata County, Pennsylvania",us_county
+188,"Lackawanna County, Pennsylvania",us_county
+189,"Lancaster County, Pennsylvania",us_county
+190,"Lawrence County, Pennsylvania",us_county
+191,"Lebanon County, Pennsylvania",us_county
+192,"Lehigh County, Pennsylvania",us_county
+193,"Luzerne County, Pennsylvania",us_county
+194,"Lycoming County, Pennsylvania",us_county
+195,"Mckean County, Pennsylvania",us_county
+196,"Mercer County, Pennsylvania",us_county
+197,"Mifflin County, Pennsylvania",us_county
+198,"Monroe County, Pennsylvania",us_county
+199,"Montgomery County, Pennsylvania",us_county
+200,"Montour County, Pennsylvania",us_county
+201,"Northampton County, Pennsylvania",us_county
+202,"Northumberland County, Pennsylvania",us_county
+203,"Perry County, Pennsylvania",us_county
+204,"Philadelphia County, Pennsylvania",us_county
+205,"Pike County, Pennsylvania",us_county
+206,"Potter County, Pennsylvania",us_county
+207,"Schuylkill County, Pennsylvania",us_county
+208,"Snyder County, Pennsylvania",us_county
+209,"Somerset County, Pennsylvania",us_county
+210,"Sullivan County, Pennsylvania",us_county
+211,"Susquehanna County, Pennsylvania",us_county
+212,"Tioga County, Pennsylvania",us_county
+213,"Union County, Pennsylvania",us_county
+214,"Venango County, Pennsylvania",us_county
+215,"Warren County, Pennsylvania",us_county
+216,"Washington County, Pennsylvania",us_county
+217,"Wayne County, Pennsylvania",us_county
+218,"Westmoreland County, Pennsylvania",us_county
+219,"Wyoming County, Pennsylvania",us_county
+220,"York County, Pennsylvania",us_county
+221,"Adams County, Illinois",us_county
+222,"Alexander County, Illinois",us_county
+223,"Bond County, Illinois",us_county
+224,"Boone County, Illinois",us_county
+225,"Brown County, Illinois",us_county
+226,"Bureau County, Illinois",us_county
+227,"Calhoun County, Illinois",us_county
+228,"Carroll County, Illinois",us_county
+229,"Cass County, Illinois",us_county
+230,"Champaign County, Illinois",us_county
+231,"Christian County, Illinois",us_county
+232,"Clark County, Illinois",us_county
+233,"Clay County, Illinois",us_county
+234,"Clinton County, Illinois",us_county
+235,"Coles County, Illinois",us_county
+236,"Cook County, Illinois",us_county
+237,"Crawford County, Illinois",us_county
+238,"Cumberland County, Illinois",us_county
+239,"DeKalb County, Illinois",us_county
+240,"De Witt County, Illinois",us_county
+241,"Douglas County, Illinois",us_county
+242,"Du Page County, Illinois",us_county
+243,"Edgar County, Illinois",us_county
+244,"Edwards County, Illinois",us_county
+245,"Effingham County, Illinois",us_county
+246,"Fayette County, Illinois",us_county
+247,"Ford County, Illinois",us_county
+248,"Franklin County, Illinois",us_county
+249,"Fulton County, Illinois",us_county
+250,"Gallatin County, Illinois",us_county
+251,"Greene County, Illinois",us_county
+252,"Grundy County, Illinois",us_county
+253,"Hamilton County, Illinois",us_county
+254,"Hancock County, Illinois",us_county
+255,"Hardin County, Illinois",us_county
+256,"Henderson County, Illinois",us_county
+257,"Henry County, Illinois",us_county
+258,"Iroquois County, Illinois",us_county
+259,"Jackson County, Illinois",us_county
+260,"Jasper County, Illinois",us_county
+261,"Jefferson County, Illinois",us_county
+262,"Jersey County, Illinois",us_county
+263,"Jo Daviess County, Illinois",us_county
+264,"Johnson County, Illinois",us_county
+265,"Kane County, Illinois",us_county
+266,"Kankakee County, Illinois",us_county
+267,"Kendall County, Illinois",us_county
+268,"Knox County, Illinois",us_county
+269,"Lake County, Illinois",us_county
+270,"La Salle County, Illinois",us_county
+271,"Lawrence County, Illinois",us_county
+272,"Lee County, Illinois",us_county
+273,"Livingston County, Illinois",us_county
+274,"Logan County, Illinois",us_county
+275,"McDonough County, Illinois",us_county
+276,"McHenry County, Illinois",us_county
+277,"McLean County, Illinois",us_county
+278,"Macon County, Illinois",us_county
+279,"Macoupin County, Illinois",us_county
+280,"Madison County, Illinois",us_county
+281,"Marion County, Illinois",us_county
+282,"Marshall County, Illinois",us_county
+283,"Mason County, Illinois",us_county
+284,"Massac County, Illinois",us_county
+285,"Menard County, Illinois",us_county
+286,"Mercer County, Illinois",us_county
+287,"Monroe County, Illinois",us_county
+288,"Montgomery County, Illinois",us_county
+289,"Morgan County, Illinois",us_county
+290,"Moultrie County, Illinois",us_county
+291,"Ogle County, Illinois",us_county
+292,"Peoria County, Illinois",us_county
+293,"Perry County, Illinois",us_county
+294,"Piatt County, Illinois",us_county
+295,"Pike County, Illinois",us_county
+296,"Pope County, Illinois",us_county
+297,"Pulaski County, Illinois",us_county
+298,"Putnam County, Illinois",us_county
+299,"Randolph County, Illinois",us_county
+300,"Richland County, Illinois",us_county
+301,"Rock Island County, Illinois",us_county
+302,"St Clair County, Illinois",us_county
+303,"Saline County, Illinois",us_county
+304,"Sangamon County, Illinois",us_county
+305,"Schuyler County, Illinois",us_county
+306,"Scott County, Illinois",us_county
+307,"Shelby County, Illinois",us_county
+308,"Stark County, Illinois",us_county
+309,"Stephenson County, Illinois",us_county
+310,"Tazewell County, Illinois",us_county
+311,"Union County, Illinois",us_county
+312,"Vermilion County, Illinois",us_county
+313,"Wabash County, Illinois",us_county
+314,"Warren County, Illinois",us_county
+315,"Washington County, Illinois",us_county
+316,"Wayne County, Illinois",us_county
+317,"White County, Illinois",us_county
+318,"Whiteside County, Illinois",us_county
+319,"Will County, Illinois",us_county
+320,"Williamson County, Illinois",us_county
+321,"Winnebago County, Illinois",us_county
+322,"Woodford County, Illinois",us_county
+323,"Adams County, Indiana",us_county
+324,"Allen County, Indiana",us_county
+325,"Bartholomew County, Indiana",us_county
+326,"Benton County, Indiana",us_county
+327,"Blackford County, Indiana",us_county
+328,"Boone County, Indiana",us_county
+329,"Brown County, Indiana",us_county
+330,"Carroll County, Indiana",us_county
+331,"Cass County, Indiana",us_county
+332,"Clark County, Indiana",us_county
+333,"Clay County, Indiana",us_county
+334,"Clinton County, Indiana",us_county
+335,"Crawford County, Indiana",us_county
+336,"Daviess County, Indiana",us_county
+337,"Dearborn County, Indiana",us_county
+338,"Decatur County, Indiana",us_county
+339,"De Kalb County, Indiana",us_county
+340,"Delaware County, Indiana",us_county
+341,"Dubois County, Indiana",us_county
+342,"Elkhart County, Indiana",us_county
+343,"Fayette County, Indiana",us_county
+344,"Floyd County, Indiana",us_county
+345,"Fountain County, Indiana",us_county
+346,"Franklin County, Indiana",us_county
+347,"Fulton County, Indiana",us_county
+348,"Gibson County, Indiana",us_county
+349,"Grant County, Indiana",us_county
+350,"Greene County, Indiana",us_county
+351,"Hamilton County, Indiana",us_county
+352,"Hancock County, Indiana",us_county
+353,"Harrison County, Indiana",us_county
+354,"Hendricks County, Indiana",us_county
+355,"Henry County, Indiana",us_county
+356,"Howard County, Indiana",us_county
+357,"Huntington County, Indiana",us_county
+358,"Jackson County, Indiana",us_county
+359,"Jasper County, Indiana",us_county
+360,"Jay County, Indiana",us_county
+361,"Jefferson County, Indiana",us_county
+362,"Jennings County, Indiana",us_county
+363,"Johnson County, Indiana",us_county
+364,"Knox County, Indiana",us_county
+365,"Kosciusko County, Indiana",us_county
+366,"Lagrange County, Indiana",us_county
+367,"Lake County, Indiana",us_county
+368,"La Porte County, Indiana",us_county
+369,"Lawrence County, Indiana",us_county
+370,"Madison County, Indiana",us_county
+371,"Marion County, Indiana",us_county
+372,"Marshall County, Indiana",us_county
+373,"Martin County, Indiana",us_county
+374,"Miami County, Indiana",us_county
+375,"Monroe County, Indiana",us_county
+376,"Montgomery County, Indiana",us_county
+377,"Morgan County, Indiana",us_county
+378,"Newton County, Indiana",us_county
+379,"Noble County, Indiana",us_county
+380,"Ohio County, Indiana",us_county
+381,"Orange County, Indiana",us_county
+382,"Owen County, Indiana",us_county
+383,"Parke County, Indiana",us_county
+384,"Perry County, Indiana",us_county
+385,"Pike County, Indiana",us_county
+386,"Porter County, Indiana",us_county
+387,"Posey County, Indiana",us_county
+388,"Pulaski County, Indiana",us_county
+389,"Putnam County, Indiana",us_county
+390,"Randolph County, Indiana",us_county
+391,"Ripley County, Indiana",us_county
+392,"Rush County, Indiana",us_county
+393,"St Joseph County, Indiana",us_county
+394,"Scott County, Indiana",us_county
+395,"Shelby County, Indiana",us_county
+396,"Spencer County, Indiana",us_county
+397,"Starke County, Indiana",us_county
+398,"Steuben County, Indiana",us_county
+399,"Sullivan County, Indiana",us_county
+400,"Switzerland County, Indiana",us_county
+401,"Tippecanoe County, Indiana",us_county
+402,"Tipton County, Indiana",us_county
+403,"Union County, Indiana",us_county
+404,"Vanderburgh County, Indiana",us_county
+405,"Vermillion County, Indiana",us_county
+406,"Vigo County, Indiana",us_county
+407,"Wabash County, Indiana",us_county
+408,"Warren County, Indiana",us_county
+409,"Warrick County, Indiana",us_county
+410,"Washington County, Indiana",us_county
+411,"Wayne County, Indiana",us_county
+412,"Wells County, Indiana",us_county
+413,"White County, Indiana",us_county
+414,"Whitley County, Indiana",us_county
+415,"Alcona County, Michigan",us_county
+416,"Alger County, Michigan",us_county
+417,"Allegan County, Michigan",us_county
+418,"Alpena County, Michigan",us_county
+419,"Antrim County, Michigan",us_county
+420,"Arenac County, Michigan",us_county
+421,"Baraga County, Michigan",us_county
+422,"Barry County, Michigan",us_county
+423,"Bay County, Michigan",us_county
+424,"Benzie County, Michigan",us_county
+425,"Berrien County, Michigan",us_county
+426,"Branch County, Michigan",us_county
+427,"Calhoun County, Michigan",us_county
+428,"Cass County, Michigan",us_county
+429,"Charlevoix County, Michigan",us_county
+430,"Cheboygan County, Michigan",us_county
+431,"Chippewa County, Michigan",us_county
+432,"Clare County, Michigan",us_county
+433,"Clinton County, Michigan",us_county
+434,"Crawford County, Michigan",us_county
+435,"Delta County, Michigan",us_county
+436,"Dickinson County, Michigan",us_county
+437,"Eaton County, Michigan",us_county
+438,"Emmet County, Michigan",us_county
+439,"Genesee County, Michigan",us_county
+440,"Gladwin County, Michigan",us_county
+441,"Gogebic County, Michigan",us_county
+442,"Grand Traverse County, Michigan",us_county
+443,"Gratiot County, Michigan",us_county
+444,"Hillsdale County, Michigan",us_county
+445,"Houghton County, Michigan",us_county
+446,"Huron County, Michigan",us_county
+447,"Ingham County, Michigan",us_county
+448,"Ionia County, Michigan",us_county
+449,"Iosco County, Michigan",us_county
+450,"Iron County, Michigan",us_county
+451,"Isabella County, Michigan",us_county
+452,"Isle Royale County, Michigan",us_county
+453,"Jackson County, Michigan",us_county
+454,"Kalamazoo County, Michigan",us_county
+455,"Kalkaska County, Michigan",us_county
+456,"Kent County, Michigan",us_county
+457,"Keweenaw County, Michigan",us_county
+458,"Lake County, Michigan",us_county
+459,"Lapeer County, Michigan",us_county
+460,"Leelanau County, Michigan",us_county
+461,"Lenawee County, Michigan",us_county
+462,"Livingston County, Michigan",us_county
+463,"Luce County, Michigan",us_county
+464,"Mackinac/Michilim County, Michigan",us_county
+465,"Macomb County, Michigan",us_county
+466,"Manistee County, Michigan",us_county
+467,"Manitou County, Michigan",us_county
+468,"Marquette County, Michigan",us_county
+469,"Mason County, Michigan",us_county
+470,"Mecosta County, Michigan",us_county
+471,"Menominee County, Michigan",us_county
+472,"Midland County, Michigan",us_county
+473,"Missaukee County, Michigan",us_county
+474,"Monroe County, Michigan",us_county
+475,"Montcalm County, Michigan",us_county
+476,"Montmorency County, Michigan",us_county
+477,"Muskegon County, Michigan",us_county
+478,"Newaygo County, Michigan",us_county
+479,"Oakland County, Michigan",us_county
+480,"Oceana County, Michigan",us_county
+481,"Ogemaw County, Michigan",us_county
+482,"Ontonagon County, Michigan",us_county
+483,"Osceola County, Michigan",us_county
+484,"Oscoda County, Michigan",us_county
+485,"Otsego County, Michigan",us_county
+486,"Ottawa County, Michigan",us_county
+487,"Presque Isle County, Michigan",us_county
+488,"Roscommon County, Michigan",us_county
+489,"Saginaw County, Michigan",us_county
+490,"St Clair County, Michigan",us_county
+491,"St Joseph County, Michigan",us_county
+492,"Sanilac County, Michigan",us_county
+493,"Schoolcraft County, Michigan",us_county
+494,"Shiawassee County, Michigan",us_county
+495,"Tuscola County, Michigan",us_county
+496,"Van Buren County, Michigan",us_county
+497,"Washtenaw County, Michigan",us_county
+498,"Wayne County, Michigan",us_county
+499,"Wexford County, Michigan",us_county
+500,"Adams County, Ohio",us_county
+501,"Allen County, Ohio",us_county
+502,"Ashland County, Ohio",us_county
+503,"Ashtabula County, Ohio",us_county
+504,"Athens County, Ohio",us_county
+505,"Auglaize County, Ohio",us_county
+506,"Belmont County, Ohio",us_county
+507,"Brown County, Ohio",us_county
+508,"Butler County, Ohio",us_county
+509,"Carroll County, Ohio",us_county
+510,"Champaign County, Ohio",us_county
+511,"Clark County, Ohio",us_county
+512,"Clermont County, Ohio",us_county
+513,"Clinton County, Ohio",us_county
+514,"Columbiana County, Ohio",us_county
+515,"Coshocton County, Ohio",us_county
+516,"Crawford County, Ohio",us_county
+517,"Cuyahoga County, Ohio",us_county
+518,"Darke County, Ohio",us_county
+519,"Defiance County, Ohio",us_county
+520,"Delaware County, Ohio",us_county
+521,"Erie County, Ohio",us_county
+522,"Fairfield County, Ohio",us_county
+523,"Fayette County, Ohio",us_county
+524,"Franklin County, Ohio",us_county
+525,"Fulton County, Ohio",us_county
+526,"Gallia County, Ohio",us_county
+527,"Geauga County, Ohio",us_county
+528,"Greene County, Ohio",us_county
+529,"Guernsey County, Ohio",us_county
+530,"Hamilton County, Ohio",us_county
+531,"Hancock County, Ohio",us_county
+532,"Hardin County, Ohio",us_county
+533,"Harrison County, Ohio",us_county
+534,"Henry County, Ohio",us_county
+535,"Highland County, Ohio",us_county
+536,"Hocking County, Ohio",us_county
+537,"Holmes County, Ohio",us_county
+538,"Huron County, Ohio",us_county
+539,"Jackson County, Ohio",us_county
+540,"Jefferson County, Ohio",us_county
+541,"Knox County, Ohio",us_county
+542,"Lake County, Ohio",us_county
+543,"Lawrence County, Ohio",us_county
+544,"Licking County, Ohio",us_county
+545,"Logan County, Ohio",us_county
+546,"Lorain County, Ohio",us_county
+547,"Lucas County, Ohio",us_county
+548,"Madison County, Ohio",us_county
+549,"Mahoning County, Ohio",us_county
+550,"Marion County, Ohio",us_county
+551,"Medina County, Ohio",us_county
+552,"Meigs County, Ohio",us_county
+553,"Mercer County, Ohio",us_county
+554,"Miami County, Ohio",us_county
+555,"Monroe County, Ohio",us_county
+556,"Montgomery County, Ohio",us_county
+557,"Morgan County, Ohio",us_county
+558,"Morrow County, Ohio",us_county
+559,"Muskingum County, Ohio",us_county
+560,"Noble County, Ohio",us_county
+561,"Ottawa County, Ohio",us_county
+562,"Paulding County, Ohio",us_county
+563,"Perry County, Ohio",us_county
+564,"Pickaway County, Ohio",us_county
+565,"Pike County, Ohio",us_county
+566,"Portage County, Ohio",us_county
+567,"Preble County, Ohio",us_county
+568,"Putnam County, Ohio",us_county
+569,"Richland County, Ohio",us_county
+570,"Ross County, Ohio",us_county
+571,"Sandusky County, Ohio",us_county
+572,"Scioto County, Ohio",us_county
+573,"Seneca County, Ohio",us_county
+574,"Shelby County, Ohio",us_county
+575,"Stark County, Ohio",us_county
+576,"Summit County, Ohio",us_county
+577,"Trumbull County, Ohio",us_county
+578,"Tuscarawas County, Ohio",us_county
+579,"Union County, Ohio",us_county
+580,"Van Wert County, Ohio",us_county
+581,"Vinton County, Ohio",us_county
+582,"Warren County, Ohio",us_county
+583,"Washington County, Ohio",us_county
+584,"Wayne County, Ohio",us_county
+585,"Williams County, Ohio",us_county
+586,"Wood County, Ohio",us_county
+587,"Wyandot County, Ohio",us_county
+588,"Adams County, Wisconsin",us_county
+589,"Ashland County, Wisconsin",us_county
+590,"Barron/Dallas County, Wisconsin",us_county
+591,"Bayfield/La Point County, Wisconsin",us_county
+592,"Brown County, Wisconsin",us_county
+593,"Buffalo County, Wisconsin",us_county
+594,"Burnett County, Wisconsin",us_county
+595,"Calumet County, Wisconsin",us_county
+596,"Chippewa County, Wisconsin",us_county
+597,"Clark County, Wisconsin",us_county
+598,"Columbia County, Wisconsin",us_county
+599,"Crawford County, Wisconsin",us_county
+600,"Dane County, Wisconsin",us_county
+601,"Dodge County, Wisconsin",us_county
+602,"Door County, Wisconsin",us_county
+603,"Douglas County, Wisconsin",us_county
+604,"Dunn County, Wisconsin",us_county
+605,"Eau Claire County, Wisconsin",us_county
+606,"Florence County, Wisconsin",us_county
+607,"Fond Du Lac County, Wisconsin",us_county
+608,"Forest County, Wisconsin",us_county
+609,"Grant County, Wisconsin",us_county
+610,"Green County, Wisconsin",us_county
+611,"Green Lake County, Wisconsin",us_county
+612,"Iowa County, Wisconsin",us_county
+613,"Iron County, Wisconsin",us_county
+614,"Jackson County, Wisconsin",us_county
+615,"Jefferson County, Wisconsin",us_county
+616,"Juneau County, Wisconsin",us_county
+617,"Kenosha County, Wisconsin",us_county
+618,"Kewaunee County, Wisconsin",us_county
+619,"La Crosse County, Wisconsin",us_county
+620,"Lafayette County, Wisconsin",us_county
+621,"Langlade County, Wisconsin",us_county
+622,"Lincoln County, Wisconsin",us_county
+623,"Manitowoc County, Wisconsin",us_county
+624,"Marathon County, Wisconsin",us_county
+625,"Marinette County, Wisconsin",us_county
+626,"Marquette County, Wisconsin",us_county
+627,"Milwaukee County, Wisconsin",us_county
+628,"Monroe County, Wisconsin",us_county
+629,"Oconto County, Wisconsin",us_county
+630,"Oneida County, Wisconsin",us_county
+631,"Outagamie County, Wisconsin",us_county
+632,"Ozaukee County, Wisconsin",us_county
+633,"Pepin County, Wisconsin",us_county
+634,"Pierce County, Wisconsin",us_county
+635,"Polk County, Wisconsin",us_county
+636,"Portage County, Wisconsin",us_county
+637,"Price County, Wisconsin",us_county
+638,"Racine County, Wisconsin",us_county
+639,"Richland County, Wisconsin",us_county
+640,"Rock County, Wisconsin",us_county
+641,"Rusk County, Wisconsin",us_county
+642,"St Croix County, Wisconsin",us_county
+643,"Sauk County, Wisconsin",us_county
+644,"Sawyer County, Wisconsin",us_county
+645,"Shawano County, Wisconsin",us_county
+646,"Sheboygan County, Wisconsin",us_county
+647,"Taylor County, Wisconsin",us_county
+648,"Trempealeau County, Wisconsin",us_county
+649,"Vernon/Bad Ax County, Wisconsin",us_county
+650,"Vilas County, Wisconsin",us_county
+651,"Walworth County, Wisconsin",us_county
+652,"Washburn County, Wisconsin",us_county
+653,"Washington County, Wisconsin",us_county
+654,"Waukesha County, Wisconsin",us_county
+655,"Waupaca County, Wisconsin",us_county
+656,"Waushara County, Wisconsin",us_county
+657,"Winnebago County, Wisconsin",us_county
+658,"Wood County, Wisconsin",us_county
+659,"Adair County, Iowa",us_county
+660,"Adams County, Iowa",us_county
+661,"Allamakee County, Iowa",us_county
+662,"Appanoose County, Iowa",us_county
+663,"Audubon County, Iowa",us_county
+664,"Benton County, Iowa",us_county
+665,"Black Hawk County, Iowa",us_county
+666,"Boone County, Iowa",us_county
+667,"Bremer County, Iowa",us_county
+668,"Buchanan County, Iowa",us_county
+669,"Buena Vista County, Iowa",us_county
+670,"Butler County, Iowa",us_county
+671,"Calhoun County, Iowa",us_county
+672,"Carroll County, Iowa",us_county
+673,"Cass County, Iowa",us_county
+674,"Cedar County, Iowa",us_county
+675,"Cerro Gordo County, Iowa",us_county
+676,"Cherokee County, Iowa",us_county
+677,"Chickasaw County, Iowa",us_county
+678,"Clarke County, Iowa",us_county
+679,"Clay County, Iowa",us_county
+680,"Clayton County, Iowa",us_county
+681,"Clinton County, Iowa",us_county
+682,"Crawford County, Iowa",us_county
+683,"Dallas County, Iowa",us_county
+684,"Davis County, Iowa",us_county
+685,"Decatur County, Iowa",us_county
+686,"Delaware County, Iowa",us_county
+687,"Des Moines County, Iowa",us_county
+688,"Dickinson County, Iowa",us_county
+689,"Dubuque County, Iowa",us_county
+690,"Emmet County, Iowa",us_county
+691,"Fayette County, Iowa",us_county
+692,"Floyd County, Iowa",us_county
+693,"Franklin County, Iowa",us_county
+694,"Fremont County, Iowa",us_county
+695,"Greene County, Iowa",us_county
+696,"Grundy County, Iowa",us_county
+697,"Guthrie County, Iowa",us_county
+698,"Hamilton County, Iowa",us_county
+699,"Hancock County, Iowa",us_county
+700,"Hardin County, Iowa",us_county
+701,"Harrison County, Iowa",us_county
+702,"Henry County, Iowa",us_county
+703,"Howard County, Iowa",us_county
+704,"Humboldt County, Iowa",us_county
+705,"Ida County, Iowa",us_county
+706,"Iowa County, Iowa",us_county
+707,"Jackson County, Iowa",us_county
+708,"Jasper County, Iowa",us_county
+709,"Jefferson County, Iowa",us_county
+710,"Johnson County, Iowa",us_county
+711,"Jones County, Iowa",us_county
+712,"Keokuk County, Iowa",us_county
+713,"Kossuth County, Iowa",us_county
+714,"Lee County, Iowa",us_county
+715,"Linn County, Iowa",us_county
+716,"Louisa County, Iowa",us_county
+717,"Lucas County, Iowa",us_county
+718,"Lyon/Buncombe County, Iowa",us_county
+719,"Madison County, Iowa",us_county
+720,"Mahaska County, Iowa",us_county
+721,"Marion County, Iowa",us_county
+722,"Marshall County, Iowa",us_county
+723,"Mills County, Iowa",us_county
+724,"Mitchell County, Iowa",us_county
+725,"Monona County, Iowa",us_county
+726,"Monroe County, Iowa",us_county
+727,"Montgomery County, Iowa",us_county
+728,"Muscatine County, Iowa",us_county
+729,"O Brien County, Iowa",us_county
+730,"Osceola County, Iowa",us_county
+731,"Page County, Iowa",us_county
+732,"Palo Alto County, Iowa",us_county
+733,"Plymouth County, Iowa",us_county
+734,"Pocahontas County, Iowa",us_county
+735,"Polk County, Iowa",us_county
+736,"Pottawattamie County, Iowa",us_county
+737,"Poweshiek County, Iowa",us_county
+738,"Ringgold County, Iowa",us_county
+739,"Sac County, Iowa",us_county
+740,"Scott County, Iowa",us_county
+741,"Shelby County, Iowa",us_county
+742,"Sioux County, Iowa",us_county
+743,"Story County, Iowa",us_county
+744,"Tama County, Iowa",us_county
+745,"Taylor County, Iowa",us_county
+746,"Union County, Iowa",us_county
+747,"Van Buren County, Iowa",us_county
+748,"Wapello County, Iowa",us_county
+749,"Warren County, Iowa",us_county
+750,"Washington County, Iowa",us_county
+751,"Wayne County, Iowa",us_county
+752,"Webster County, Iowa",us_county
+753,"Winnebago County, Iowa",us_county
+754,"Winneshiek County, Iowa",us_county
+755,"Woodbury County, Iowa",us_county
+756,"Worth County, Iowa",us_county
+757,"Wright County, Iowa",us_county
+758,"Allen County, Kansas",us_county
+759,"Anderson County, Kansas",us_county
+760,"Atchison County, Kansas",us_county
+761,"Arapahoe County, Kansas",us_county
+762,"Barber/Barbour County, Kansas",us_county
+763,"Barton County, Kansas",us_county
+764,"Bourbon County, Kansas",us_county
+765,"Breckenridge County, Kansas",us_county
+766,"Brown County, Kansas",us_county
+767,"Buffalo County, Kansas",us_county
+768,"Butler County, Kansas",us_county
+769,"Chase County, Kansas",us_county
+770,"Chautauqua County, Kansas",us_county
+771,"Cherokee/Mcghee County, Kansas",us_county
+772,"Cheyenne County, Kansas",us_county
+773,"Clark County, Kansas",us_county
+774,"Clay County, Kansas",us_county
+775,"Cloud County, Kansas",us_county
+776,"Coffey County, Kansas",us_county
+777,"Comanche County, Kansas",us_county
+778,"Cowley County, Kansas",us_county
+779,"Crawford County, Kansas",us_county
+780,"Decatur County, Kansas",us_county
+781,"Dickinson County, Kansas",us_county
+782,"Doniphan County, Kansas",us_county
+783,"Douglas County, Kansas",us_county
+784,"Edwards County, Kansas",us_county
+785,"Elk County, Kansas",us_county
+786,"Ellis County, Kansas",us_county
+787,"Ellsworth County, Kansas",us_county
+788,"Finney/Sequoyah County, Kansas",us_county
+789,"Foote County, Kansas",us_county
+790,"Ford County, Kansas",us_county
+791,"Franklin County, Kansas",us_county
+792,"Garfield County, Kansas",us_county
+793,"Geary/Davis County, Kansas",us_county
+794,"Gove County, Kansas",us_county
+795,"Graham County, Kansas",us_county
+796,"Grant County, Kansas",us_county
+797,"Gray County, Kansas",us_county
+798,"Greeley County, Kansas",us_county
+799,"Greenwood County, Kansas",us_county
+800,"Hamilton County, Kansas",us_county
+801,"Harper County, Kansas",us_county
+802,"Harvey County, Kansas",us_county
+803,"Haskell County, Kansas",us_county
+804,"Hodgeman County, Kansas",us_county
+805,"Howard County, Kansas",us_county
+806,"Jackson County, Kansas",us_county
+807,"Jefferson County, Kansas",us_county
+808,"Jewell County, Kansas",us_county
+809,"Johnson County, Kansas",us_county
+810,"Kansas County, Kansas",us_county
+811,"Kearny County, Kansas",us_county
+812,"Kingman County, Kansas",us_county
+813,"Kiowa County, Kansas",us_county
+814,"Labette County, Kansas",us_county
+815,"Lane County, Kansas",us_county
+816,"Leavenworth County, Kansas",us_county
+817,"Lincoln County, Kansas",us_county
+818,"Linn County, Kansas",us_county
+819,"Logan County, Kansas",us_county
+820,"Lyon County, Kansas",us_county
+821,"Madison County, Kansas",us_county
+822,"McPherson County, Kansas",us_county
+823,"Marion County, Kansas",us_county
+824,"Marshall County, Kansas",us_county
+825,"Meade County, Kansas",us_county
+826,"Miami/Lykins County, Kansas",us_county
+827,"Mitchell County, Kansas",us_county
+828,"Montgomery County, Kansas",us_county
+829,"Morris County, Kansas",us_county
+830,"Morton County, Kansas",us_county
+831,"Nemaha County, Kansas",us_county
+832,"Neosho/Dorn County, Kansas",us_county
+833,"Ness County, Kansas",us_county
+834,"Norton County, Kansas",us_county
+835,"Osage County, Kansas",us_county
+836,"Osborne County, Kansas",us_county
+837,"Otoc County, Kansas",us_county
+838,"Ottawa County, Kansas",us_county
+839,"Pawnee County, Kansas",us_county
+840,"Phillips County, Kansas",us_county
+841,"Pottawatomie County, Kansas",us_county
+842,"Pratt County, Kansas",us_county
+843,"Rawlins County, Kansas",us_county
+844,"Reno County, Kansas",us_county
+845,"Republic County, Kansas",us_county
+846,"Rice County, Kansas",us_county
+847,"Riley County, Kansas",us_county
+848,"Rooks County, Kansas",us_county
+849,"Rush County, Kansas",us_county
+850,"Russell County, Kansas",us_county
+851,"Saline County, Kansas",us_county
+852,"Scott County, Kansas",us_county
+853,"Sedgwick County, Kansas",us_county
+854,"Seward County, Kansas",us_county
+855,"Shawnee County, Kansas",us_county
+856,"Sheridan County, Kansas",us_county
+857,"Sherman County, Kansas",us_county
+858,"Smith County, Kansas",us_county
+859,"Stafford County, Kansas",us_county
+860,"Stanton County, Kansas",us_county
+861,"Stevens County, Kansas",us_county
+862,"Sumner County, Kansas",us_county
+863,"Thomas County, Kansas",us_county
+864,"Trego County, Kansas",us_county
+865,"Wabaunsee County, Kansas",us_county
+866,"Wallace County, Kansas",us_county
+867,"Washington County, Kansas",us_county
+868,"Wichita County, Kansas",us_county
+869,"Wilson County, Kansas",us_county
+870,"Woodson County, Kansas",us_county
+871,"Wyandotte County, Kansas",us_county
+872,"Aitkin County, Minnesota",us_county
+873,"Anoka County, Minnesota",us_county
+874,"Becker County, Minnesota",us_county
+875,"Beltrami County, Minnesota",us_county
+876,"Benton County, Minnesota",us_county
+877,"Big Stone County, Minnesota",us_county
+878,"Blue Earth County, Minnesota",us_county
+879,"Brown County, Minnesota",us_county
+880,"Buchanan County, Minnesota",us_county
+881,"Carlton County, Minnesota",us_county
+882,"Carver County, Minnesota",us_county
+883,"Cass County, Minnesota",us_county
+884,"Chippewa County, Minnesota",us_county
+885,"Chisago County, Minnesota",us_county
+886,"Clay County, Minnesota",us_county
+887,"Clearwater County, Minnesota",us_county
+888,"Cook County, Minnesota",us_county
+889,"Cottonwood County, Minnesota",us_county
+890,"Crow Wing County, Minnesota",us_county
+891,"Dakota County, Minnesota",us_county
+892,"Dodge County, Minnesota",us_county
+893,"Douglas County, Minnesota",us_county
+894,"Faribault County, Minnesota",us_county
+895,"Fillmore County, Minnesota",us_county
+896,"Freeborn County, Minnesota",us_county
+897,"Goodhue County, Minnesota",us_county
+898,"Grant County, Minnesota",us_county
+899,"Hennepin County, Minnesota",us_county
+900,"Houston County, Minnesota",us_county
+901,"Hubbard County, Minnesota",us_county
+902,"Isanti County, Minnesota",us_county
+903,"Itasca County, Minnesota",us_county
+904,"Jackson County, Minnesota",us_county
+905,"Kanabec County, Minnesota",us_county
+906,"Kandiyohi County, Minnesota",us_county
+907,"Kittson/Pembina County, Minnesota",us_county
+908,"Koochiching County, Minnesota",us_county
+909,"Lac Qui Parle County, Minnesota",us_county
+910,"Lake County, Minnesota",us_county
+911,"Lake of the Woods County, Minnesota",us_county
+912,"Le Sueur County, Minnesota",us_county
+913,"Lincoln County, Minnesota",us_county
+914,"Lyon County, Minnesota",us_county
+915,"McLeod County, Minnesota",us_county
+916,"Mahnomen County, Minnesota",us_county
+917,"Mahkahta County, Minnesota",us_county
+918,"Marshall County, Minnesota",us_county
+919,"Martin County, Minnesota",us_county
+920,"Meeker County, Minnesota",us_county
+921,"Mille Lacs County, Minnesota",us_county
+922,"Monongalia County, Minnesota",us_county
+923,"Morrison County, Minnesota",us_county
+924,"Mower County, Minnesota",us_county
+925,"Murray County, Minnesota",us_county
+926,"Nicollet County, Minnesota",us_county
+927,"Nobles County, Minnesota",us_county
+928,"Norman County, Minnesota",us_county
+929,"Olmsted County, Minnesota",us_county
+930,"Otter Tail County, Minnesota",us_county
+931,"Pennington County, Minnesota",us_county
+932,"Pierce County, Minnesota",us_county
+933,"Pine County, Minnesota",us_county
+934,"Pipestone County, Minnesota",us_county
+935,"Polk County, Minnesota",us_county
+936,"Pope County, Minnesota",us_county
+937,"Ramsey County, Minnesota",us_county
+938,"Red Lake County, Minnesota",us_county
+939,"Redwood County, Minnesota",us_county
+940,"Renville County, Minnesota",us_county
+941,"Rice County, Minnesota",us_county
+942,"Rock County, Minnesota",us_county
+943,"Roseau County, Minnesota",us_county
+944,"St Louis County, Minnesota",us_county
+945,"Scott County, Minnesota",us_county
+946,"Sherburne County, Minnesota",us_county
+947,"Sibley County, Minnesota",us_county
+948,"Stearns County, Minnesota",us_county
+949,"Steele County, Minnesota",us_county
+950,"Stevens County, Minnesota",us_county
+951,"Swift County, Minnesota",us_county
+952,"Todd County, Minnesota",us_county
+953,"Traverse County, Minnesota",us_county
+954,"Wabasha County, Minnesota",us_county
+955,"Wadena County, Minnesota",us_county
+956,"Wahnata County, Minnesota",us_county
+957,"Waseca County, Minnesota",us_county
+958,"Washington County, Minnesota",us_county
+959,"Watonwan County, Minnesota",us_county
+960,"White Earth County, Minnesota",us_county
+961,"Wilkin/Toombs County, Minnesota",us_county
+962,"Winona County, Minnesota",us_county
+963,"Wright County, Minnesota",us_county
+964,"Yellow Medicine County, Minnesota",us_county
+965,"White Earth Reservation, Minnesota",us_county
+966,"Adair County, Missouri",us_county
+967,"Andrew County, Missouri",us_county
+968,"Atchison County, Missouri",us_county
+969,"Audrain County, Missouri",us_county
+970,"Barry County, Missouri",us_county
+971,"Barton County, Missouri",us_county
+972,"Bates County, Missouri",us_county
+973,"Benton County, Missouri",us_county
+974,"Bollinger County, Missouri",us_county
+975,"Boone County, Missouri",us_county
+976,"Buchanan County, Missouri",us_county
+977,"Butler County, Missouri",us_county
+978,"Caldwell County, Missouri",us_county
+979,"Callaway County, Missouri",us_county
+980,"Camden County, Missouri",us_county
+981,"Cape Girardeau County, Missouri",us_county
+982,"Carroll County, Missouri",us_county
+983,"Carter County, Missouri",us_county
+984,"Cass/Van Buren County, Missouri",us_county
+985,"Cedar County, Missouri",us_county
+986,"Chariton County, Missouri",us_county
+987,"Christian County, Missouri",us_county
+988,"Clark County, Missouri",us_county
+989,"Clay County, Missouri",us_county
+990,"Clinton County, Missouri",us_county
+991,"Cole County, Missouri",us_county
+992,"Cooper County, Missouri",us_county
+993,"Crawford County, Missouri",us_county
+994,"Dade County, Missouri",us_county
+995,"Dallas County, Missouri",us_county
+996,"Daviess County, Missouri",us_county
+997,"De Kalb County, Missouri",us_county
+998,"Dent County, Missouri",us_county
+999,"Dodge County, Missouri",us_county
+1000,"Douglas County, Missouri",us_county
+1001,"Dunklin County, Missouri",us_county
+1002,"Franklin County, Missouri",us_county
+1003,"Gasconade County, Missouri",us_county
+1004,"Gentry County, Missouri",us_county
+1005,"Greene County, Missouri",us_county
+1006,"Grundy County, Missouri",us_county
+1007,"Harrison County, Missouri",us_county
+1008,"Henry/Rives County, Missouri",us_county
+1009,"Hickory County, Missouri",us_county
+1010,"Holt County, Missouri",us_county
+1011,"Howard County, Missouri",us_county
+1012,"Howell County, Missouri",us_county
+1013,"Iron County, Missouri",us_county
+1014,"Jackson County, Missouri",us_county
+1015,"Jasper County, Missouri",us_county
+1016,"Jefferson County, Missouri",us_county
+1017,"Johnson County, Missouri",us_county
+1018,"Knox County, Missouri",us_county
+1019,"Laclede County, Missouri",us_county
+1020,"Lafayette County, Missouri",us_county
+1021,"Lawrence County, Missouri",us_county
+1022,"Lewis County, Missouri",us_county
+1023,"Lincoln County, Missouri",us_county
+1024,"Linn County, Missouri",us_county
+1025,"Livingston County, Missouri",us_county
+1026,"McDonald County, Missouri",us_county
+1027,"Macon County, Missouri",us_county
+1028,"Madison County, Missouri",us_county
+1029,"Maries County, Missouri",us_county
+1030,"Marion County, Missouri",us_county
+1031,"Mercer County, Missouri",us_county
+1032,"Miller County, Missouri",us_county
+1033,"Mississippi County, Missouri",us_county
+1034,"Moniteau County, Missouri",us_county
+1035,"Monroe County, Missouri",us_county
+1036,"Montgomery County, Missouri",us_county
+1037,"Morgan County, Missouri",us_county
+1038,"New Madrid County, Missouri",us_county
+1039,"Newton County, Missouri",us_county
+1040,"Nodaway County, Missouri",us_county
+1041,"Oregon County, Missouri",us_county
+1042,"Osage County, Missouri",us_county
+1043,"Ozark County, Missouri",us_county
+1044,"Pemiscot County, Missouri",us_county
+1045,"Perry County, Missouri",us_county
+1046,"Pettis County, Missouri",us_county
+1047,"Phelps County, Missouri",us_county
+1048,"Pike County, Missouri",us_county
+1049,"Platte County, Missouri",us_county
+1050,"Polk County, Missouri",us_county
+1051,"Pulaski County, Missouri",us_county
+1052,"Putnam County, Missouri",us_county
+1053,"Ralls County, Missouri",us_county
+1054,"Randolph County, Missouri",us_county
+1055,"Ray County, Missouri",us_county
+1056,"Reynolds County, Missouri",us_county
+1057,"Ripley County, Missouri",us_county
+1058,"St Charles County, Missouri",us_county
+1059,"St Clair County, Missouri",us_county
+1060,"St Francois County, Missouri",us_county
+1061,"St Louis County, Missouri",us_county
+1062,"Ste Genevieve County, Missouri",us_county
+1063,"Saline County, Missouri",us_county
+1064,"Schuyler County, Missouri",us_county
+1065,"Scotland County, Missouri",us_county
+1066,"Scott County, Missouri",us_county
+1067,"Shannon County, Missouri",us_county
+1068,"Shelby County, Missouri",us_county
+1069,"Stoddard County, Missouri",us_county
+1070,"Stone County, Missouri",us_county
+1071,"Sullivan County, Missouri",us_county
+1072,"Taney County, Missouri",us_county
+1073,"Texas County, Missouri",us_county
+1074,"Vernon County, Missouri",us_county
+1075,"Warren County, Missouri",us_county
+1076,"Washington County, Missouri",us_county
+1077,"Wayne County, Missouri",us_county
+1078,"Webster County, Missouri",us_county
+1079,"Worth County, Missouri",us_county
+1080,"Wright County, Missouri",us_county
+1081,"St Louis City County, Missouri",us_county
+1082,"Adams County, Nebraska",us_county
+1083,"Antelope County, Nebraska",us_county
+1084,"Arthur County, Nebraska",us_county
+1085,"Banner County, Nebraska",us_county
+1086,"Blackbird County, Nebraska",us_county
+1087,"Blaine County, Nebraska",us_county
+1088,"Boone County, Nebraska",us_county
+1089,"Box Butte County, Nebraska",us_county
+1090,"Boyd County, Nebraska",us_county
+1091,"Brown County, Nebraska",us_county
+1092,"Buffalo County, Nebraska",us_county
+1093,"Burt County, Nebraska",us_county
+1094,"Butler County, Nebraska",us_county
+1095,"Cass County, Nebraska",us_county
+1096,"Cedar County, Nebraska",us_county
+1097,"Chase County, Nebraska",us_county
+1098,"Cherry County, Nebraska",us_county
+1099,"Cheyenne County, Nebraska",us_county
+1100,"Clay County, Nebraska",us_county
+1101,"Colfax County, Nebraska",us_county
+1102,"Cuming County, Nebraska",us_county
+1103,"Custer County, Nebraska",us_county
+1104,"Dakota County, Nebraska",us_county
+1105,"Dawes County, Nebraska",us_county
+1106,"Dawson County, Nebraska",us_county
+1107,"Deuel County, Nebraska",us_county
+1108,"Dixon County, Nebraska",us_county
+1109,"Dodge County, Nebraska",us_county
+1110,"Douglas County, Nebraska",us_county
+1111,"Dundy County, Nebraska",us_county
+1112,"Fillmore County, Nebraska",us_county
+1113,"Franklin County, Nebraska",us_county
+1114,"Frontier County, Nebraska",us_county
+1115,"Furnas County, Nebraska",us_county
+1116,"Gage County, Nebraska",us_county
+1117,"Garden County, Nebraska",us_county
+1118,"Garfield County, Nebraska",us_county
+1119,"Gosper County, Nebraska",us_county
+1120,"Grant County, Nebraska",us_county
+1121,"Greeley County, Nebraska",us_county
+1122,"Hall County, Nebraska",us_county
+1123,"Hamilton County, Nebraska",us_county
+1124,"Harlan County, Nebraska",us_county
+1125,"Harrison County, Nebraska",us_county
+1126,"Hayes County, Nebraska",us_county
+1127,"Hitchcock County, Nebraska",us_county
+1128,"Holt County, Nebraska",us_county
+1129,"Hooker County, Nebraska",us_county
+1130,"Howard County, Nebraska",us_county
+1131,"Jackson County, Nebraska",us_county
+1132,"Jefferson County, Nebraska",us_county
+1133,"Johnson/Johnston County, Nebraska",us_county
+1134,"Jones County, Nebraska",us_county
+1135,"Kearney County, Nebraska",us_county
+1136,"Keith County, Nebraska",us_county
+1137,"Keya Paha County, Nebraska",us_county
+1138,"Kimball County, Nebraska",us_county
+1139,"Knox/L'eau Qui Co County, Nebraska",us_county
+1140,"Lancaster County, Nebraska",us_county
+1141,"Lincoln County, Nebraska",us_county
+1142,"Logan County, Nebraska",us_county
+1143,"Loup County, Nebraska",us_county
+1144,"Lyon County, Nebraska",us_county
+1145,"McPherson County, Nebraska",us_county
+1146,"Madison County, Nebraska",us_county
+1147,"Merrick County, Nebraska",us_county
+1148,"Monroe County, Nebraska",us_county
+1149,"Morrill County, Nebraska",us_county
+1150,"Nance County, Nebraska",us_county
+1151,"Nemaha County, Nebraska",us_county
+1152,"Nuckolls County, Nebraska",us_county
+1153,"Otoe County, Nebraska",us_county
+1154,"Pawnee County, Nebraska",us_county
+1155,"Perkins County, Nebraska",us_county
+1156,"Phelps County, Nebraska",us_county
+1157,"Pierce County, Nebraska",us_county
+1158,"Platte County, Nebraska",us_county
+1159,"Polk County, Nebraska",us_county
+1160,"Red Willow County, Nebraska",us_county
+1161,"Richardson County, Nebraska",us_county
+1162,"Rock County, Nebraska",us_county
+1163,"Saline County, Nebraska",us_county
+1164,"Sarpy County, Nebraska",us_county
+1165,"Saunders County, Nebraska",us_county
+1166,"Scotts Bluff County, Nebraska",us_county
+1167,"Seward County, Nebraska",us_county
+1168,"Sheridan County, Nebraska",us_county
+1169,"Sherman County, Nebraska",us_county
+1170,"Shorter County, Nebraska",us_county
+1171,"Sioux County, Nebraska",us_county
+1172,"Stanton County, Nebraska",us_county
+1173,"Taylor County, Nebraska",us_county
+1174,"Thayer County, Nebraska",us_county
+1175,"Thomas County, Nebraska",us_county
+1176,"Thurston County, Nebraska",us_county
+1177,"Valley County, Nebraska",us_county
+1178,"Washington County, Nebraska",us_county
+1179,"Wayne County, Nebraska",us_county
+1180,"Webster County, Nebraska",us_county
+1181,"Wheeler County, Nebraska",us_county
+1182,"York County, Nebraska",us_county
+1183,"Unorganized Territory, Nebraska",us_county
+1184,"Adams County, North Dakota",us_county
+1185,"Barnes County, North Dakota",us_county
+1186,"Benson County, North Dakota",us_county
+1187,"Billings County, North Dakota",us_county
+1188,"Billings-Sioux County, North Dakota",us_county
+1189,"Bottineau County, North Dakota",us_county
+1190,"Bowman County, North Dakota",us_county
+1191,"Buford County, North Dakota",us_county
+1192,"Burke County, North Dakota",us_county
+1193,"Burleigh County, North Dakota",us_county
+1194,"Cass County, North Dakota",us_county
+1195,"Cavalier County, North Dakota",us_county
+1196,"Church County, North Dakota",us_county
+1197,"Dickey County, North Dakota",us_county
+1198,"Divide County, North Dakota",us_county
+1199,"Dunn County, North Dakota",us_county
+1200,"Eddy County, North Dakota",us_county
+1201,"Emmons County, North Dakota",us_county
+1202,"Flannery County, North Dakota",us_county
+1203,"Foster County, North Dakota",us_county
+1204,"Garfield County, North Dakota",us_county
+1205,"Golden Valley County, North Dakota",us_county
+1206,"Grand Forks County, North Dakota",us_county
+1207,"Grant County, North Dakota",us_county
+1208,"Griggs County, North Dakota",us_county
+1209,"Hettinger County, North Dakota",us_county
+1210,"Howard County, North Dakota",us_county
+1211,"Kidder County, North Dakota",us_county
+1212,"La Moure County, North Dakota",us_county
+1213,"Logan County, North Dakota",us_county
+1214,"McHenry County, North Dakota",us_county
+1215,"McIntosh County, North Dakota",us_county
+1216,"McKenzie County, North Dakota",us_county
+1217,"McLean County, North Dakota",us_county
+1218,"Mercer County, North Dakota",us_county
+1219,"Morton County, North Dakota",us_county
+1220,"Mountrail County, North Dakota",us_county
+1221,"Nelson County, North Dakota",us_county
+1222,"Oliver County, North Dakota",us_county
+1223,"Pembina County, North Dakota",us_county
+1224,"Pierce County, North Dakota",us_county
+1225,"Ramsey County, North Dakota",us_county
+1226,"Ransom County, North Dakota",us_county
+1227,"Renville County, North Dakota",us_county
+1228,"Richland County, North Dakota",us_county
+1229,"Rolette County, North Dakota",us_county
+1230,"Sargent County, North Dakota",us_county
+1231,"Sheridan County, North Dakota",us_county
+1232,"Sioux County, North Dakota",us_county
+1233,"Slope County, North Dakota",us_county
+1234,"Standing Rock County, North Dakota",us_county
+1235,"Stark County, North Dakota",us_county
+1236,"Steele County, North Dakota",us_county
+1237,"Stevens County, North Dakota",us_county
+1238,"Stutsman County, North Dakota",us_county
+1239,"Towner County, North Dakota",us_county
+1240,"Traill County, North Dakota",us_county
+1241,"Wallace County, North Dakota",us_county
+1242,"Wallette County, North Dakota",us_county
+1243,"Walsh County, North Dakota",us_county
+1244,"Ward County, North Dakota",us_county
+1245,"Wells County, North Dakota",us_county
+1246,"Williams County, North Dakota",us_county
+1247,"Standing Rock Reservation, North Dakota",us_county
+1248,"Armstrong County, South Dakota",us_county
+1249,"Aurora County, South Dakota",us_county
+1250,"Beadle County, South Dakota",us_county
+1251,"Bennett County, South Dakota",us_county
+1252,"Bon Homme County, South Dakota",us_county
+1253,"Boreman County, South Dakota",us_county
+1254,"Brookings County, South Dakota",us_county
+1255,"Brown County, South Dakota",us_county
+1256,"Brule County, South Dakota",us_county
+1257,"Buffalo County, South Dakota",us_county
+1258,"Butte County, South Dakota",us_county
+1259,"Campbell County, South Dakota",us_county
+1260,"Charles Mix County, South Dakota",us_county
+1261,"Cheyenne River County, South Dakota",us_county
+1262,"Choteau County, South Dakota",us_county
+1263,"Clark County, South Dakota",us_county
+1264,"Clay County, South Dakota",us_county
+1265,"Codington County, South Dakota",us_county
+1266,"Corson County, South Dakota",us_county
+1267,"Custer County, South Dakota",us_county
+1268,"Davison County, South Dakota",us_county
+1269,"Day County, South Dakota",us_county
+1270,"Deuel County, South Dakota",us_county
+1271,"Dewey County, South Dakota",us_county
+1272,"Douglas County, South Dakota",us_county
+1273,"Edmunds County, South Dakota",us_county
+1274,"Ewing County, South Dakota",us_county
+1275,"Fall River County, South Dakota",us_county
+1276,"Faulk County, South Dakota",us_county
+1277,"Grant County, South Dakota",us_county
+1278,"Gregory County, South Dakota",us_county
+1279,"Haakon County, South Dakota",us_county
+1280,"Hamlin County, South Dakota",us_county
+1281,"Hand County, South Dakota",us_county
+1282,"Hanson County, South Dakota",us_county
+1283,"Harding County, South Dakota",us_county
+1284,"Hughes County, South Dakota",us_county
+1285,"Hutchinson County, South Dakota",us_county
+1286,"Hyde County, South Dakota",us_county
+1287,"Jackson County, South Dakota",us_county
+1288,"Jayne County, South Dakota",us_county
+1289,"Jerauld County, South Dakota",us_county
+1290,"Jones County, South Dakota",us_county
+1291,"Kingsbury County, South Dakota",us_county
+1292,"Lake County, South Dakota",us_county
+1293,"Lawrence County, South Dakota",us_county
+1294,"Lincoln County, South Dakota",us_county
+1295,"Lyman County, South Dakota",us_county
+1296,"McCook County, South Dakota",us_county
+1297,"McPherson County, South Dakota",us_county
+1298,"Marshall County, South Dakota",us_county
+1299,"Martin County, South Dakota",us_county
+1300,"Meade County, South Dakota",us_county
+1301,"Mellette County, South Dakota",us_county
+1302,"Meyer County, South Dakota",us_county
+1303,"Miner County, South Dakota",us_county
+1304,"Minnehaha County, South Dakota",us_county
+1305,"Moody County, South Dakota",us_county
+1306,"Nowlin County, South Dakota",us_county
+1307,"Pennington County, South Dakota",us_county
+1308,"Perkins/Spink County, South Dakota",us_county
+1309,"Pine River Reservation (Alternate), South Dakota",us_county
+1310,"Potter County, South Dakota",us_county
+1311,"Pratt County, South Dakota",us_county
+1312,"Presho County, South Dakota",us_county
+1313,"Roberts/Sully County, South Dakota",us_county
+1314,"Sanborn County, South Dakota",us_county
+1315,"Schnasse County, South Dakota",us_county
+1316,"Scobey County, South Dakota",us_county
+1317,"Shannon County, South Dakota",us_county
+1318,"Spink County, South Dakota",us_county
+1319,"Stanley County, South Dakota",us_county
+1320,"Sterling County, South Dakota",us_county
+1321,"Sully County, South Dakota",us_county
+1322,"Todd County, South Dakota",us_county
+1323,"Tripp County, South Dakota",us_county
+1324,"Turner County, South Dakota",us_county
+1325,"Union County, South Dakota",us_county
+1326,"Walworth County, South Dakota",us_county
+1327,"Washabaugh County, South Dakota",us_county
+1328,"Washington County, South Dakota",us_county
+1329,"Yankton County, South Dakota",us_county
+1330,"Ziebach County, South Dakota",us_county
+1331,"Cheyenne River Reservation, South Dakota",us_county
+1332,"Pine Ridge Reservation, South Dakota",us_county
+1333,"Rosebud Reservation, South Dakota",us_county
+1334,"Standing Rock Reservation, South Dakota",us_county
+1335,"Unorganized Territory, Dakota",us_county
+1336,"Accomack County, Virginia",us_county
+1337,"Albemarle County, Virginia",us_county
+1338,"Alleghany County, Virginia",us_county
+1339,"Amelia County, Virginia",us_county
+1340,"Amherst County, Virginia",us_county
+1341,"Appomattox County, Virginia",us_county
+1342,"Arlington/Alexandria County, Virginia",us_county
+1343,"Augusta County, Virginia",us_county
+1344,"Barbour County, Virginia",us_county
+1345,"Bath County, Virginia",us_county
+1346,"Bedford County, Virginia",us_county
+1347,"Berkeley County, Virginia",us_county
+1348,"Bland County, Virginia",us_county
+1349,"Boone County, Virginia",us_county
+1350,"Botetourt County, Virginia",us_county
+1351,"Braxton County, Virginia",us_county
+1352,"Brooke County, Virginia",us_county
+1353,"Brunswick County, Virginia",us_county
+1354,"Buchanan County, Virginia",us_county
+1355,"Buckingham County, Virginia",us_county
+1356,"Cabell County, Virginia",us_county
+1357,"Campbell County, Virginia",us_county
+1358,"Caroline County, Virginia",us_county
+1359,"Carroll County, Virginia",us_county
+1360,"Charles City County, Virginia",us_county
+1361,"Charlotte County, Virginia",us_county
+1362,"Chesterfield County, Virginia",us_county
+1363,"Clarke County, Virginia",us_county
+1364,"Craig County, Virginia",us_county
+1365,"Culpeper County, Virginia",us_county
+1366,"Cumberland County, Virginia",us_county
+1367,"Dickenson County, Virginia",us_county
+1368,"Dinwiddie County, Virginia",us_county
+1369,"Doddridge County, Virginia",us_county
+1370,"Elizabeth City County, Virginia",us_county
+1371,"Essex County, Virginia",us_county
+1372,"Fairfax County, Virginia",us_county
+1373,"Fauquier County, Virginia",us_county
+1374,"Fayette County, Virginia",us_county
+1375,"Floyd County, Virginia",us_county
+1376,"Fluvanna County, Virginia",us_county
+1377,"Franklin County, Virginia",us_county
+1378,"Frederick County, Virginia",us_county
+1379,"Giles County, Virginia",us_county
+1380,"Gilmer County, Virginia",us_county
+1381,"Gloucester County, Virginia",us_county
+1382,"Goochland County, Virginia",us_county
+1383,"Grayson County, Virginia",us_county
+1384,"Greenbrier County, Virginia",us_county
+1385,"Greene County, Virginia",us_county
+1386,"Greensville County, Virginia",us_county
+1387,"Halifax County, Virginia",us_county
+1388,"Hanover County, Virginia",us_county
+1389,"Hardy County, Virginia",us_county
+1390,"Harrison County, Virginia",us_county
+1391,"Henrico County, Virginia",us_county
+1392,"Henry County, Virginia",us_county
+1393,"Highland County, Virginia",us_county
+1394,"Isle Of Wight County, Virginia",us_county
+1395,"Jackson County, Virginia",us_county
+1396,"James City County, Virginia",us_county
+1397,"Jefferson County, Virginia",us_county
+1398,"Kanawha County, Virginia",us_county
+1399,"King And Queen County, Virginia",us_county
+1400,"King George County, Virginia",us_county
+1401,"King William County, Virginia",us_county
+1402,"Lancaster County, Virginia",us_county
+1403,"Lee County, Virginia",us_county
+1404,"Lewis County, Virginia",us_county
+1405,"Logan County, Virginia",us_county
+1406,"Loudoun County, Virginia",us_county
+1407,"Louisa County, Virginia",us_county
+1408,"Lunenburg County, Virginia",us_county
+1409,"Madison County, Virginia",us_county
+1410,"City Of Manchester County, Virginia",us_county
+1411,"Marion County, Virginia",us_county
+1412,"Marshall County, Virginia",us_county
+1413,"Mason County, Virginia",us_county
+1414,"Mathews County, Virginia",us_county
+1415,"Mecklenburg County, Virginia",us_county
+1416,"Mercer County, Virginia",us_county
+1417,"Middlesex County, Virginia",us_county
+1418,"Monongalia County, Virginia",us_county
+1419,"Monroe County, Virginia",us_county
+1420,"Montgomery County, Virginia",us_county
+1421,"Morgan County, Virginia",us_county
+1422,"Nansemond County, Virginia",us_county
+1423,"Nelson County, Virginia",us_county
+1424,"New Kent County, Virginia",us_county
+1425,"Nicholas County, Virginia",us_county
+1426,"Norfolk County, Virginia",us_county
+1427,"Northampton County, Virginia",us_county
+1428,"Northumberland County, Virginia",us_county
+1429,"Nottoway County, Virginia",us_county
+1430,"Ohio County, Virginia",us_county
+1431,"Orange County, Virginia",us_county
+1432,"Page County, Virginia",us_county
+1433,"Patrick County, Virginia",us_county
+1434,"Pendleton County, Virginia",us_county
+1435,"Pittsylvania County, Virginia",us_county
+1436,"Pocahontas County, Virginia",us_county
+1437,"Powhatan County, Virginia",us_county
+1438,"Preston County, Virginia",us_county
+1439,"Prince Edward County, Virginia",us_county
+1440,"Prince George County, Virginia",us_county
+1441,"Princess Anne County, Virginia",us_county
+1442,"Prince William County, Virginia",us_county
+1443,"Pulaski County, Virginia",us_county
+1444,"Putnam County, Virginia",us_county
+1445,"Raleigh County, Virginia",us_county
+1446,"Randolph County, Virginia",us_county
+1447,"Rappahannock County, Virginia",us_county
+1448,"Richmond County, Virginia",us_county
+1449,"Ritchie County, Virginia",us_county
+1450,"Roanoke County, Virginia",us_county
+1451,"Rockbridge County, Virginia",us_county
+1452,"Rockingham County, Virginia",us_county
+1453,"Russell County, Virginia",us_county
+1454,"Scott County, Virginia",us_county
+1455,"Shenandoah County, Virginia",us_county
+1456,"Smyth County, Virginia",us_county
+1457,"Southampton County, Virginia",us_county
+1458,"Spotsylvania County, Virginia",us_county
+1459,"Stafford County, Virginia",us_county
+1460,"Surry County, Virginia",us_county
+1461,"Sussex County, Virginia",us_county
+1462,"Taylor County, Virginia",us_county
+1463,"Tazewell County, Virginia",us_county
+1464,"Tyler County, Virginia",us_county
+1465,"Warren County, Virginia",us_county
+1466,"Warwick County, Virginia",us_county
+1467,"Washington County, Virginia",us_county
+1468,"Wayne County, Virginia",us_county
+1469,"Westmoreland County, Virginia",us_county
+1470,"Wetzel County, Virginia",us_county
+1471,"Wirt County, Virginia",us_county
+1472,"Wise County, Virginia",us_county
+1473,"Wood County, Virginia",us_county
+1474,"Wyoming County, Virginia",us_county
+1475,"Wythe County, Virginia",us_county
+1476,"York County, Virginia",us_county
+1477,"Alexandria City County, Virginia",us_county
+1478,"Bristol County, Virginia",us_county
+1479,"Buena Vista County, Virginia",us_county
+1480,"Charlottesville County, Virginia",us_county
+1481,"Clifton Forge County, Virginia",us_county
+1482,"Danville County, Virginia",us_county
+1483,"Martinsville County, Virginia",us_county
+1484,"Fredericksburg County, Virginia",us_county
+1485,"Hampton County, Virginia",us_county
+1486,"Harrisonburg County, Virginia",us_county
+1487,"Hopewell County, Virginia",us_county
+1488,"Lynchburg County, Virginia",us_county
+1489,"Manchester County, Virginia",us_county
+1490,"Newport News County, Virginia",us_county
+1491,"Norfolk City County, Virginia",us_county
+1492,"Petersburg County, Virginia",us_county
+1493,"Portsmouth County, Virginia",us_county
+1494,"Radford County, Virginia",us_county
+1495,"Richmond City County, Virginia",us_county
+1496,"Roanoke City County, Virginia",us_county
+1497,"Staunton County, Virginia",us_county
+1498,"Suffolk County, Virginia",us_county
+1499,"South Norfolk County, Virginia",us_county
+1500,"Williamsburg City County, Virginia",us_county
+1501,"Winchester County, Virginia",us_county
+1502,"Autauga County, Alabama",us_county
+1503,"Baldwin County, Alabama",us_county
+1504,"Barbour County, Alabama",us_county
+1505,"Bibb County, Alabama",us_county
+1506,"Blount County, Alabama",us_county
+1507,"Bullock County, Alabama",us_county
+1508,"Butler County, Alabama",us_county
+1509,"Calhoun/Benton County, Alabama",us_county
+1510,"Chambers County, Alabama",us_county
+1511,"Cherokee County, Alabama",us_county
+1512,"Chilton/Baker County, Alabama",us_county
+1513,"Choctaw County, Alabama",us_county
+1514,"Clarke County, Alabama",us_county
+1515,"Clay County, Alabama",us_county
+1516,"Cleburne County, Alabama",us_county
+1517,"Coffee County, Alabama",us_county
+1518,"Colbert County, Alabama",us_county
+1519,"Conecuh County, Alabama",us_county
+1520,"Coosa County, Alabama",us_county
+1521,"Covington County, Alabama",us_county
+1522,"Crenshaw County, Alabama",us_county
+1523,"Cullman County, Alabama",us_county
+1524,"Dale County, Alabama",us_county
+1525,"Dallas County, Alabama",us_county
+1526,"DeKalb County, Alabama",us_county
+1527,"Elmore County, Alabama",us_county
+1528,"Escambia County, Alabama",us_county
+1529,"Etowah County, Alabama",us_county
+1530,"Fayette County, Alabama",us_county
+1531,"Franklin County, Alabama",us_county
+1532,"Geneva County, Alabama",us_county
+1533,"Greene County, Alabama",us_county
+1534,"Hale County, Alabama",us_county
+1535,"Henry County, Alabama",us_county
+1536,"Houston County, Alabama",us_county
+1537,"Jackson County, Alabama",us_county
+1538,"Jefferson County, Alabama",us_county
+1539,"Lamar/Sanford County, Alabama",us_county
+1540,"Lauderdale County, Alabama",us_county
+1541,"Lawrence County, Alabama",us_county
+1542,"Lee County, Alabama",us_county
+1543,"Limestone County, Alabama",us_county
+1544,"Lowndes County, Alabama",us_county
+1545,"Macon County, Alabama",us_county
+1546,"Madison County, Alabama",us_county
+1547,"Marengo County, Alabama",us_county
+1548,"Marion County, Alabama",us_county
+1549,"Marshall County, Alabama",us_county
+1550,"Mobile County, Alabama",us_county
+1551,"Monroe County, Alabama",us_county
+1552,"Montgomery County, Alabama",us_county
+1553,"Morgan/Cotaco County, Alabama",us_county
+1554,"Perry County, Alabama",us_county
+1555,"Pickens County, Alabama",us_county
+1556,"Pike County, Alabama",us_county
+1557,"Randolph County, Alabama",us_county
+1558,"Russell County, Alabama",us_county
+1559,"St Clair County, Alabama",us_county
+1560,"Shelby County, Alabama",us_county
+1561,"Sumter County, Alabama",us_county
+1562,"Talladega County, Alabama",us_county
+1563,"Tallapoosa County, Alabama",us_county
+1564,"Tuscaloosa County, Alabama",us_county
+1565,"Walker County, Alabama",us_county
+1566,"Washington County, Alabama",us_county
+1567,"Wilcox County, Alabama",us_county
+1568,"Winston/Hancock County, Alabama",us_county
+1569,"Arkansas County, Arkansas",us_county
+1570,"Ashley County, Arkansas",us_county
+1571,"Baxter County, Arkansas",us_county
+1572,"Benton County, Arkansas",us_county
+1573,"Boone County, Arkansas",us_county
+1574,"Bradley County, Arkansas",us_county
+1575,"Calhoun County, Arkansas",us_county
+1576,"Carroll County, Arkansas",us_county
+1577,"Chicot County, Arkansas",us_county
+1578,"Clark County, Arkansas",us_county
+1579,"Clay County, Arkansas",us_county
+1580,"Cleburne County, Arkansas",us_county
+1581,"Cleveland/Dorsey County, Arkansas",us_county
+1582,"Columbia County, Arkansas",us_county
+1583,"Conway County, Arkansas",us_county
+1584,"Craighead County, Arkansas",us_county
+1585,"Crawford County, Arkansas",us_county
+1586,"Crittenden County, Arkansas",us_county
+1587,"Cross County, Arkansas",us_county
+1588,"Dallas County, Arkansas",us_county
+1589,"Desha County, Arkansas",us_county
+1590,"Drew County, Arkansas",us_county
+1591,"Faulkner County, Arkansas",us_county
+1592,"Franklin County, Arkansas",us_county
+1593,"Fulton County, Arkansas",us_county
+1594,"Garland County, Arkansas",us_county
+1595,"Grant County, Arkansas",us_county
+1596,"Greene County, Arkansas",us_county
+1597,"Hempstead County, Arkansas",us_county
+1598,"Hot Spring County, Arkansas",us_county
+1599,"Howard County, Arkansas",us_county
+1600,"Independence County, Arkansas",us_county
+1601,"Izard County, Arkansas",us_county
+1602,"Jackson County, Arkansas",us_county
+1603,"Jefferson County, Arkansas",us_county
+1604,"Johnson County, Arkansas",us_county
+1605,"Lafayette County, Arkansas",us_county
+1606,"Lawrence County, Arkansas",us_county
+1607,"Lee County, Arkansas",us_county
+1608,"Lincoln County, Arkansas",us_county
+1609,"Little River County, Arkansas",us_county
+1610,"Logan County, Arkansas",us_county
+1611,"Lonoke County, Arkansas",us_county
+1612,"Madison County, Arkansas",us_county
+1613,"Marion County, Arkansas",us_county
+1614,"Miller County, Arkansas",us_county
+1615,"Mississippi County, Arkansas",us_county
+1616,"Monroe County, Arkansas",us_county
+1617,"Montgomery County, Arkansas",us_county
+1618,"Nevada County, Arkansas",us_county
+1619,"Newton County, Arkansas",us_county
+1620,"Ouachita County, Arkansas",us_county
+1621,"Perry County, Arkansas",us_county
+1622,"Phillips County, Arkansas",us_county
+1623,"Pike County, Arkansas",us_county
+1624,"Poinsett County, Arkansas",us_county
+1625,"Polk County, Arkansas",us_county
+1626,"Pope County, Arkansas",us_county
+1627,"Prairie County, Arkansas",us_county
+1628,"Pulaski County, Arkansas",us_county
+1629,"Randolph County, Arkansas",us_county
+1630,"St Francis County, Arkansas",us_county
+1631,"Saline County, Arkansas",us_county
+1632,"Scott County, Arkansas",us_county
+1633,"Searcy County, Arkansas",us_county
+1634,"Sebastian County, Arkansas",us_county
+1635,"Sevier County, Arkansas",us_county
+1636,"Sharp County, Arkansas",us_county
+1637,"Stone County, Arkansas",us_county
+1638,"Union County, Arkansas",us_county
+1639,"Van Buren County, Arkansas",us_county
+1640,"Washington County, Arkansas",us_county
+1641,"White County, Arkansas",us_county
+1642,"Woodruff County, Arkansas",us_county
+1643,"Yell County, Arkansas",us_county
+1644,"Alachua County, Florida",us_county
+1645,"Baker County, Florida",us_county
+1646,"Bay County, Florida",us_county
+1647,"Bradford/New River County, Florida",us_county
+1648,"Brevard/St Lucie County, Florida",us_county
+1649,"Broward County, Florida",us_county
+1650,"Calhoun County, Florida",us_county
+1651,"Charlotte County, Florida",us_county
+1652,"Citrus County, Florida",us_county
+1653,"Clay County, Florida",us_county
+1654,"Collier County, Florida",us_county
+1655,"Columbia County, Florida",us_county
+1656,"Dade County, Florida",us_county
+1657,"De Soto County, Florida",us_county
+1658,"Dixie County, Florida",us_county
+1659,"Duval County, Florida",us_county
+1660,"Escambia County, Florida",us_county
+1661,"Flagler County, Florida",us_county
+1662,"Franklin County, Florida",us_county
+1663,"Gadsden County, Florida",us_county
+1664,"Gilchrist County, Florida",us_county
+1665,"Glades County, Florida",us_county
+1666,"Gulf County, Florida",us_county
+1667,"Hamilton County, Florida",us_county
+1668,"Hardee County, Florida",us_county
+1669,"Hendry County, Florida",us_county
+1670,"Hernando/ Benton County, Florida",us_county
+1671,"Highlands County, Florida",us_county
+1672,"Hillsborough County, Florida",us_county
+1673,"Holmes County, Florida",us_county
+1674,"Indian River County, Florida",us_county
+1675,"Jackson County, Florida",us_county
+1676,"Jefferson County, Florida",us_county
+1677,"Lafayette County, Florida",us_county
+1678,"Lake County, Florida",us_county
+1679,"Lee County, Florida",us_county
+1680,"Leon County, Florida",us_county
+1681,"Levy County, Florida",us_county
+1682,"Liberty County, Florida",us_county
+1683,"Madison County, Florida",us_county
+1684,"Manatee County, Florida",us_county
+1685,"Marion County, Florida",us_county
+1686,"Martin County, Florida",us_county
+1687,"Monroe County, Florida",us_county
+1688,"Nassau County, Florida",us_county
+1689,"Okaloosa County, Florida",us_county
+1690,"Okeechobee County, Florida",us_county
+1691,"Orange/Mesquito County, Florida",us_county
+1692,"Osceola County, Florida",us_county
+1693,"Palm Beach County, Florida",us_county
+1694,"Pasco County, Florida",us_county
+1695,"Pinellas County, Florida",us_county
+1696,"Polk County, Florida",us_county
+1697,"Putnam County, Florida",us_county
+1698,"St Johns County, Florida",us_county
+1699,"St Lucie County, Florida",us_county
+1700,"Santa Rosa County, Florida",us_county
+1701,"Sarasota County, Florida",us_county
+1702,"Seminole County, Florida",us_county
+1703,"Sumter County, Florida",us_county
+1704,"Suwannee County, Florida",us_county
+1705,"Taylor County, Florida",us_county
+1706,"Union County, Florida",us_county
+1707,"Volusia County, Florida",us_county
+1708,"Wakulla County, Florida",us_county
+1709,"Walton County, Florida",us_county
+1710,"Washington County, Florida",us_county
+1711,"Appling County, Georgia",us_county
+1712,"Atkinson County, Georgia",us_county
+1713,"Bacon County, Georgia",us_county
+1714,"Baker County, Georgia",us_county
+1715,"Baldwin County, Georgia",us_county
+1716,"Banks County, Georgia",us_county
+1717,"Barrow County, Georgia",us_county
+1718,"Bartow/Cass County, Georgia",us_county
+1719,"Ben Hill County, Georgia",us_county
+1720,"Berrien County, Georgia",us_county
+1721,"Bibb County, Georgia",us_county
+1722,"Bleckley County, Georgia",us_county
+1723,"Brantley County, Georgia",us_county
+1724,"Brooks County, Georgia",us_county
+1725,"Bryan County, Georgia",us_county
+1726,"Bulloch County, Georgia",us_county
+1727,"Burke County, Georgia",us_county
+1728,"Butts County, Georgia",us_county
+1729,"Calhoun County, Georgia",us_county
+1730,"Camden County, Georgia",us_county
+1731,"Campbell County, Georgia",us_county
+1732,"Candler County, Georgia",us_county
+1733,"Carroll County, Georgia",us_county
+1734,"Catoosa County, Georgia",us_county
+1735,"Charlton County, Georgia",us_county
+1736,"Chatham County, Georgia",us_county
+1737,"Chattahoochee County, Georgia",us_county
+1738,"Chattooga County, Georgia",us_county
+1739,"Cherokee County, Georgia",us_county
+1740,"Clarke County, Georgia",us_county
+1741,"Clay County, Georgia",us_county
+1742,"Clayton County, Georgia",us_county
+1743,"Clinch County, Georgia",us_county
+1744,"Cobb County, Georgia",us_county
+1745,"Coffee County, Georgia",us_county
+1746,"Colquitt County, Georgia",us_county
+1747,"Columbia County, Georgia",us_county
+1748,"Cook County, Georgia",us_county
+1749,"Coweta County, Georgia",us_county
+1750,"Crawford County, Georgia",us_county
+1751,"Crisp County, Georgia",us_county
+1752,"Dade County, Georgia",us_county
+1753,"Dawson County, Georgia",us_county
+1754,"Decatur County, Georgia",us_county
+1755,"De Kalb County, Georgia",us_county
+1756,"Dodge County, Georgia",us_county
+1757,"Dooly County, Georgia",us_county
+1758,"Dougherty County, Georgia",us_county
+1759,"Douglas County, Georgia",us_county
+1760,"Early County, Georgia",us_county
+1761,"Echols County, Georgia",us_county
+1762,"Effingham County, Georgia",us_county
+1763,"Elbert County, Georgia",us_county
+1764,"Emanuel County, Georgia",us_county
+1765,"Evans County, Georgia",us_county
+1766,"Fannin County, Georgia",us_county
+1767,"Fayette County, Georgia",us_county
+1768,"Floyd County, Georgia",us_county
+1769,"Forsyth County, Georgia",us_county
+1770,"Franklin County, Georgia",us_county
+1771,"Fulton County, Georgia",us_county
+1772,"Gilmer County, Georgia",us_county
+1773,"Glascock County, Georgia",us_county
+1774,"Glynn County, Georgia",us_county
+1775,"Gordon County, Georgia",us_county
+1776,"Grady County, Georgia",us_county
+1777,"Greene County, Georgia",us_county
+1778,"Gwinnett County, Georgia",us_county
+1779,"Habersham County, Georgia",us_county
+1780,"Hall County, Georgia",us_county
+1781,"Hancock County, Georgia",us_county
+1782,"Haralson County, Georgia",us_county
+1783,"Harris County, Georgia",us_county
+1784,"Hart County, Georgia",us_county
+1785,"Heard County, Georgia",us_county
+1786,"Henry County, Georgia",us_county
+1787,"Houston County, Georgia",us_county
+1788,"Irwin County, Georgia",us_county
+1789,"Jackson County, Georgia",us_county
+1790,"Jasper County, Georgia",us_county
+1791,"Jeff Davis County, Georgia",us_county
+1792,"Jefferson County, Georgia",us_county
+1793,"Jenkins County, Georgia",us_county
+1794,"Johnson County, Georgia",us_county
+1795,"Jones County, Georgia",us_county
+1796,"Lamar County, Georgia",us_county
+1797,"Lanier County, Georgia",us_county
+1798,"Laurens County, Georgia",us_county
+1799,"Lee County, Georgia",us_county
+1800,"Liberty County, Georgia",us_county
+1801,"Lincoln County, Georgia",us_county
+1802,"Long County, Georgia",us_county
+1803,"Lowndes County, Georgia",us_county
+1804,"Lumpkin County, Georgia",us_county
+1805,"Mcduffie County, Georgia",us_county
+1806,"Mcintosh County, Georgia",us_county
+1807,"Macon County, Georgia",us_county
+1808,"Madison County, Georgia",us_county
+1809,"Marion County, Georgia",us_county
+1810,"Meriwether County, Georgia",us_county
+1811,"Miller County, Georgia",us_county
+1812,"Milton County, Georgia",us_county
+1813,"Mitchell County, Georgia",us_county
+1814,"Monroe County, Georgia",us_county
+1815,"Montgomery County, Georgia",us_county
+1816,"Morgan County, Georgia",us_county
+1817,"Murray County, Georgia",us_county
+1818,"Muscogee County, Georgia",us_county
+1819,"Newton County, Georgia",us_county
+1820,"Oconee County, Georgia",us_county
+1821,"Oglethorpe County, Georgia",us_county
+1822,"Paulding County, Georgia",us_county
+1823,"Peach County, Georgia",us_county
+1824,"Pickens County, Georgia",us_county
+1825,"Pierce County, Georgia",us_county
+1826,"Pike County, Georgia",us_county
+1827,"Polk County, Georgia",us_county
+1828,"Pulaski County, Georgia",us_county
+1829,"Putnam County, Georgia",us_county
+1830,"Quitman County, Georgia",us_county
+1831,"Rabun County, Georgia",us_county
+1832,"Randolph County, Georgia",us_county
+1833,"Richmond County, Georgia",us_county
+1834,"Rockdale County, Georgia",us_county
+1835,"Schley County, Georgia",us_county
+1836,"Screven County, Georgia",us_county
+1837,"Seminole County, Georgia",us_county
+1838,"Spalding County, Georgia",us_county
+1839,"Stephens County, Georgia",us_county
+1840,"Stewart County, Georgia",us_county
+1841,"Sumter County, Georgia",us_county
+1842,"Talbot County, Georgia",us_county
+1843,"Taliaferro County, Georgia",us_county
+1844,"Tattnall County, Georgia",us_county
+1845,"Taylor County, Georgia",us_county
+1846,"Telfair County, Georgia",us_county
+1847,"Terrell County, Georgia",us_county
+1848,"Thomas County, Georgia",us_county
+1849,"Tift County, Georgia",us_county
+1850,"Toombs County, Georgia",us_county
+1851,"Towns County, Georgia",us_county
+1852,"Treutlen County, Georgia",us_county
+1853,"Troup County, Georgia",us_county
+1854,"Turner County, Georgia",us_county
+1855,"Twiggs County, Georgia",us_county
+1856,"Union County, Georgia",us_county
+1857,"Upson County, Georgia",us_county
+1858,"Walker County, Georgia",us_county
+1859,"Walton County, Georgia",us_county
+1860,"Ware County, Georgia",us_county
+1861,"Warren County, Georgia",us_county
+1862,"Washington County, Georgia",us_county
+1863,"Wayne County, Georgia",us_county
+1864,"Webster County, Georgia",us_county
+1865,"Wheeler County, Georgia",us_county
+1866,"White County, Georgia",us_county
+1867,"Whitfield County, Georgia",us_county
+1868,"Wilcox County, Georgia",us_county
+1869,"Wilkes County, Georgia",us_county
+1870,"Wilkinson County, Georgia",us_county
+1871,"Worth County, Georgia",us_county
+1872,"Acadia County, Louisiana",us_county
+1873,"Allen County, Louisiana",us_county
+1874,"Ascension County, Louisiana",us_county
+1875,"Assumption County, Louisiana",us_county
+1876,"Avoyelles County, Louisiana",us_county
+1877,"Beauregard County, Louisiana",us_county
+1878,"Bienville County, Louisiana",us_county
+1879,"Bossier County, Louisiana",us_county
+1880,"Caddo County, Louisiana",us_county
+1881,"Calcasieu County, Louisiana",us_county
+1882,"Caldwell County, Louisiana",us_county
+1883,"Cameron County, Louisiana",us_county
+1884,"Catahoula County, Louisiana",us_county
+1885,"Claiborne County, Louisiana",us_county
+1886,"Concordia County, Louisiana",us_county
+1887,"De Soto County, Louisiana",us_county
+1888,"East Baton Rouge County, Louisiana",us_county
+1889,"East Carroll/Carroll County, Louisiana",us_county
+1890,"East Feliciana County, Louisiana",us_county
+1891,"Evangeline County, Louisiana",us_county
+1892,"Franklin County, Louisiana",us_county
+1893,"Grant County, Louisiana",us_county
+1894,"Iberia County, Louisiana",us_county
+1895,"Iberville County, Louisiana",us_county
+1896,"Jackson County, Louisiana",us_county
+1897,"Jefferson County, Louisiana",us_county
+1898,"Jefferson Davis County, Louisiana",us_county
+1899,"Lafayette County, Louisiana",us_county
+1900,"Lafourche County, Louisiana",us_county
+1901,"La Salle County, Louisiana",us_county
+1902,"Lincoln County, Louisiana",us_county
+1903,"Livingston County, Louisiana",us_county
+1904,"Madison County, Louisiana",us_county
+1905,"Morehouse County, Louisiana",us_county
+1906,"Natchitoches County, Louisiana",us_county
+1907,"Orleans County, Louisiana",us_county
+1908,"Ouachita County, Louisiana",us_county
+1909,"Plaquemines County, Louisiana",us_county
+1910,"Pointe Coupee County, Louisiana",us_county
+1911,"Rapides County, Louisiana",us_county
+1912,"Red River County, Louisiana",us_county
+1913,"Richland County, Louisiana",us_county
+1914,"Sabine County, Louisiana",us_county
+1915,"St Bernard County, Louisiana",us_county
+1916,"St Charles County, Louisiana",us_county
+1917,"St Helena County, Louisiana",us_county
+1918,"St James County, Louisiana",us_county
+1919,"St John The Baptist County, Louisiana",us_county
+1920,"St Landry County, Louisiana",us_county
+1921,"St Martin County, Louisiana",us_county
+1922,"St Mary County, Louisiana",us_county
+1923,"St Tammany County, Louisiana",us_county
+1924,"Tangipahoa County, Louisiana",us_county
+1925,"Tensas County, Louisiana",us_county
+1926,"Terrebonne County, Louisiana",us_county
+1927,"Union County, Louisiana",us_county
+1928,"Vermilion County, Louisiana",us_county
+1929,"Vernon County, Louisiana",us_county
+1930,"Washington County, Louisiana",us_county
+1931,"Webster County, Louisiana",us_county
+1932,"West Baton Rouge County, Louisiana",us_county
+1933,"West Carroll County, Louisiana",us_county
+1934,"West Feliciana County, Louisiana",us_county
+1935,"Winn County, Louisiana",us_county
+1936,"Adams County, Mississippi",us_county
+1937,"Alcorn County, Mississippi",us_county
+1938,"Amite County, Mississippi",us_county
+1939,"Attala County, Mississippi",us_county
+1940,"Benton County, Mississippi",us_county
+1941,"Bolivar County, Mississippi",us_county
+1942,"Calhoun County, Mississippi",us_county
+1943,"Carroll County, Mississippi",us_county
+1944,"Chickasaw County, Mississippi",us_county
+1945,"Choctaw County, Mississippi",us_county
+1946,"Claiborne County, Mississippi",us_county
+1947,"Clarke County, Mississippi",us_county
+1948,"Clay County, Mississippi",us_county
+1949,"Coahoma County, Mississippi",us_county
+1950,"Copiah County, Mississippi",us_county
+1951,"Covington County, Mississippi",us_county
+1952,"De Soto County, Mississippi",us_county
+1953,"Forrest County, Mississippi",us_county
+1954,"Franklin County, Mississippi",us_county
+1955,"George County, Mississippi",us_county
+1956,"Greene County, Mississippi",us_county
+1957,"Grenada County, Mississippi",us_county
+1958,"Hancock County, Mississippi",us_county
+1959,"Harrison County, Mississippi",us_county
+1960,"Hinds County, Mississippi",us_county
+1961,"Holmes County, Mississippi",us_county
+1962,"Humphreys County, Mississippi",us_county
+1963,"Issaquena County, Mississippi",us_county
+1964,"Itawamba County, Mississippi",us_county
+1965,"Jackson County, Mississippi",us_county
+1966,"Jasper County, Mississippi",us_county
+1967,"Jefferson County, Mississippi",us_county
+1968,"Jefferson Davis County, Mississippi",us_county
+1969,"Jones County, Mississippi",us_county
+1970,"Kemper County, Mississippi",us_county
+1971,"Lafayette County, Mississippi",us_county
+1972,"Lamar County, Mississippi",us_county
+1973,"Lauderdale County, Mississippi",us_county
+1974,"Lawrence County, Mississippi",us_county
+1975,"Leake County, Mississippi",us_county
+1976,"Lee County, Mississippi",us_county
+1977,"Leflore County, Mississippi",us_county
+1978,"Lincoln County, Mississippi",us_county
+1979,"Lowndes County, Mississippi",us_county
+1980,"Madison County, Mississippi",us_county
+1981,"Marion County, Mississippi",us_county
+1982,"Marshall County, Mississippi",us_county
+1983,"Monroe County, Mississippi",us_county
+1984,"Montgomery County, Mississippi",us_county
+1985,"Neshoba County, Mississippi",us_county
+1986,"Newton County, Mississippi",us_county
+1987,"Noxubee County, Mississippi",us_county
+1988,"Oktibbeha County, Mississippi",us_county
+1989,"Panola County, Mississippi",us_county
+1990,"Pearl River County, Mississippi",us_county
+1991,"Perry County, Mississippi",us_county
+1992,"Pike County, Mississippi",us_county
+1993,"Pontotoc County, Mississippi",us_county
+1994,"Prentiss County, Mississippi",us_county
+1995,"Quitman County, Mississippi",us_county
+1996,"Rankin County, Mississippi",us_county
+1997,"Scott County, Mississippi",us_county
+1998,"Sharkey County, Mississippi",us_county
+1999,"Simpson County, Mississippi",us_county
+2000,"Smith County, Mississippi",us_county
+2001,"Stone County, Mississippi",us_county
+2002,"Sunflower County, Mississippi",us_county
+2003,"Tallahatchie County, Mississippi",us_county
+2004,"Tate County, Mississippi",us_county
+2005,"Tippah County, Mississippi",us_county
+2006,"Tishomingo County, Mississippi",us_county
+2007,"Tunica County, Mississippi",us_county
+2008,"Union County, Mississippi",us_county
+2009,"Walthall County, Mississippi",us_county
+2010,"Warren County, Mississippi",us_county
+2011,"Washington County, Mississippi",us_county
+2012,"Wayne County, Mississippi",us_county
+2013,"Webster County, Mississippi",us_county
+2014,"Wilkinson County, Mississippi",us_county
+2015,"Winston County, Mississippi",us_county
+2016,"Yalobusha County, Mississippi",us_county
+2017,"Yazoo County, Mississippi",us_county
+2018,"Alamance County, North Carolina",us_county
+2019,"Alexander County, North Carolina",us_county
+2020,"Alleghany County, North Carolina",us_county
+2021,"Anson County, North Carolina",us_county
+2022,"Ashe County, North Carolina",us_county
+2023,"Avery County, North Carolina",us_county
+2024,"Beaufort County, North Carolina",us_county
+2025,"Bertie County, North Carolina",us_county
+2026,"Bladen County, North Carolina",us_county
+2027,"Brunswick County, North Carolina",us_county
+2028,"Buncombe County, North Carolina",us_county
+2029,"Burke County, North Carolina",us_county
+2030,"Cabarrus County, North Carolina",us_county
+2031,"Caldwell County, North Carolina",us_county
+2032,"Camden County, North Carolina",us_county
+2033,"Carteret County, North Carolina",us_county
+2034,"Caswell County, North Carolina",us_county
+2035,"Catawba County, North Carolina",us_county
+2036,"Chatham County, North Carolina",us_county
+2037,"Cherokee County, North Carolina",us_county
+2038,"Chowan County, North Carolina",us_county
+2039,"Clay County, North Carolina",us_county
+2040,"Cleveland County, North Carolina",us_county
+2041,"Columbus County, North Carolina",us_county
+2042,"Craven County, North Carolina",us_county
+2043,"Cumberland County, North Carolina",us_county
+2044,"Currituck County, North Carolina",us_county
+2045,"Dare County, North Carolina",us_county
+2046,"Davidson County, North Carolina",us_county
+2047,"Davie County, North Carolina",us_county
+2048,"Duplin County, North Carolina",us_county
+2049,"Durham County, North Carolina",us_county
+2050,"Edgecombe County, North Carolina",us_county
+2051,"Forsyth County, North Carolina",us_county
+2052,"Franklin County, North Carolina",us_county
+2053,"Gaston County, North Carolina",us_county
+2054,"Gates County, North Carolina",us_county
+2055,"Graham County, North Carolina",us_county
+2056,"Granville County, North Carolina",us_county
+2057,"Greene County, North Carolina",us_county
+2058,"Guilford County, North Carolina",us_county
+2059,"Halifax County, North Carolina",us_county
+2060,"Harnett County, North Carolina",us_county
+2061,"Haywood County, North Carolina",us_county
+2062,"Henderson County, North Carolina",us_county
+2063,"Hertford County, North Carolina",us_county
+2064,"Hoke County, North Carolina",us_county
+2065,"Hyde County, North Carolina",us_county
+2066,"Iredell County, North Carolina",us_county
+2067,"Jackson County, North Carolina",us_county
+2068,"Johnston County, North Carolina",us_county
+2069,"Jones County, North Carolina",us_county
+2070,"Lee County, North Carolina",us_county
+2071,"Lenoir County, North Carolina",us_county
+2072,"Lincoln County, North Carolina",us_county
+2073,"McDowell County, North Carolina",us_county
+2074,"Macon County, North Carolina",us_county
+2075,"Madison County, North Carolina",us_county
+2076,"Martin County, North Carolina",us_county
+2077,"Mecklenburg County, North Carolina",us_county
+2078,"Mitchell County, North Carolina",us_county
+2079,"Montgomery County, North Carolina",us_county
+2080,"Moore County, North Carolina",us_county
+2081,"Nash County, North Carolina",us_county
+2082,"New Hanover County, North Carolina",us_county
+2083,"Northampton County, North Carolina",us_county
+2084,"Onslow County, North Carolina",us_county
+2085,"Orange County, North Carolina",us_county
+2086,"Pamlico County, North Carolina",us_county
+2087,"Pasquotank County, North Carolina",us_county
+2088,"Pender County, North Carolina",us_county
+2089,"Perquimans County, North Carolina",us_county
+2090,"Person County, North Carolina",us_county
+2091,"Pitt County, North Carolina",us_county
+2092,"Polk County, North Carolina",us_county
+2093,"Randolph County, North Carolina",us_county
+2094,"Richmond County, North Carolina",us_county
+2095,"Robeson County, North Carolina",us_county
+2096,"Rockingham County, North Carolina",us_county
+2097,"Rowan County, North Carolina",us_county
+2098,"Rutherford County, North Carolina",us_county
+2099,"Sampson County, North Carolina",us_county
+2100,"Scotland County, North Carolina",us_county
+2101,"Stanly County, North Carolina",us_county
+2102,"Stokes County, North Carolina",us_county
+2103,"Surry County, North Carolina",us_county
+2104,"Swain County, North Carolina",us_county
+2105,"Transylvania County, North Carolina",us_county
+2106,"Tyrrell County, North Carolina",us_county
+2107,"Union County, North Carolina",us_county
+2108,"Vance County, North Carolina",us_county
+2109,"Wake County, North Carolina",us_county
+2110,"Walton County, North Carolina",us_county
+2111,"Warren County, North Carolina",us_county
+2112,"Washington County, North Carolina",us_county
+2113,"Watauga County, North Carolina",us_county
+2114,"Wayne County, North Carolina",us_county
+2115,"Wilkes County, North Carolina",us_county
+2116,"Wilson County, North Carolina",us_county
+2117,"Yadkin County, North Carolina",us_county
+2118,"Yancey County, North Carolina",us_county
+2119,"Abbeville County, South Carolina",us_county
+2120,"Aiken County, South Carolina",us_county
+2121,"Allendale County, South Carolina",us_county
+2122,"Anderson County, South Carolina",us_county
+2123,"Bamberg County, South Carolina",us_county
+2124,"Barnwell County, South Carolina",us_county
+2125,"Beaufort County, South Carolina",us_county
+2126,"Berkeley County, South Carolina",us_county
+2127,"Calhoun County, South Carolina",us_county
+2128,"Charleston County, South Carolina",us_county
+2129,"Cherokee County, South Carolina",us_county
+2130,"Chester County, South Carolina",us_county
+2131,"Chesterfield County, South Carolina",us_county
+2132,"Clarendon County, South Carolina",us_county
+2133,"Colleton County, South Carolina",us_county
+2134,"Darlington County, South Carolina",us_county
+2135,"Dillon County, South Carolina",us_county
+2136,"Dorchester County, South Carolina",us_county
+2137,"Edgefield County, South Carolina",us_county
+2138,"Fairfield County, South Carolina",us_county
+2139,"Florence County, South Carolina",us_county
+2140,"Georgetown County, South Carolina",us_county
+2141,"Greenville County, South Carolina",us_county
+2142,"Greenwood County, South Carolina",us_county
+2143,"Hampton County, South Carolina",us_county
+2144,"Horry County, South Carolina",us_county
+2145,"Jasper County, South Carolina",us_county
+2146,"Kershaw County, South Carolina",us_county
+2147,"Lancaster County, South Carolina",us_county
+2148,"Laurens County, South Carolina",us_county
+2149,"Lee County, South Carolina",us_county
+2150,"Lexington County, South Carolina",us_county
+2151,"McCormick County, South Carolina",us_county
+2152,"Marion County, South Carolina",us_county
+2153,"Marlboro County, South Carolina",us_county
+2154,"Newberry County, South Carolina",us_county
+2155,"Oconee County, South Carolina",us_county
+2156,"Orangeburg County, South Carolina",us_county
+2157,"Pendleton County, South Carolina",us_county
+2158,"Pickens County, South Carolina",us_county
+2159,"Richland County, South Carolina",us_county
+2160,"Saluda County, South Carolina",us_county
+2161,"Spartanburg County, South Carolina",us_county
+2162,"Sumter County, South Carolina",us_county
+2163,"Union County, South Carolina",us_county
+2164,"Williamsburg County, South Carolina",us_county
+2165,"York County, South Carolina",us_county
+2166,"Anderson County, Texas",us_county
+2167,"Andrews County, Texas",us_county
+2168,"Angelina County, Texas",us_county
+2169,"Aransas County, Texas",us_county
+2170,"Archer County, Texas",us_county
+2171,"Armstrong County, Texas",us_county
+2172,"Atascosa County, Texas",us_county
+2173,"Austin County, Texas",us_county
+2174,"Bailey County, Texas",us_county
+2175,"Bandera County, Texas",us_county
+2176,"Bastrop County, Texas",us_county
+2177,"Baylor County, Texas",us_county
+2178,"Bee County, Texas",us_county
+2179,"Bell County, Texas",us_county
+2180,"Bexar County, Texas",us_county
+2181,"Blanco County, Texas",us_county
+2182,"Borden County, Texas",us_county
+2183,"Bosque County, Texas",us_county
+2184,"Bowie County, Texas",us_county
+2185,"Brazoria County, Texas",us_county
+2186,"Brazos County, Texas",us_county
+2187,"Brewster County, Texas",us_county
+2188,"Briscoe County, Texas",us_county
+2189,"Brooks County, Texas",us_county
+2190,"Brown County, Texas",us_county
+2191,"Buchel County, Texas",us_county
+2192,"Burleson County, Texas",us_county
+2193,"Burnet County, Texas",us_county
+2194,"Caldwell County, Texas",us_county
+2195,"Calhoun County, Texas",us_county
+2196,"Callahan County, Texas",us_county
+2197,"Cameron County, Texas",us_county
+2198,"Cameron-Starr-Webb County, Texas",us_county
+2199,"Camp County, Texas",us_county
+2200,"Carson County, Texas",us_county
+2201,"Cass/Davis County, Texas",us_county
+2202,"Castro County, Texas",us_county
+2203,"Chambers County, Texas",us_county
+2204,"Cherokee County, Texas",us_county
+2205,"Childress County, Texas",us_county
+2206,"Clay County, Texas",us_county
+2207,"Cochran County, Texas",us_county
+2208,"Coke County, Texas",us_county
+2209,"Coleman County, Texas",us_county
+2210,"Collin County, Texas",us_county
+2211,"Collingsworth County, Texas",us_county
+2212,"Colorado County, Texas",us_county
+2213,"Comal County, Texas",us_county
+2214,"Comanche County, Texas",us_county
+2215,"Concho County, Texas",us_county
+2216,"Cooke County, Texas",us_county
+2217,"Coryell County, Texas",us_county
+2218,"Cottle County, Texas",us_county
+2219,"Crane County, Texas",us_county
+2220,"Crockett County, Texas",us_county
+2221,"Crosby County, Texas",us_county
+2222,"Culberson County, Texas",us_county
+2223,"Dallam County, Texas",us_county
+2224,"Dallas County, Texas",us_county
+2225,"Dawson County, Texas",us_county
+2226,"Deaf Smith County, Texas",us_county
+2227,"Delta County, Texas",us_county
+2228,"Denton County, Texas",us_county
+2229,"De Witt County, Texas",us_county
+2230,"Dickens County, Texas",us_county
+2231,"Dimmit County, Texas",us_county
+2232,"Donley County, Texas",us_county
+2233,"Duval County, Texas",us_county
+2234,"Eastland County, Texas",us_county
+2235,"Ector County, Texas",us_county
+2236,"Edwards County, Texas",us_county
+2237,"Ellis County, Texas",us_county
+2238,"El Paso County, Texas",us_county
+2239,"Encinal County, Texas",us_county
+2240,"Erath County, Texas",us_county
+2241,"Falls County, Texas",us_county
+2242,"Fannin County, Texas",us_county
+2243,"Fayette County, Texas",us_county
+2244,"Fisher County, Texas",us_county
+2245,"Floyd County, Texas",us_county
+2246,"Foard County, Texas",us_county
+2247,"Fort Bend County, Texas",us_county
+2248,"Franklin County, Texas",us_county
+2249,"Freestone County, Texas",us_county
+2250,"Frio County, Texas",us_county
+2251,"Gaines County, Texas",us_county
+2252,"Galveston County, Texas",us_county
+2253,"Garza County, Texas",us_county
+2254,"Gillespie County, Texas",us_county
+2255,"Glasscock County, Texas",us_county
+2256,"Goliad County, Texas",us_county
+2257,"Gonzales County, Texas",us_county
+2258,"Gray County, Texas",us_county
+2259,"Grayson County, Texas",us_county
+2260,"Gregg County, Texas",us_county
+2261,"Grimes County, Texas",us_county
+2262,"Guadalupe County, Texas",us_county
+2263,"Hale County, Texas",us_county
+2264,"Hall County, Texas",us_county
+2265,"Hamilton County, Texas",us_county
+2266,"Hansford County, Texas",us_county
+2267,"Hardeman County, Texas",us_county
+2268,"Hardin County, Texas",us_county
+2269,"Harris County, Texas",us_county
+2270,"Harrison County, Texas",us_county
+2271,"Hartley County, Texas",us_county
+2272,"Haskell County, Texas",us_county
+2273,"Hays County, Texas",us_county
+2274,"Hemphill County, Texas",us_county
+2275,"Henderson County, Texas",us_county
+2276,"Hidalgo County, Texas",us_county
+2277,"Hill County, Texas",us_county
+2278,"Hockley County, Texas",us_county
+2279,"Hood County, Texas",us_county
+2280,"Hopkins County, Texas",us_county
+2281,"Houston County, Texas",us_county
+2282,"Howard County, Texas",us_county
+2283,"Hudspeth County, Texas",us_county
+2284,"Hunt County, Texas",us_county
+2285,"Hutchinson County, Texas",us_county
+2286,"Irion County, Texas",us_county
+2287,"Jack County, Texas",us_county
+2288,"Jackson County, Texas",us_county
+2289,"Jasper County, Texas",us_county
+2290,"Jeff Davis County, Texas",us_county
+2291,"Jefferson County, Texas",us_county
+2292,"Jim Hogg County, Texas",us_county
+2293,"Jim Wells County, Texas",us_county
+2294,"Johnson County, Texas",us_county
+2295,"Jones County, Texas",us_county
+2296,"Karnes County, Texas",us_county
+2297,"Kaufman County, Texas",us_county
+2298,"Kendall County, Texas",us_county
+2299,"Kenedy County, Texas",us_county
+2300,"Kent County, Texas",us_county
+2301,"Kerr County, Texas",us_county
+2302,"Kimble County, Texas",us_county
+2303,"King County, Texas",us_county
+2304,"Kinney County, Texas",us_county
+2305,"Kleberg County, Texas",us_county
+2306,"Knox County, Texas",us_county
+2307,"Lamar County, Texas",us_county
+2308,"Lamb County, Texas",us_county
+2309,"Lampasas County, Texas",us_county
+2310,"La Salle County, Texas",us_county
+2311,"Lavaca County, Texas",us_county
+2312,"Lee County, Texas",us_county
+2313,"Leon County, Texas",us_county
+2314,"Liberty County, Texas",us_county
+2315,"Limestone County, Texas",us_county
+2316,"Lipscomb County, Texas",us_county
+2317,"Live Oak County, Texas",us_county
+2318,"Llano County, Texas",us_county
+2319,"Loving County, Texas",us_county
+2320,"Lubbock County, Texas",us_county
+2321,"Lynn County, Texas",us_county
+2322,"McCulloch County, Texas",us_county
+2323,"McLennan County, Texas",us_county
+2324,"McMullen County, Texas",us_county
+2325,"Madison County, Texas",us_county
+2326,"Marion County, Texas",us_county
+2327,"Martin County, Texas",us_county
+2328,"Mason County, Texas",us_county
+2329,"Matagorda County, Texas",us_county
+2330,"Maverick County, Texas",us_county
+2331,"Medina County, Texas",us_county
+2332,"Menard County, Texas",us_county
+2333,"Midland County, Texas",us_county
+2334,"Milam County, Texas",us_county
+2335,"Mills County, Texas",us_county
+2336,"Mitchell County, Texas",us_county
+2337,"Montague County, Texas",us_county
+2338,"Montgomery County, Texas",us_county
+2339,"Moore County, Texas",us_county
+2340,"Morris County, Texas",us_county
+2341,"Motley County, Texas",us_county
+2342,"Nacogdoches County, Texas",us_county
+2343,"Navarro County, Texas",us_county
+2344,"Newton County, Texas",us_county
+2345,"Nolan County, Texas",us_county
+2346,"Nueces County, Texas",us_county
+2347,"Ochiltree County, Texas",us_county
+2348,"Oldham County, Texas",us_county
+2349,"Orange County, Texas",us_county
+2350,"Palo Pinto County, Texas",us_county
+2351,"Panola County, Texas",us_county
+2352,"Parker County, Texas",us_county
+2353,"Parmer County, Texas",us_county
+2354,"Pecos County, Texas",us_county
+2355,"Polk County, Texas",us_county
+2356,"Potter County, Texas",us_county
+2357,"Presidio County, Texas",us_county
+2358,"Rains County, Texas",us_county
+2359,"Randall County, Texas",us_county
+2360,"Reagan County, Texas",us_county
+2361,"Real County, Texas",us_county
+2362,"Red River County, Texas",us_county
+2363,"Reeves County, Texas",us_county
+2364,"Refugio County, Texas",us_county
+2365,"Roberts County, Texas",us_county
+2366,"Robertson County, Texas",us_county
+2367,"Rockwall County, Texas",us_county
+2368,"Runnels County, Texas",us_county
+2369,"Rusk County, Texas",us_county
+2370,"Sabine County, Texas",us_county
+2371,"San Augustine County, Texas",us_county
+2372,"San Jacinto County, Texas",us_county
+2373,"San Patricio County, Texas",us_county
+2374,"San Saba County, Texas",us_county
+2375,"Schleicher County, Texas",us_county
+2376,"Scurry County, Texas",us_county
+2377,"Shackelford County, Texas",us_county
+2378,"Shelby County, Texas",us_county
+2379,"Sherman County, Texas",us_county
+2380,"Smith County, Texas",us_county
+2381,"Somervell County, Texas",us_county
+2382,"Starr County, Texas",us_county
+2383,"Stephens/Buchanan County, Texas",us_county
+2384,"Sterling County, Texas",us_county
+2385,"Stonewall County, Texas",us_county
+2386,"Sutton County, Texas",us_county
+2387,"Swisher County, Texas",us_county
+2388,"Tarrant County, Texas",us_county
+2389,"Taylor County, Texas",us_county
+2390,"Terrell County, Texas",us_county
+2391,"Terry County, Texas",us_county
+2392,"Throckmorton County, Texas",us_county
+2393,"Titus County, Texas",us_county
+2394,"Tom Green County, Texas",us_county
+2395,"Travis County, Texas",us_county
+2396,"Trinity County, Texas",us_county
+2397,"Tyler County, Texas",us_county
+2398,"Upshur County, Texas",us_county
+2399,"Upton County, Texas",us_county
+2400,"Uvalde County, Texas",us_county
+2401,"Val Verde County, Texas",us_county
+2402,"Van Zandt County, Texas",us_county
+2403,"Victoria County, Texas",us_county
+2404,"Walker County, Texas",us_county
+2405,"Waller County, Texas",us_county
+2406,"Ward County, Texas",us_county
+2407,"Washington County, Texas",us_county
+2408,"Webb County, Texas",us_county
+2409,"Wharton County, Texas",us_county
+2410,"Wheeler County, Texas",us_county
+2411,"Wichita County, Texas",us_county
+2412,"Wilbarger County, Texas",us_county
+2413,"Willacy County, Texas",us_county
+2414,"Williamson County, Texas",us_county
+2415,"Wilson County, Texas",us_county
+2416,"Winkler County, Texas",us_county
+2417,"Wise County, Texas",us_county
+2418,"Wood County, Texas",us_county
+2419,"Yoakum County, Texas",us_county
+2420,"Young County, Texas",us_county
+2421,"Zapata County, Texas",us_county
+2422,"Zavalla County, Texas",us_county
+2423,"Adair County, Kentucky",us_county
+2424,"Allen County, Kentucky",us_county
+2425,"Anderson County, Kentucky",us_county
+2426,"Ballard County, Kentucky",us_county
+2427,"Barren County, Kentucky",us_county
+2428,"Bath County, Kentucky",us_county
+2429,"Bell County, Kentucky",us_county
+2430,"Boone County, Kentucky",us_county
+2431,"Bourbon County, Kentucky",us_county
+2432,"Boyd County, Kentucky",us_county
+2433,"Boyle County, Kentucky",us_county
+2434,"Bracken County, Kentucky",us_county
+2435,"Breathitt County, Kentucky",us_county
+2436,"Breckinridge County, Kentucky",us_county
+2437,"Bullitt County, Kentucky",us_county
+2438,"Butler County, Kentucky",us_county
+2439,"Caldwell County, Kentucky",us_county
+2440,"Calloway County, Kentucky",us_county
+2441,"Campbell County, Kentucky",us_county
+2442,"Carlisle County, Kentucky",us_county
+2443,"Carroll County, Kentucky",us_county
+2444,"Carter County, Kentucky",us_county
+2445,"Casey County, Kentucky",us_county
+2446,"Christian County, Kentucky",us_county
+2447,"Clark County, Kentucky",us_county
+2448,"Clay County, Kentucky",us_county
+2449,"Clinton County, Kentucky",us_county
+2450,"Crittenden County, Kentucky",us_county
+2451,"Cumberland County, Kentucky",us_county
+2452,"Daviess County, Kentucky",us_county
+2453,"Edmonson County, Kentucky",us_county
+2454,"Elliott County, Kentucky",us_county
+2455,"Estill County, Kentucky",us_county
+2456,"Fayette County, Kentucky",us_county
+2457,"Fleming County, Kentucky",us_county
+2458,"Floyd County, Kentucky",us_county
+2459,"Franklin County, Kentucky",us_county
+2460,"Fulton County, Kentucky",us_county
+2461,"Gallatin County, Kentucky",us_county
+2462,"Garrard County, Kentucky",us_county
+2463,"Grant County, Kentucky",us_county
+2464,"Graves County, Kentucky",us_county
+2465,"Grayson County, Kentucky",us_county
+2466,"Green County, Kentucky",us_county
+2467,"Greenup County, Kentucky",us_county
+2468,"Hancock County, Kentucky",us_county
+2469,"Hardin County, Kentucky",us_county
+2470,"Harlan County, Kentucky",us_county
+2471,"Harrison County, Kentucky",us_county
+2472,"Hart County, Kentucky",us_county
+2473,"Henderson County, Kentucky",us_county
+2474,"Henry County, Kentucky",us_county
+2475,"Hickman County, Kentucky",us_county
+2476,"Hopkins County, Kentucky",us_county
+2477,"Jackson County, Kentucky",us_county
+2478,"Jefferson County, Kentucky",us_county
+2479,"Jessamine County, Kentucky",us_county
+2480,"Johnson County, Kentucky",us_county
+2481,"Josh Bell County, Kentucky",us_county
+2482,"Kenton County, Kentucky",us_county
+2483,"Knott County, Kentucky",us_county
+2484,"Knox County, Kentucky",us_county
+2485,"Larue County, Kentucky",us_county
+2486,"Laurel County, Kentucky",us_county
+2487,"Lawrence County, Kentucky",us_county
+2488,"Lee County, Kentucky",us_county
+2489,"Leslie County, Kentucky",us_county
+2490,"Letcher County, Kentucky",us_county
+2491,"Lewis County, Kentucky",us_county
+2492,"Lincoln County, Kentucky",us_county
+2493,"Livingston County, Kentucky",us_county
+2494,"Logan County, Kentucky",us_county
+2495,"Lyon County, Kentucky",us_county
+2496,"McCracken County, Kentucky",us_county
+2497,"McCreary County, Kentucky",us_county
+2498,"McLean County, Kentucky",us_county
+2499,"Madison County, Kentucky",us_county
+2500,"Magoffin County, Kentucky",us_county
+2501,"Marion County, Kentucky",us_county
+2502,"Marshall County, Kentucky",us_county
+2503,"Martin County, Kentucky",us_county
+2504,"Mason County, Kentucky",us_county
+2505,"Meade County, Kentucky",us_county
+2506,"Menifee County, Kentucky",us_county
+2507,"Mercer County, Kentucky",us_county
+2508,"Metcalfe County, Kentucky",us_county
+2509,"Monroe County, Kentucky",us_county
+2510,"Montgomery County, Kentucky",us_county
+2511,"Morgan County, Kentucky",us_county
+2512,"Muhlenberg County, Kentucky",us_county
+2513,"Nelson County, Kentucky",us_county
+2514,"Nicholas County, Kentucky",us_county
+2515,"Ohio County, Kentucky",us_county
+2516,"Oldham County, Kentucky",us_county
+2517,"Owen County, Kentucky",us_county
+2518,"Owsley County, Kentucky",us_county
+2519,"Pendleton County, Kentucky",us_county
+2520,"Perry County, Kentucky",us_county
+2521,"Pike County, Kentucky",us_county
+2522,"Powell County, Kentucky",us_county
+2523,"Pulaski County, Kentucky",us_county
+2524,"Robertson County, Kentucky",us_county
+2525,"Rockcastle County, Kentucky",us_county
+2526,"Rowan County, Kentucky",us_county
+2527,"Russell County, Kentucky",us_county
+2528,"Scott County, Kentucky",us_county
+2529,"Shelby County, Kentucky",us_county
+2530,"Simpson County, Kentucky",us_county
+2531,"Spencer County, Kentucky",us_county
+2532,"Taylor County, Kentucky",us_county
+2533,"Todd County, Kentucky",us_county
+2534,"Trigg County, Kentucky",us_county
+2535,"Trimble County, Kentucky",us_county
+2536,"Union County, Kentucky",us_county
+2537,"Warren County, Kentucky",us_county
+2538,"Washington County, Kentucky",us_county
+2539,"Wayne County, Kentucky",us_county
+2540,"Webster County, Kentucky",us_county
+2541,"Whitley County, Kentucky",us_county
+2542,"Wolfe County, Kentucky",us_county
+2543,"Woodford County, Kentucky",us_county
+2544,"Allegany County, Maryland",us_county
+2545,"Anne Arundel County, Maryland",us_county
+2546,"Baltimore County, Maryland",us_county
+2547,"Calvert County, Maryland",us_county
+2548,"Caroline County, Maryland",us_county
+2549,"Carroll County, Maryland",us_county
+2550,"Cecil County, Maryland",us_county
+2551,"Charles County, Maryland",us_county
+2552,"Dorchester County, Maryland",us_county
+2553,"Frederick County, Maryland",us_county
+2554,"Garrett County, Maryland",us_county
+2555,"Harford County, Maryland",us_county
+2556,"Howard County, Maryland",us_county
+2557,"Kent County, Maryland",us_county
+2558,"Montgomery County, Maryland",us_county
+2559,"Prince Georges County, Maryland",us_county
+2560,"Queen Annes County, Maryland",us_county
+2561,"Somerset County, Maryland",us_county
+2562,"St Marys County, Maryland",us_county
+2563,"Talbot County, Maryland",us_county
+2564,"Washington County, Maryland",us_county
+2565,"Wicomico County, Maryland",us_county
+2566,"Worcester County, Maryland",us_county
+2567,"Baltimore City County, Maryland",us_county
+2568,"Adair County, Oklahoma",us_county
+2569,"Alfalfa County, Oklahoma",us_county
+2570,"Atoka County, Oklahoma",us_county
+2571,"Beaver County, Oklahoma",us_county
+2572,"Beckham County, Oklahoma",us_county
+2573,"Blaine County, Oklahoma",us_county
+2574,"Bryan County, Oklahoma",us_county
+2575,"Caddo County, Oklahoma",us_county
+2576,"Canadian County, Oklahoma",us_county
+2577,"Carter County, Oklahoma",us_county
+2578,"Cherokee County, Oklahoma",us_county
+2579,"Choctaw County, Oklahoma",us_county
+2580,"Cimarron County, Oklahoma",us_county
+2581,"Cleveland County, Oklahoma",us_county
+2582,"Coal County, Oklahoma",us_county
+2583,"Comanche County, Oklahoma",us_county
+2584,"Cotton County, Oklahoma",us_county
+2585,"Craig County, Oklahoma",us_county
+2586,"Creek County, Oklahoma",us_county
+2587,"Custer County, Oklahoma",us_county
+2588,"Delaware County, Oklahoma",us_county
+2589,"Dewey County, Oklahoma",us_county
+2590,"Ellis County, Oklahoma",us_county
+2591,"Garfield County, Oklahoma",us_county
+2592,"Garvin County, Oklahoma",us_county
+2593,"Grady County, Oklahoma",us_county
+2594,"Grant County, Oklahoma",us_county
+2595,"Greer County, Oklahoma",us_county
+2596,"Harmon County, Oklahoma",us_county
+2597,"Harper County, Oklahoma",us_county
+2598,"Haskell County, Oklahoma",us_county
+2599,"Hughes County, Oklahoma",us_county
+2600,"Jackson County, Oklahoma",us_county
+2601,"Jefferson County, Oklahoma",us_county
+2602,"Johnston County, Oklahoma",us_county
+2603,"Kay County, Oklahoma",us_county
+2604,"Kingfisher County, Oklahoma",us_county
+2605,"Kiowa County, Oklahoma",us_county
+2606,"Latimer County, Oklahoma",us_county
+2607,"Le Flore County, Oklahoma",us_county
+2608,"Lincoln County, Oklahoma",us_county
+2609,"Logan County, Oklahoma",us_county
+2610,"Love County, Oklahoma",us_county
+2611,"Mcclain County, Oklahoma",us_county
+2612,"Mccurtain County, Oklahoma",us_county
+2613,"Mcintosh County, Oklahoma",us_county
+2614,"Major County, Oklahoma",us_county
+2615,"Marshall County, Oklahoma",us_county
+2616,"Mayes County, Oklahoma",us_county
+2617,"Murray County, Oklahoma",us_county
+2618,"Muskogee County, Oklahoma",us_county
+2619,"Noble County, Oklahoma",us_county
+2620,"Nowata County, Oklahoma",us_county
+2621,"Okfuskee County, Oklahoma",us_county
+2622,"Oklahoma County, Oklahoma",us_county
+2623,"Okmulgee County, Oklahoma",us_county
+2624,"Osage County, Oklahoma",us_county
+2625,"Ottawa County, Oklahoma",us_county
+2626,"Pawnee County, Oklahoma",us_county
+2627,"Payne County, Oklahoma",us_county
+2628,"Pittsburg County, Oklahoma",us_county
+2629,"Pontotoc County, Oklahoma",us_county
+2630,"Pottawatomie County, Oklahoma",us_county
+2631,"Pushmataha County, Oklahoma",us_county
+2632,"Roger Mills County, Oklahoma",us_county
+2633,"Rogers County, Oklahoma",us_county
+2634,"Seminole County, Oklahoma",us_county
+2635,"Sequoyah County, Oklahoma",us_county
+2636,"Stephens County, Oklahoma",us_county
+2637,"Texas County, Oklahoma",us_county
+2638,"Tillman County, Oklahoma",us_county
+2639,"Tulsa County, Oklahoma",us_county
+2640,"Wagoner County, Oklahoma",us_county
+2641,"Washington County, Oklahoma",us_county
+2642,"Washita County, Oklahoma",us_county
+2643,"Woods County, Oklahoma",us_county
+2644,"Woodward County, Oklahoma",us_county
+2645,"Cherokee Nation, Oklahoma",us_county
+2646,"Chickasaw Nation, Oklahoma",us_county
+2647,"Choctaw Nation, Oklahoma",us_county
+2648,"Creek Nation, Oklahoma",us_county
+2649,"Seminole Nation, Oklahoma",us_county
+2650,"Modoc Nation, Oklahoma",us_county
+2651,"Ottawa Nation, Oklahoma",us_county
+2652,"Peoria Nation, Oklahoma",us_county
+2653,"Seneca Nation, Oklahoma",us_county
+2654,"Shawnee Nation, Oklahoma",us_county
+2655,"Wyandotte Nation, Oklahoma",us_county
+2656,"Kaw Indian Reservation, Oklahoma",us_county
+2657,"Apache Kiowa and Comanche Reservation, Oklahoma",us_county
+2658,"Osage Nation, Oklahoma",us_county
+2659,"Wichita Reservation, Oklahoma",us_county
+2660,"Anderson County, Tennessee",us_county
+2661,"Bedford County, Tennessee",us_county
+2662,"Benton County, Tennessee",us_county
+2663,"Bledsoe County, Tennessee",us_county
+2664,"Blount County, Tennessee",us_county
+2665,"Bradley County, Tennessee",us_county
+2666,"Campbell County, Tennessee",us_county
+2667,"Cannon County, Tennessee",us_county
+2668,"Carroll County, Tennessee",us_county
+2669,"Carter County, Tennessee",us_county
+2670,"Cheatham County, Tennessee",us_county
+2671,"Chester County, Tennessee",us_county
+2672,"Claiborne County, Tennessee",us_county
+2673,"Clay County, Tennessee",us_county
+2674,"Cocke County, Tennessee",us_county
+2675,"Coffee County, Tennessee",us_county
+2676,"Crockett County, Tennessee",us_county
+2677,"Cumberland County, Tennessee",us_county
+2678,"Davidson County, Tennessee",us_county
+2679,"Decatur County, Tennessee",us_county
+2680,"De Kalb County, Tennessee",us_county
+2681,"Dickson County, Tennessee",us_county
+2682,"Dyer County, Tennessee",us_county
+2683,"Fayette County, Tennessee",us_county
+2684,"Fentress County, Tennessee",us_county
+2685,"Franklin County, Tennessee",us_county
+2686,"Gibson County, Tennessee",us_county
+2687,"Giles County, Tennessee",us_county
+2688,"Grainger County, Tennessee",us_county
+2689,"Greene County, Tennessee",us_county
+2690,"Grundy County, Tennessee",us_county
+2691,"Hamblen County, Tennessee",us_county
+2692,"Hamilton County, Tennessee",us_county
+2693,"Hancock County, Tennessee",us_county
+2694,"Hardeman County, Tennessee",us_county
+2695,"Hardin County, Tennessee",us_county
+2696,"Hawkins County, Tennessee",us_county
+2697,"Haywood County, Tennessee",us_county
+2698,"Henderson County, Tennessee",us_county
+2699,"Henry County, Tennessee",us_county
+2700,"Hickman County, Tennessee",us_county
+2701,"Houston County, Tennessee",us_county
+2702,"Humphreys County, Tennessee",us_county
+2703,"Jackson County, Tennessee",us_county
+2704,"James County, Tennessee",us_county
+2705,"Jefferson County, Tennessee",us_county
+2706,"Johnson County, Tennessee",us_county
+2707,"Knox County, Tennessee",us_county
+2708,"Lake County, Tennessee",us_county
+2709,"Lauderdale County, Tennessee",us_county
+2710,"Lawrence County, Tennessee",us_county
+2711,"Lewis County, Tennessee",us_county
+2712,"Lincoln County, Tennessee",us_county
+2713,"Loudon County, Tennessee",us_county
+2714,"McMinn County, Tennessee",us_county
+2715,"McNairy County, Tennessee",us_county
+2716,"Macon County, Tennessee",us_county
+2717,"Madison County, Tennessee",us_county
+2718,"Marion County, Tennessee",us_county
+2719,"Marshall County, Tennessee",us_county
+2720,"Maury County, Tennessee",us_county
+2721,"Meigs County, Tennessee",us_county
+2722,"Monroe County, Tennessee",us_county
+2723,"Montgomery County, Tennessee",us_county
+2724,"Moore County, Tennessee",us_county
+2725,"Morgan County, Tennessee",us_county
+2726,"Obion County, Tennessee",us_county
+2727,"Overton County, Tennessee",us_county
+2728,"Perry County, Tennessee",us_county
+2729,"Pickett County, Tennessee",us_county
+2730,"Polk County, Tennessee",us_county
+2731,"Putnam County, Tennessee",us_county
+2732,"Rhea County, Tennessee",us_county
+2733,"Roane County, Tennessee",us_county
+2734,"Robertson County, Tennessee",us_county
+2735,"Rutherford County, Tennessee",us_county
+2736,"Scott County, Tennessee",us_county
+2737,"Sequatchie County, Tennessee",us_county
+2738,"Sevier County, Tennessee",us_county
+2739,"Shelby County, Tennessee",us_county
+2740,"Smith County, Tennessee",us_county
+2741,"Stewart County, Tennessee",us_county
+2742,"Sullivan County, Tennessee",us_county
+2743,"Sumner County, Tennessee",us_county
+2744,"Tipton County, Tennessee",us_county
+2745,"Trousdale County, Tennessee",us_county
+2746,"Unicoi County, Tennessee",us_county
+2747,"Union County, Tennessee",us_county
+2748,"Van Buren County, Tennessee",us_county
+2749,"Warren County, Tennessee",us_county
+2750,"Washington County, Tennessee",us_county
+2751,"Wayne County, Tennessee",us_county
+2752,"Weakley County, Tennessee",us_county
+2753,"White County, Tennessee",us_county
+2754,"Williamson County, Tennessee",us_county
+2755,"Wilson County, Tennessee",us_county
+2756,"Barbour County, West Virginia",us_county
+2757,"Berkeley County, West Virginia",us_county
+2758,"Boone County, West Virginia",us_county
+2759,"Braxton County, West Virginia",us_county
+2760,"Brooke County, West Virginia",us_county
+2761,"Cabell County, West Virginia",us_county
+2762,"Calhoun County, West Virginia",us_county
+2763,"Clay County, West Virginia",us_county
+2764,"Doddridge County, West Virginia",us_county
+2765,"Fayette County, West Virginia",us_county
+2766,"Gilmer County, West Virginia",us_county
+2767,"Grant County, West Virginia",us_county
+2768,"Greenbrier County, West Virginia",us_county
+2769,"Hampshire County, West Virginia",us_county
+2770,"Hancock County, West Virginia",us_county
+2771,"Hardy County, West Virginia",us_county
+2772,"Harrison County, West Virginia",us_county
+2773,"Jackson County, West Virginia",us_county
+2774,"Jefferson County, West Virginia",us_county
+2775,"Kanawha County, West Virginia",us_county
+2776,"Lewis County, West Virginia",us_county
+2777,"Lincoln County, West Virginia",us_county
+2778,"Logan County, West Virginia",us_county
+2779,"McDowell County, West Virginia",us_county
+2780,"Marion County, West Virginia",us_county
+2781,"Marshall County, West Virginia",us_county
+2782,"Mason County, West Virginia",us_county
+2783,"Mercer County, West Virginia",us_county
+2784,"Mineral County, West Virginia",us_county
+2785,"Mingo County, West Virginia",us_county
+2786,"Monongalia County, West Virginia",us_county
+2787,"Monroe County, West Virginia",us_county
+2788,"Morgan County, West Virginia",us_county
+2789,"Nicholas County, West Virginia",us_county
+2790,"Ohio County, West Virginia",us_county
+2791,"Pendleton County, West Virginia",us_county
+2792,"Pleasants County, West Virginia",us_county
+2793,"Pocahontas County, West Virginia",us_county
+2794,"Preston County, West Virginia",us_county
+2795,"Putnam County, West Virginia",us_county
+2796,"Raleigh County, West Virginia",us_county
+2797,"Randolph County, West Virginia",us_county
+2798,"Ritchie County, West Virginia",us_county
+2799,"Roane County, West Virginia",us_county
+2800,"Summers County, West Virginia",us_county
+2801,"Taylor County, West Virginia",us_county
+2802,"Tucker County, West Virginia",us_county
+2803,"Tyler County, West Virginia",us_county
+2804,"Upshur County, West Virginia",us_county
+2805,"Wayne County, West Virginia",us_county
+2806,"Webster County, West Virginia",us_county
+2807,"Wetzel County, West Virginia",us_county
+2808,"Wirt County, West Virginia",us_county
+2809,"Wood County, West Virginia",us_county
+2810,"Wyoming County, West Virginia",us_county
+2811,"Apache County, Arizona",us_county
+2812,"Cochise County, Arizona",us_county
+2813,"Coconino County, Arizona",us_county
+2814,"Gila County, Arizona",us_county
+2815,"Graham County, Arizona",us_county
+2816,"Greenlee County, Arizona",us_county
+2817,"Maricopa County, Arizona",us_county
+2818,"Mohave County, Arizona",us_county
+2819,"Navajo County, Arizona",us_county
+2820,"Pima County, Arizona",us_county
+2821,"Pinal County, Arizona",us_county
+2822,"Santa Cruz County, Arizona",us_county
+2823,"Yavapai County, Arizona",us_county
+2824,"Yuma County, Arizona",us_county
+2825,"San Carlos Indian Reservation, Arizona",us_county
+2826,"Unorganized Territory, Arizona",us_county
+2827,"Adams County, Colorado",us_county
+2828,"Alamosa County, Colorado",us_county
+2829,"Arapahoe County, Colorado",us_county
+2830,"Archuleta County, Colorado",us_county
+2831,"Baca County, Colorado",us_county
+2832,"Bent County, Colorado",us_county
+2833,"Boulder County, Colorado",us_county
+2834,"Chaffee County, Colorado",us_county
+2835,"Cheyenne County, Colorado",us_county
+2836,"Clear Creek County, Colorado",us_county
+2837,"Conejos County, Colorado",us_county
+2838,"Costilla County, Colorado",us_county
+2839,"Crowley County, Colorado",us_county
+2840,"Custer County, Colorado",us_county
+2841,"Delta County, Colorado",us_county
+2842,"Denver County, Colorado",us_county
+2843,"Dolores County, Colorado",us_county
+2844,"Douglas County, Colorado",us_county
+2845,"Eagle County, Colorado",us_county
+2846,"Elbert County, Colorado",us_county
+2847,"El Paso County, Colorado",us_county
+2848,"Fremont County, Colorado",us_county
+2849,"Garfield County, Colorado",us_county
+2850,"Gilpin County, Colorado",us_county
+2851,"Grand County, Colorado",us_county
+2852,"Greenwood County, Colorado",us_county
+2853,"Gunnison County, Colorado",us_county
+2854,"Hinsdale County, Colorado",us_county
+2855,"Huerfano County, Colorado",us_county
+2856,"Jackson County, Colorado",us_county
+2857,"Jefferson County, Colorado",us_county
+2858,"Kiowa County, Colorado",us_county
+2859,"Kit Carson County, Colorado",us_county
+2860,"Lake County, Colorado",us_county
+2861,"La Plata County, Colorado",us_county
+2862,"Larimer County, Colorado",us_county
+2863,"Las Animas County, Colorado",us_county
+2864,"Lincoln County, Colorado",us_county
+2865,"Logan County, Colorado",us_county
+2866,"Mesa County, Colorado",us_county
+2867,"Mineral County, Colorado",us_county
+2868,"Moffat County, Colorado",us_county
+2869,"Montezuma County, Colorado",us_county
+2870,"Montrose County, Colorado",us_county
+2871,"Morgan County, Colorado",us_county
+2872,"Otero County, Colorado",us_county
+2873,"Ouray County, Colorado",us_county
+2874,"Park County, Colorado",us_county
+2875,"Phillips County, Colorado",us_county
+2876,"Pitkin County, Colorado",us_county
+2877,"Prowers County, Colorado",us_county
+2878,"Pueblo County, Colorado",us_county
+2879,"Rio Blanco County, Colorado",us_county
+2880,"Rio Grande County, Colorado",us_county
+2881,"Routt County, Colorado",us_county
+2882,"Saguache County, Colorado",us_county
+2883,"San Juan County, Colorado",us_county
+2884,"San Miguel County, Colorado",us_county
+2885,"Sedgwick County, Colorado",us_county
+2886,"Summit County, Colorado",us_county
+2887,"Teller County, Colorado",us_county
+2888,"Washington County, Colorado",us_county
+2889,"Weld County, Colorado",us_county
+2890,"Yuma County, Colorado",us_county
+2891,"Ada County, Idaho",us_county
+2892,"Adams County, Idaho",us_county
+2893,"Alturas County, Idaho",us_county
+2894,"Bannock County, Idaho",us_county
+2895,"Bear Lake County, Idaho",us_county
+2896,"Benewah County, Idaho",us_county
+2897,"Bingham County, Idaho",us_county
+2898,"Blaine County, Idaho",us_county
+2899,"Boise County, Idaho",us_county
+2900,"Bonner County, Idaho",us_county
+2901,"Bonneville County, Idaho",us_county
+2902,"Boundary County, Idaho",us_county
+2903,"Butte County, Idaho",us_county
+2904,"Camas County, Idaho",us_county
+2905,"Canyon County, Idaho",us_county
+2906,"Caribou County, Idaho",us_county
+2907,"Cassia County, Idaho",us_county
+2908,"Clark County, Idaho",us_county
+2909,"Clark-Fremont County, Idaho",us_county
+2910,"Clearwater County, Idaho",us_county
+2911,"Custer County, Idaho",us_county
+2912,"Elmore County, Idaho",us_county
+2913,"Franklin County, Idaho",us_county
+2914,"Fremont County, Idaho",us_county
+2915,"Gem County, Idaho",us_county
+2916,"Gooding County, Idaho",us_county
+2917,"Idaho County, Idaho",us_county
+2918,"Jefferson County, Idaho",us_county
+2919,"Jerome County, Idaho",us_county
+2920,"Kootenai County, Idaho",us_county
+2921,"Latah County, Idaho",us_county
+2922,"Lemhi County, Idaho",us_county
+2923,"Lewis County, Idaho",us_county
+2924,"Lincoln County, Idaho",us_county
+2925,"Logan County, Idaho",us_county
+2926,"Madison County, Idaho",us_county
+2927,"Minidoka County, Idaho",us_county
+2928,"Nez Perce County, Idaho",us_county
+2929,"Oneida County, Idaho",us_county
+2930,"Owyhee County, Idaho",us_county
+2931,"Payette County, Idaho",us_county
+2932,"Power County, Idaho",us_county
+2933,"Shoshone County, Idaho",us_county
+2934,"Teton County, Idaho",us_county
+2935,"Twin Falls County, Idaho",us_county
+2936,"Valley County, Idaho",us_county
+2937,"Washington County, Idaho",us_county
+2938,"Beaverhead County, Montana",us_county
+2939,"Big Horn County, Montana",us_county
+2940,"Blaine County, Montana",us_county
+2941,"Broadwater County, Montana",us_county
+2942,"Carbon County, Montana",us_county
+2943,"Carter County, Montana",us_county
+2944,"Cascade County, Montana",us_county
+2945,"Chouteau County, Montana",us_county
+2946,"Crow Reservation, Montana",us_county
+2947,"Custer County, Montana",us_county
+2948,"Daniels County, Montana",us_county
+2949,"Dawson County, Montana",us_county
+2950,"Deer Lodge County, Montana",us_county
+2951,"Fallon County, Montana",us_county
+2952,"Fergus County, Montana",us_county
+2953,"Flathead County, Montana",us_county
+2954,"Gallatin County, Montana",us_county
+2955,"Garfield County, Montana",us_county
+2956,"Glacier County, Montana",us_county
+2957,"Golden Valley County, Montana",us_county
+2958,"Granite County, Montana",us_county
+2959,"Hill County, Montana",us_county
+2960,"Jefferson County, Montana",us_county
+2961,"Judith Basin County, Montana",us_county
+2962,"Lake County, Montana",us_county
+2963,"Lewis And Clark County, Montana",us_county
+2964,"Liberty County, Montana",us_county
+2965,"Lincoln County, Montana",us_county
+2966,"Mccone County, Montana",us_county
+2967,"Madison County, Montana",us_county
+2968,"Meagher County, Montana",us_county
+2969,"Mineral County, Montana",us_county
+2970,"Missoula County, Montana",us_county
+2971,"Musselshell County, Montana",us_county
+2972,"Park County, Montana",us_county
+2973,"Petroleum County, Montana",us_county
+2974,"Phillips County, Montana",us_county
+2975,"Pondera County, Montana",us_county
+2976,"Powder River County, Montana",us_county
+2977,"Powell County, Montana",us_county
+2978,"Prairie County, Montana",us_county
+2979,"Ravalli County, Montana",us_county
+2980,"Richland County, Montana",us_county
+2981,"Roosevelt County, Montana",us_county
+2982,"Rosebud County, Montana",us_county
+2983,"Sanders County, Montana",us_county
+2984,"Sheridan County, Montana",us_county
+2985,"Silver Bow County, Montana",us_county
+2986,"Stillwater County, Montana",us_county
+2987,"Sweet Grass County, Montana",us_county
+2988,"Teton County, Montana",us_county
+2989,"Toole County, Montana",us_county
+2990,"Treasure County, Montana",us_county
+2991,"Valley County, Montana",us_county
+2992,"Wheatland County, Montana",us_county
+2993,"Wibaux County, Montana",us_county
+2994,"Yellowstone County, Montana",us_county
+2995,"Carson County, Nevada",us_county
+2996,"Churchill County, Nevada",us_county
+2997,"Clark County, Nevada",us_county
+2998,"Douglas County, Nevada",us_county
+2999,"Elko County, Nevada",us_county
+3000,"Esmeralda County, Nevada",us_county
+3001,"Eureka County, Nevada",us_county
+3002,"Humboldt County, Nevada",us_county
+3003,"Lander County, Nevada",us_county
+3004,"Lincoln County, Nevada",us_county
+3005,"Lyon County, Nevada",us_county
+3006,"Mineral County, Nevada",us_county
+3007,"Nye County, Nevada",us_county
+3008,"Pershing County, Nevada",us_county
+3009,"Riovirgin County, Nevada",us_county
+3010,"Roop County, Nevada",us_county
+3011,"St. Mary’s County, Nevada",us_county
+3012,"Storey County, Nevada",us_county
+3013,"Washoe County, Nevada",us_county
+3014,"White Pine County, Nevada",us_county
+3015,"Carson City County, Nevada",us_county
+3016,"Bernalillo County, New Mexico",us_county
+3017,"Catron County, New Mexico",us_county
+3018,"Chaves County, New Mexico",us_county
+3019,"Colfax County, New Mexico",us_county
+3020,"Curry County, New Mexico",us_county
+3021,"DeBaca County, New Mexico",us_county
+3022,"Dona Ana County, New Mexico",us_county
+3023,"Eddy County, New Mexico",us_county
+3024,"Grant County, New Mexico",us_county
+3025,"Guadalupe County, New Mexico",us_county
+3026,"Harding County, New Mexico",us_county
+3027,"Hidalgo County, New Mexico",us_county
+3028,"Lea County, New Mexico",us_county
+3029,"Lea-Roosevelt County, New Mexico",us_county
+3030,"Lincoln County, New Mexico",us_county
+3031,"Luna County, New Mexico",us_county
+3032,"Mckinley County, New Mexico",us_county
+3033,"Mora County, New Mexico",us_county
+3034,"Otero County, New Mexico",us_county
+3035,"Quay County, New Mexico",us_county
+3036,"Rio Arriba County, New Mexico",us_county
+3037,"Roosevelt County, New Mexico",us_county
+3038,"Sandoval County, New Mexico",us_county
+3039,"San Juan County, New Mexico",us_county
+3040,"San Miguel County, New Mexico",us_county
+3041,"Santa Ana County, New Mexico",us_county
+3042,"Santa Fe County, New Mexico",us_county
+3043,"Sierra County, New Mexico",us_county
+3044,"Socorro County, New Mexico",us_county
+3045,"Taos County, New Mexico",us_county
+3046,"Torrance County, New Mexico",us_county
+3047,"Union County, New Mexico",us_county
+3048,"Valencia County, New Mexico",us_county
+3049,"Beaver County, Utah",us_county
+3050,"Box Elder County, Utah",us_county
+3051,"Cache County, Utah",us_county
+3052,"Carbon County, Utah",us_county
+3053,"Cedar County, Utah",us_county
+3054,"Daggett County, Utah",us_county
+3055,"Davis County, Utah",us_county
+3056,"Duchesne County, Utah",us_county
+3057,"Emery County, Utah",us_county
+3058,"Garfield County, Utah",us_county
+3059,"Grand County, Utah",us_county
+3060,"Green River County, Utah",us_county
+3061,"Iron County, Utah",us_county
+3062,"Juab County, Utah",us_county
+3063,"Kane County, Utah",us_county
+3064,"Millard County, Utah",us_county
+3065,"Morgan County, Utah",us_county
+3066,"Piute County, Utah",us_county
+3067,"Rich County, Utah",us_county
+3068,"Salt Lake County, Utah",us_county
+3069,"San Juan County, Utah",us_county
+3070,"Sanpete County, Utah",us_county
+3071,"Sevier County, Utah",us_county
+3072,"Shambip County, Utah",us_county
+3073,"Summit County, Utah",us_county
+3074,"Tooele County, Utah",us_county
+3075,"Uintah County, Utah",us_county
+3076,"Utah County, Utah",us_county
+3077,"Wasatch County, Utah",us_county
+3078,"Washington County, Utah",us_county
+3079,"Wayne County, Utah",us_county
+3080,"Weber County, Utah",us_county
+3081,"National Parks, Wyoming",us_county
+3082,"Albany County, Wyoming",us_county
+3083,"Big Horn County, Wyoming",us_county
+3084,"Campbell County, Wyoming",us_county
+3085,"Carbon County, Wyoming",us_county
+3086,"Converse County, Wyoming",us_county
+3087,"Converse-Natrona County, Wyoming",us_county
+3088,"Crook County, Wyoming",us_county
+3089,"Fremont County, Wyoming",us_county
+3090,"Goshen County, Wyoming",us_county
+3091,"Hot Springs County, Wyoming",us_county
+3092,"Johnson County, Wyoming",us_county
+3093,"Laramie County, Wyoming",us_county
+3094,"Lincoln County, Wyoming",us_county
+3095,"Natrona County, Wyoming",us_county
+3096,"Niobrara County, Wyoming",us_county
+3097,"Park County, Wyoming",us_county
+3098,"Platte County, Wyoming",us_county
+3099,"Sheridan County, Wyoming",us_county
+3100,"Sublette County, Wyoming",us_county
+3101,"Sweetwater County, Wyoming",us_county
+3102,"Teton County, Wyoming",us_county
+3103,"Uinta County, Wyoming",us_county
+3104,"Washakie County, Wyoming",us_county
+3105,"Weston County, Wyoming",us_county
+3106,"Yellowstone  County, Wyoming",us_county
+3107,"Alameda County, California",us_county
+3108,"Alpine County, California",us_county
+3109,"Amador County, California",us_county
+3110,"Butte County, California",us_county
+3111,"Calaveras County, California",us_county
+3112,"Colusa County, California",us_county
+3113,"Contra Costa County, California",us_county
+3114,"Del Norte County, California",us_county
+3115,"El Dorado County, California",us_county
+3116,"Fresno County, California",us_county
+3117,"Glenn County, California",us_county
+3118,"Humboldt County, California",us_county
+3119,"Imperial County, California",us_county
+3120,"Inyo County, California",us_county
+3121,"Kern County, California",us_county
+3122,"Kings County, California",us_county
+3123,"Klamath County, California",us_county
+3124,"Lake County, California",us_county
+3125,"Lassen County, California",us_county
+3126,"Los Angeles County, California",us_county
+3127,"Madera County, California",us_county
+3128,"Marin County, California",us_county
+3129,"Mariposa County, California",us_county
+3130,"Mariposa-Mono County, California",us_county
+3131,"Mendocino County, California",us_county
+3132,"Merced County, California",us_county
+3133,"Modoc County, California",us_county
+3134,"Mono County, California",us_county
+3135,"Monterey County, California",us_county
+3136,"Napa County, California",us_county
+3137,"Nevada County, California",us_county
+3138,"Orange County, California",us_county
+3139,"Placer County, California",us_county
+3140,"Plumas County, California",us_county
+3141,"Riverside County, California",us_county
+3142,"Sacramento County, California",us_county
+3143,"San Benito County, California",us_county
+3144,"San Bernardino County, California",us_county
+3145,"San Diego County, California",us_county
+3146,"San Francisco County, California",us_county
+3147,"San Joaquin County, California",us_county
+3148,"San Luis Obispo County, California",us_county
+3149,"San Mateo County, California",us_county
+3150,"Santa Barbara County, California",us_county
+3151,"Santa Clara County, California",us_county
+3152,"Santa Cruz County, California",us_county
+3153,"Shasta County, California",us_county
+3154,"Sierra County, California",us_county
+3155,"Siskiyou County, California",us_county
+3156,"Solano County, California",us_county
+3157,"Sonoma County, California",us_county
+3158,"Stanislaus County, California",us_county
+3159,"Sutter County, California",us_county
+3160,"Tehama County, California",us_county
+3161,"Trinity County, California",us_county
+3162,"Tulare County, California",us_county
+3163,"Tuolumne County, California",us_county
+3164,"Ventura County, California",us_county
+3165,"Yolo County, California",us_county
+3166,"Yuba County, California",us_county
+3167,"Baker County, Oregon",us_county
+3168,"Benton County, Oregon",us_county
+3169,"Clackamas County, Oregon",us_county
+3170,"Clatsop County, Oregon",us_county
+3171,"Columbia County, Oregon",us_county
+3172,"Coos County, Oregon",us_county
+3173,"Crook County, Oregon",us_county
+3174,"Curry County, Oregon",us_county
+3175,"Deschutes County, Oregon",us_county
+3176,"Douglas County, Oregon",us_county
+3177,"Gilliam County, Oregon",us_county
+3178,"Grant County, Oregon",us_county
+3179,"Harney County, Oregon",us_county
+3180,"Hood River County, Oregon",us_county
+3181,"Jackson County, Oregon",us_county
+3182,"Jefferson County, Oregon",us_county
+3183,"Josephine County, Oregon",us_county
+3184,"Klamath County, Oregon",us_county
+3185,"Lake County, Oregon",us_county
+3186,"Lane County, Oregon",us_county
+3187,"Lincoln County, Oregon",us_county
+3188,"Linn County, Oregon",us_county
+3189,"Malheur County, Oregon",us_county
+3190,"Marion County, Oregon",us_county
+3191,"Morrow County, Oregon",us_county
+3192,"Multnomah County, Oregon",us_county
+3193,"Polk County, Oregon",us_county
+3194,"Sherman County, Oregon",us_county
+3195,"Tillamook County, Oregon",us_county
+3196,"Umatilla County, Oregon",us_county
+3197,"Union County, Oregon",us_county
+3198,"Umpqua County, Oregon",us_county
+3199,"Wallowa County, Oregon",us_county
+3200,"Wasco County, Oregon",us_county
+3201,"Washington County, Oregon",us_county
+3202,"Wheeler County, Oregon",us_county
+3203,"Yamhill County, Oregon",us_county
+3204,"Adams County, Washington",us_county
+3205,"Asotin County, Washington",us_county
+3206,"Benton County, Washington",us_county
+3207,"Chelan County, Washington",us_county
+3208,"Clallam County, Washington",us_county
+3209,"Clark County, Washington",us_county
+3210,"Columbia County, Washington",us_county
+3211,"Cowlitz County, Washington",us_county
+3212,"Douglas County, Washington",us_county
+3213,"Ferry County, Washington",us_county
+3214,"Franklin County, Washington",us_county
+3215,"Garfield County, Washington",us_county
+3216,"Grant County, Washington",us_county
+3217,"Grays Harbor/Cheh County, Washington",us_county
+3218,"Island County, Washington",us_county
+3219,"Jefferson County, Washington",us_county
+3220,"King County, Washington",us_county
+3221,"Kitsap County, Washington",us_county
+3222,"Kittitas County, Washington",us_county
+3223,"Klickitat County, Washington",us_county
+3224,"Lewis County, Washington",us_county
+3225,"Lincoln County, Washington",us_county
+3226,"Mason County, Washington",us_county
+3227,"Okanogan County, Washington",us_county
+3228,"Pacific County, Washington",us_county
+3229,"Pend Oreille County, Washington",us_county
+3230,"Pierce County, Washington",us_county
+3231,"San Juan County, Washington",us_county
+3232,"Skagit County, Washington",us_county
+3233,"Skamania County, Washington",us_county
+3234,"Snohomish County, Washington",us_county
+3235,"Spokane County, Washington",us_county
+3236,"Stevens County, Washington",us_county
+3237,"Thurston County, Washington",us_county
+3238,"Wahkiakum County, Washington",us_county
+3239,"Walla Walla County, Washington",us_county
+3240,"Whatcom County, Washington",us_county
+3241,"Whitman County, Washington",us_county
+3242,"Yakima County, Washington",us_county
+3243,"Northern District, Alaska",us_county
+3244,"Southern District, Alaska",us_county
+3245,"First Judicial Division, Alaska",us_county
+3246,"Second Judicial Division, Alaska",us_county
+3247,"Third Judicial Division, Alaska",us_county
+3248,"Fourth Judicial Division, Alaska",us_county
+3249,"Hawaii, Hawaii",us_county
+3250,"Honolulu, Hawaii",us_county
+3251,"Kauai, Hawaii",us_county
+3252,"Maui, Hawaii",us_county
+3253,"Unknown, Hawaii",us_county
+3254,"Lanai, Hawaii",us_county
+3255,"Molokai, Hawaii",us_county
+3256,"Niihau, Hawaii",us_county
+3257,"Oahu, Hawaii",us_county
+3258,Overseas Military,us_county
+3259,District of Columbia (Washington DC),us_county

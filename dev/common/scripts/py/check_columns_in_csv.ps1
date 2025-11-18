@@ -1,0 +1,1 @@
+(Get-Content usa_00043.csv -First 1).Split(',').Count

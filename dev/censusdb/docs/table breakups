@@ -1,0 +1,21 @@
+Family Migration
+Search Links (census year)
+hik, year, serial, loc
+
+Places
+location, stateicp, region, zone
+
+Household (census year)
+year, serial, loc, farm, urban, sizepl, hhtype, gq, gqtype, gqtyped
+
+Family (census year)
+year, serial, loc, histid, birthyr, sex, histid_hh, pernum, relate, related, histid_sp, histid_pop, histid_mom,
+	steppop, stepmom, age, hik, race, bpl, bpld, sursim
+	
+Work Status
+year, serial, loc, histid, school, labforce, occ1950
+
+Slaveholder (processed from individual slv fields - adult or child in slaveholding household 1850/1860)
+year, serial, histid, slvhcat
+
+

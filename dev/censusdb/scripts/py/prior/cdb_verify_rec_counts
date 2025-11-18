@@ -1,0 +1,144 @@
+#!/usr/bin/env python3
+"""
+check_keys_and_write_code.py
+
+Usage:
+  python check_keys_and_write_code.py /path/to/1850.csv.gz 1850
+
+This script:
+- Reads the gzipped CSV using DuckDB
+- Computes hhid, locid, pid
+- Counts unique locids, hhids, pids
+- Computes max/min hhids per locid, max pids per hhid
+- Counts total records
+- Writes the code into a .txt file in the same folder
+"""
+
+import duckdb
+import sys
+from pathlib import Path
+
+def check_keys(csv_path: Path, year: int):
+    con = duckdb.connect(database=":memory:")
+    view_name = "src"
+
+    # Read and compute derived keys
+    con.execute(f"""
+        CREATE OR REPLACE VIEW {view_name} AS
+        SELECT *,
+               CAST({year} AS VARCHAR) || '-' || CAST(serial AS VARCHAR) AS hhid,
+               stateicp || '-' || countyicp AS locid,
+               CAST({year} AS VARCHAR) || '-' || CAST(serial AS VARCHAR) || '-' || CAST(histid AS VARCHAR) AS pid
+        FROM read_csv_auto('{csv_path.as_posix()}', header=true);
+    """)
+
+    # Count distinct keys and total records
+    locid_count, hhid_count, pid_count, record_count = con.execute(f"""
+        SELECT
+            COUNT(DISTINCT locid),
+            COUNT(DISTINCT hhid),
+            COUNT(DISTINCT pid),
+            COUNT(*) AS record_count
+        FROM {view_name};
+    """).fetchone()
+
+    # Max/min hhids per locid
+    max_hhids_per_locid, min_hhids_per_locid = con.execute(f"""
+        SELECT MAX(hhcount), MIN(hhcount)
+        FROM (
+            SELECT locid, COUNT(DISTINCT hhid) AS hhcount
+            FROM {view_name}
+            GROUP BY locid
+        );
+    """).fetchone()
+
+    # Max pids per hhid
+    max_pids_per_hhid = con.execute(f"""
+        SELECT MAX(pidcount)
+        FROM (
+            SELECT hhid, COUNT(DISTINCT pid) AS pidcount
+            FROM {view_name}
+            GROUP BY hhid
+        );
+    """).fetchone()
+
+    con.close()
+
+    # Format result
+    summary = {
+        "year": year,
+        "csv": str(csv_path),
+        "record_count": record_count,
+        "locid_count": locid_count,
+        "hhid_count": hhid_count,
+        "pid_count": pid_count,
+        "max_hhids_per_locid": max_hhids_per_locid,
+        "min_hhids_per_locid": min_hhids_per_locid,
+        "max_pids_per_hhid": max_pids_per_hhid
+    }
+
+    print("Summary:", summary)
+
+    # Write code to .txt file in same folder
+    code_file = csv_path.with_suffix(".check.txt")
+    code_text = f"""# Check script for {csv_path.name}
+# Computes hhid, locid, pid and key metrics
+
+import duckdb
+
+con = duckdb.connect(database=":memory:")
+con.execute(\"\"\"
+    CREATE OR REPLACE VIEW src AS
+    SELECT *,
+           CAST({year} AS VARCHAR) || '-' || CAST(serial AS VARCHAR) AS hhid,
+           stateicp || '-' || countyicp AS locid,
+           CAST({year} AS VARCHAR) || '-' || CAST(serial AS VARCHAR) || '-' || CAST(histid AS VARCHAR) AS pid
+    FROM read_csv_auto('{csv_path.as_posix()}', header=true);
+\"\"\")
+
+locid_count, hhid_count, pid_count, record_count = con.execute(\"\"\"
+    SELECT COUNT(DISTINCT locid), COUNT(DISTINCT hhid), COUNT(DISTINCT pid), COUNT(*) FROM src;
+\"\"\").fetchone()
+
+max_hhids_per_locid, min_hhids_per_locid = con.execute(\"\"\"
+    SELECT MAX(hhcount), MIN(hhcount)
+    FROM (
+        SELECT locid, COUNT(DISTINCT hhid) AS hhcount
+        FROM src
+        GROUP BY locid
+    );
+\"\"\").fetchone()
+
+max_pids_per_hhid = con.execute(\"\"\"
+    SELECT MAX(pidcount)
+    FROM (
+        SELECT hhid, COUNT(DISTINCT pid) AS pidcount
+        FROM src
+        GROUP BY hhid
+    );
+\"\"\").fetchone()
+
+con.close()
+print({{
+    "year": {year},
+    "csv": "{csv_path.name}",
+    "record_count": record_count,
+    "locid_count": locid_count,
+    "hhid_count": hhid_count,
+    "pid_count": pid_count,
+    "max_hhids_per_locid": max_hhids_per_locid,
+    "min_hhids_per_locid": min_hhids_per_locid,
+    "max_pids_per_hhid": max_pids_per_hhid
+}})
+"""
+    code_file.write_text(code_text)
+    print(f"Code written to: {code_file.name}")
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: python check_keys_and_write_code.py /path/to/file.csv.gz YEAR")
+        sys.exit(1)
+
+    csv_path = Path(sys.argv[1])
+    year = int(sys.argv[2])
+    check_keys(csv_path, year)
